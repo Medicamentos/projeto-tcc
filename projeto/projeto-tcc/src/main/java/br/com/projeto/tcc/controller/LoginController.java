@@ -8,7 +8,7 @@ public class LoginController {
 	
 	@RequestMapping("/login")
 	public String abrirTelaLogin(){
-		return "login/login";
+		return "login";
 	}
 
 }
