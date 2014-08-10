@@ -10,5 +10,11 @@ public class LoginController {
 	public String abrirTelaLogin(){
 		return "login";
 	}
+	
+	@RequestMapping("/teste")
+	public String teste(){
+		return "teste";
+	}
+
 
 }

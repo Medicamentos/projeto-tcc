@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="container" id="loginContainer">
-		<form action="" id="loginForm">
+		<form action='<c:url value ="/teste"/>' method="post" id="loginForm">
 			<table>
 				<tr>
 					<td colspan="2" align="center"><h2>Login</h2></td>
@@ -28,7 +28,7 @@
 					<td><input type="password"/></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="right"><input type="button" class="btnSubmit" value="Entrar"/></td>
+					<td colspan="2" align="right"><input type="submit" class="btnSubmit" value="Entrar"/></td>
 				</tr>
 			</table>
 		</form>
