@@ -1,4 +1,4 @@
-package br.com.projeto.tcc.interceptador;
+package br.com.medicamento.insumo.interceptador;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

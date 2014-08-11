@@ -1,4 +1,4 @@
-package br.com.projeto.tcc.controller;
+package br.com.medicamento.insumo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

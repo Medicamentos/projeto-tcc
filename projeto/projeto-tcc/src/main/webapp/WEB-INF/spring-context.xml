@@ -10,7 +10,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<context:component-scan base-package="br.com.projeto.tcc.controller" />
+	<context:component-scan base-package="br.com.medicamento.insumo.controller" />
 	<mvc:annotation-driven />
 
 	<mvc:default-servlet-handler />
@@ -21,7 +21,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	</bean>
 
 	<mvc:interceptors>
-		<bean class="br.com.projeto.tcc.interceptador.AutorizadorInterceptor" />
+		<bean class="br.com.medicamento.insumo.interceptador.AutorizadorInterceptor" />
 	</mvc:interceptors>
 
 	<bean id="mysqlDataSource"
