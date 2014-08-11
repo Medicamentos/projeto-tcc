@@ -9,7 +9,6 @@
 		<jta-data-source>jdbc/ExemplosJPA</jta-data-source>
 		
 		<!-- entidade mapeada -->
-		<class>br.com.medicamento.insumo.bean.Teste</class>
 		
 		<properties>
 			<!-- dados da conexao -->
