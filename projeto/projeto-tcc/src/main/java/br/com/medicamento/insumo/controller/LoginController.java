@@ -10,6 +10,5 @@ public class LoginController {
 	public String abrirTelaLogin(){
 		return "login";
 	}
-
-
+	
 }
