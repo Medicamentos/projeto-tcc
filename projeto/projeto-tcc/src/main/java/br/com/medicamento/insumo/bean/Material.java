@@ -1,6 +1,7 @@
 package br.com.medicamento.insumo.bean;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -9,6 +10,7 @@ import javax.persistence.ManyToOne;
 public class Material {
 
 	@Id
+	@GeneratedValue
 	private Long codigoMaterial;
 	private String descricaoMaterial;
 	private String descricaoPrincipioAtivo;

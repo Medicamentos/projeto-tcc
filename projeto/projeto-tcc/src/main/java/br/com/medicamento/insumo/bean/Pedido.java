@@ -18,6 +18,7 @@ public class Pedido {
 	private Long codigoPedido;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Calendar dataPedido;
+	@ManyToOne
 	@JoinColumn(name="codigoUnidade")
     private Unidade unidade;
     private Boolean aprovado;

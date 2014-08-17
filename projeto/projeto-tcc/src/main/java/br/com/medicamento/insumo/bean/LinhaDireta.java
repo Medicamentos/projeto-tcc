@@ -1,7 +1,5 @@
 package br.com.medicamento.insumo.bean;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

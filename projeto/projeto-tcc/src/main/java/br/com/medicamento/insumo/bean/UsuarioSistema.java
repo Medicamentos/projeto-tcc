@@ -6,67 +6,83 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity(name="usuario_sistema")
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
+
+@Entity(name = "usuario_sistema")
 public class UsuarioSistema {
-	
+
 	@Id
 	@GeneratedValue
 	private Integer codigoUsuarioSistema;
-	private String nomeUsuarioSistema; 
+	private String nomeUsuarioSistema;
 	private String loginUsuarioSistema;
-    private String senhaUsuarioSistema;
-    @ManyToOne
-    @JoinColumn(name="codigoCargo")
-    private Cargo  cargo; 
-    @ManyToOne
-    @JoinColumn(name="codigoNivelAcesso")
-    private NivelAcesso  nivelAcesso; 
-    @ManyToOne
-    @JoinColumn(name="codigoUnidade")
-    private Unidade  unidade;
-    
+	private String senhaUsuarioSistema;
+	@ManyToOne
+	@JoinColumn(name = "codigoCargo")
+	private Cargo cargo;
+	@ManyToOne
+	@JoinColumn(name = "codigoNivelAcesso")
+	private NivelAcesso nivelAcesso;
+	@ManyToOne
+	@JoinColumn(name = "codigoUnidade")
+	private Unidade unidade;
+
 	public Integer getCodigoUsuarioSistema() {
 		return codigoUsuarioSistema;
 	}
+
 	public void setCodigoUsuarioSistema(Integer codigoUsuarioSistema) {
 		this.codigoUsuarioSistema = codigoUsuarioSistema;
 	}
+
 	public String getNomeUsuarioSistema() {
 		return nomeUsuarioSistema;
 	}
+
 	public void setNomeUsuarioSistema(String nomeUsuarioSistema) {
 		this.nomeUsuarioSistema = nomeUsuarioSistema;
 	}
+
 	public String getLoginUsuarioSistema() {
 		return loginUsuarioSistema;
 	}
+
 	public void setLoginUsuarioSistema(String loginUsuarioSistema) {
 		this.loginUsuarioSistema = loginUsuarioSistema;
 	}
+
 	public String getSenhaUsuarioSistema() {
 		return senhaUsuarioSistema;
 	}
+
 	public void setSenhaUsuarioSistema(String senhaUsuarioSistema) {
-		this.senhaUsuarioSistema = senhaUsuarioSistema;
+		this.senhaUsuarioSistema = new Md5PasswordEncoder().encodePassword("md5", senhaUsuarioSistema);
 	}
+
 	public Cargo getCargo() {
 		return cargo;
 	}
+
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
+
 	public NivelAcesso getNivelAcesso() {
 		return nivelAcesso;
 	}
+
 	public void setNivelAcesso(NivelAcesso nivelAcesso) {
 		this.nivelAcesso = nivelAcesso;
 	}
+
 	public Unidade getUnidade() {
 		return unidade;
 	}
+
 	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -93,6 +109,7 @@ public class UsuarioSistema {
 		result = prime * result + ((unidade == null) ? 0 : unidade.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

@@ -1,14 +1,10 @@
 package br.com.medicamento.insumo.bean;
 
-import java.util.Calendar;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity(name="item_pedido")
 public class ItemPedido {
@@ -16,8 +12,10 @@ public class ItemPedido {
 	@Id
 	@GeneratedValue
 	private Long codigoItemPedido;
+	@ManyToOne
 	@JoinColumn(name="codigoMaterial")
 	private Material material;
+	@ManyToOne
 	@JoinColumn(name="codigoPedido")
 	private Pedido pedido;
 	private long quantidadeItemPedido;

@@ -12,10 +12,13 @@ public class ItemReceita {
 	@Id
 	@GeneratedValue
 	private Long codigoItemReceita;
+	@ManyToOne
 	@JoinColumn(name="codigoUnidade")
     private Unidade unidade;
+	@ManyToOne
 	@JoinColumn(name="codigoMaterial")
-    private Material material;  
+    private Material material;
+	@ManyToOne
 	@JoinColumn(name="codigoReceita")
     private Receita receita;  
     private Integer quanidadeItemReceita;
