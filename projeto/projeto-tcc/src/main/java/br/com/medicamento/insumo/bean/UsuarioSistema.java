@@ -26,6 +26,7 @@ public class UsuarioSistema {
 	@ManyToOne
 	@JoinColumn(name = "codigoUnidade")
 	private Unidade unidade;
+	private Boolean statusAtivacao;
 
 	public Integer getCodigoUsuarioSistema() {
 		return codigoUsuarioSistema;
@@ -56,7 +57,8 @@ public class UsuarioSistema {
 	}
 
 	public void setSenhaUsuarioSistema(String senhaUsuarioSistema) {
-		this.senhaUsuarioSistema = new Md5PasswordEncoder().encodePassword("md5", senhaUsuarioSistema);
+		this.senhaUsuarioSistema = new Md5PasswordEncoder().encodePassword(
+				"md5", senhaUsuarioSistema);
 	}
 
 	public Cargo getCargo() {
@@ -81,6 +83,14 @@ public class UsuarioSistema {
 
 	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
+	}
+
+	public Boolean getStatusAtivacao() {
+		return statusAtivacao;
+	}
+
+	public void setStatusAtivacao(Boolean statusAtivacao) {
+		this.statusAtivacao = statusAtivacao;
 	}
 
 	@Override

@@ -16,7 +16,7 @@
 		<intercept-url pattern="/resources/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 
 		<!-- Restrict access to ALL other pages -->
-		<intercept-url pattern="/**" access="ROLE_ADMIN" />
+		<intercept-url pattern="/**" access="ROLE_DEV" />
 
 		<!-- Set the login proprieties -->
 		<form-login login-page="/login" default-target-url="/teste"
@@ -26,9 +26,25 @@
 
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
-				<user name="jefrock" password="123456" authorities="ROLE_ADMIN" />
-			</user-service>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="SELECT usuario_sistema.nomeUsuarioSistema, 
+					  usuario_sistema.loginUsuarioSistema, usuario_sistema.statusAtivacao 
+				  FROM usuario_sistema LEFT JOIN nivel_acesso ON usuario_sistema.codigoNivelAcesso = nivel_acesso.codigoNivelAcesso 
+				  WHERE nomeUsuarioSistema=?"
+				authorities-by-username-query="SELECT usuario_sistema.nomeUsuarioSistema, 
+					nivel_acesso.descricaoNivelAcesso 
+				  FROM usuario_sistema LEFT JOIN nivel_acesso ON usuario_sistema.codigoNivelAcesso = nivel_acesso.codigoNivelAcesso 
+				  WHERE nomeUsuarioSistema=?" />
 		</authentication-provider>
 	</authentication-manager>
+
+	<beans:bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="url"
+			value="jdbc:mysql://189.113.168.54/factorso_projeto-tcc" />
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="username" value="factorso_tcc" />
+		<beans:property name="password" value="tcc123!@#" />
+	</beans:bean>
+
 </beans:beans>
