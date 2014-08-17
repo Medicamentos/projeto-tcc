@@ -1,5 +1,6 @@
 package br.com.medicamento.insumo.bean;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ public class UsuarioSistema {
 	@GeneratedValue
 	private Integer codigoUsuarioSistema;
 	private String nomeUsuarioSistema;
+	@Column(unique=true)
 	private String loginUsuarioSistema;
 	private String senhaUsuarioSistema;
 	@ManyToOne

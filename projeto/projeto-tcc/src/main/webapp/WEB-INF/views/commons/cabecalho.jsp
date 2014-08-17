@@ -2,10 +2,10 @@
 <div id="headerCabecalho"></div>
 <div id="menu">
 	<ul class="dropdown">
-		<li class="menu_nivel1"><a href="#">HOME</a></li>
+		<li class="menu_nivel1"><a href='<c:url value="/index"/>'>HOME</a></li>
 		<li class="menu_nivel1"><a href="#">USUÁRIO</a>
 			<ul class="sub_menu">
-				<li><a href="#">Cadastrar</a></li>
+				<li><a href='<c:url value="/usuario/cadastrar"/>'>Cadastrar</a></li>
 				<li><a href="#">Consultar</a></li>
 				<li><a href="#">Alterar</a></li>
 			</ul></li>
@@ -42,12 +42,6 @@
 				<li><a href="#">Training</a></li>
 				<li><a href="#"> - VIEW ALL - </a></li>
 			</ul></li>
-		<li class="menu_nivel1"><a href="#">MENU 6</a>
-			<ul class="sub_menu">
-				<li><a href="#">Field Design &amp; Maintenance</a></li>
-				<li><a href="#">Turf Management</a></li>
-				<li><a href="#">Training</a></li>
-				<li><a href="#"> - VIEW ALL - </a></li>
-			</ul></li>
+		<li class="menu_nivel1"><a href='<c:url value="/logout"/>'>SAIR</a></li>
 	</ul>
 </div>

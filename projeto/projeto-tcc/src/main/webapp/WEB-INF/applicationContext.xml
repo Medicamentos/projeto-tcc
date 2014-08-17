@@ -19,7 +19,7 @@
 		<intercept-url pattern="/**" access="ROLE_DEV" />
 
 		<!-- Set the login proprieties -->
-		<form-login login-page="/login" default-target-url="/home/index"
+		<form-login login-page="/login" default-target-url="/index"
 			always-use-default-target='true' />
 		<logout logout-success-url="/login" invalidate-session="true" logout-url="/logout" />
 

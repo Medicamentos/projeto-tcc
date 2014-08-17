@@ -24,11 +24,12 @@ div{
 #headerCabecalho{
 	width: 1024px;
 	height: 120px;
-	border: solid ;
 }
 
 #cabecalho {
 	width: 1024px;
+	background-color: #1E90FF;
+	border: 1px solid;
 }
 
 #menu{
@@ -37,9 +38,29 @@ div{
 }
 
 .dropdown{
-	margin-left: 25px
+	margin-left: 20px;
 }
 
 .menu_nivel1 {
-	width: 14%
+	width: 14%;
+}
+
+.menu_nivel1  ul li{
+	width: 63%;
+}
+
+.menu_nivel1>a{
+	border-top: solid 1px;
+}
+
+.menu_nivel1:FIRST-CHILD{
+	border-left: solid 1px;
+}
+
+.menu_nivel1:LAST-CHILD{
+	border-right: solid 1px;
+}
+
+.menu_nivel1  ul li a{
+	margin-left: -8px;
 }

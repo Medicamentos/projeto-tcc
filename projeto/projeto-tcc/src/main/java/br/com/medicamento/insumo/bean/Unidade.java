@@ -21,9 +21,6 @@ public class Unidade {
 	    @JoinColumn(name="codigoBairro")
 	    private Bairro bairro;
 	    @ManyToOne
-	    @JoinColumn(name="codigoRegiao")
-	    private Regiao regiao;
-	    @ManyToOne
 	    @JoinColumn(name="codigoTipoUnidade")
 	    private TipoUnidade tipoUnidade;
 	    
@@ -69,12 +66,6 @@ public class Unidade {
 		public void setBairro(Bairro bairro) {
 			this.bairro = bairro;
 		}
-		public Regiao getRegiao() {
-			return regiao;
-		}
-		public void setRegiao(Regiao regiao) {
-			this.regiao = regiao;
-		}
 		public TipoUnidade getTipoUnidade() {
 			return tipoUnidade;
 		}
@@ -104,8 +95,6 @@ public class Unidade {
 					* result
 					+ ((numeroTelefone2 == null) ? 0 : numeroTelefone2
 							.hashCode());
-			result = prime * result
-					+ ((regiao == null) ? 0 : regiao.hashCode());
 			result = prime * result
 					+ ((tipoUnidade == null) ? 0 : tipoUnidade.hashCode());
 			return result;
@@ -153,11 +142,6 @@ public class Unidade {
 				if (other.numeroTelefone2 != null)
 					return false;
 			} else if (!numeroTelefone2.equals(other.numeroTelefone2))
-				return false;
-			if (regiao == null) {
-				if (other.regiao != null)
-					return false;
-			} else if (!regiao.equals(other.regiao))
 				return false;
 			if (tipoUnidade == null) {
 				if (other.tipoUnidade != null)

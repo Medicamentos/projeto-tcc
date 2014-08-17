@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +13,7 @@ import br.com.medicamento.insumo.bean.UsuarioSistema;
 
 @Transactional
 @Repository
-public class UsuarioSistamaDAO{
+public class UsuarioSistemaDAO{
 	
 	@PersistenceContext
 	EntityManager em;
@@ -30,15 +31,20 @@ public class UsuarioSistamaDAO{
 	}
 
 	public UsuarioSistema buscarPorId(Long id) {
-		UsuarioSistema usuario = em.find(UsuarioSistema.class, id);
-		return usuario;
+		return em.find(UsuarioSistema.class, id.intValue());
 	}
-
+	
 	@SuppressWarnings("unchecked")
 	public List<UsuarioSistema> buscarTodos() {
-		List<UsuarioSistema> listaUsuario = em.createQuery("SELECT t FROM usuario_sistema").getResultList();
+		List<UsuarioSistema> listaUsuario = em.createQuery("SELECT c FROM usuario_sistema c").getResultList();
 		return listaUsuario;
 	}
 
+	public UsuarioSistema buscarPorLogin(String login){
+		Query query = em.createQuery("SELECT c FROM usuario_sistema c WHERE c.loginUsuarioSistema=:login");
+		query.setParameter("login", login);
+		return (UsuarioSistema)query.getSingleResult();
+	}
+	
 	
 }
