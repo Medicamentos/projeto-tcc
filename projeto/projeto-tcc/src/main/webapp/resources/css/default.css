@@ -1,18 +1,45 @@
 body {
-	margin: 0 auto;
-	width: 1024px
+	margin: 0 auto !important;
+	width: 1024px !important;
+}
+
+div{
+	float: left;
 }
 
 #loginContainer {
-	width: 320px;
-	height: 200px;
+	width: 290px;
+	height: 165px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin-left: -160px;
-	margin-top: -100px;
+	margin-left: -145px;
+	margin-top: -82.5px;
 }
 
 #loginForm{
 	margin-left: 10px
+}
+
+#headerCabecalho{
+	width: 1024px;
+	height: 120px;
+	border: solid ;
+}
+
+#cabecalho {
+	width: 1024px;
+}
+
+#menu{
+	text-align: center;
+	width: 100%;
+}
+
+.dropdown{
+	margin-left: 25px
+}
+
+.menu_nivel1 {
+	width: 14%
 }

@@ -19,22 +19,24 @@
 		<intercept-url pattern="/**" access="ROLE_DEV" />
 
 		<!-- Set the login proprieties -->
-		<form-login login-page="/login" default-target-url="/teste"
+		<form-login login-page="/login" default-target-url="/home/index"
 			always-use-default-target='true' />
+		<logout logout-success-url="/login" invalidate-session="true" logout-url="/logout" />
 
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
+			<password-encoder hash="md5"/>
 			<jdbc-user-service data-source-ref="dataSource"
-				users-by-username-query="SELECT usuario_sistema.nomeUsuarioSistema, 
-					  usuario_sistema.loginUsuarioSistema, usuario_sistema.statusAtivacao 
+				users-by-username-query="SELECT usuario_sistema.loginUsuarioSistema, 
+					  usuario_sistema.senhaUsuarioSistema, usuario_sistema.statusAtivacao 
 				  FROM usuario_sistema LEFT JOIN nivel_acesso ON usuario_sistema.codigoNivelAcesso = nivel_acesso.codigoNivelAcesso 
-				  WHERE nomeUsuarioSistema=?"
-				authorities-by-username-query="SELECT usuario_sistema.nomeUsuarioSistema, 
+				  WHERE loginUsuarioSistema=?"
+				authorities-by-username-query="SELECT usuario_sistema.loginUsuarioSistema, 
 					nivel_acesso.descricaoNivelAcesso 
 				  FROM usuario_sistema LEFT JOIN nivel_acesso ON usuario_sistema.codigoNivelAcesso = nivel_acesso.codigoNivelAcesso 
-				  WHERE nomeUsuarioSistema=?" />
+				  WHERE loginUsuarioSistema=?" />
 		</authentication-provider>
 	</authentication-manager>
 
