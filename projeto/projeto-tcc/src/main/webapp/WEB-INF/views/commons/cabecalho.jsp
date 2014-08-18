@@ -5,8 +5,8 @@
 		<li class="menu_nivel1"><a href='<c:url value="/index"/>'>HOME</a></li>
 		<li class="menu_nivel1"><a href="#">USUÁRIO</a>
 			<ul class="sub_menu">
-				<li><a href='<c:url value="/usuario/cadastrar"/>'>Cadastrar</a></li>
-				<li><a href="#">Consultar</a></li>
+				<li><a href='#' onclick='javacript:ajaxPagina("usuario/cadastrar")'>Cadastrar</a></li>
+				<li><a href="#" onclick='javacript:ajaxPagina("usuario/consultar")'>Consultar</a></li>
 				<li><a href="#">Alterar</a></li>
 			</ul></li>
 		<li class="menu_nivel1"><a href="#">MATERIAL</a>

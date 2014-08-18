@@ -7,6 +7,19 @@ div{
 	float: left;
 }
 
+#conteudoPagina{
+	margin-left: 25px;
+	margin-top: 25px;
+}
+
+#container{
+	border-left: solid 1px;
+	border-right: solid 1px;
+	border-bottom: solid 1px;
+	width: 1024px;
+	min-height: 500px;
+}
+
 #loginContainer {
 	width: 290px;
 	height: 165px;

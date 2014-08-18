@@ -4,6 +4,7 @@
 <script type="text/javascript" src='<c:url value="/resources/script/bibliotecas/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"/>'></script>
 <script type="text/javascript" src='<c:url value="/resources/script/estilo-jquery/estilo.js"/>'></script>
 <script type="text/javascript" src="<c:url value="/resources/script/bibliotecas/SimplejQueryDropdowns/js/jquery.dropdownPlain.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/script/uteis.js"/>"></script>
 <link rel="stylesheet" href='<c:url value="/resources/script/bibliotecas/SimplejQueryDropdowns/css/style.css"/>' />
 <link rel="stylesheet" href='<c:url value="/resources/css/default.css"/>' />
 <link rel="stylesheet" href='<c:url value="/resources/script/bibliotecas/jquery-ui-1.10.4.custom/css/dark-hive/jquery-ui-1.10.4.custom.min.css"/>' />

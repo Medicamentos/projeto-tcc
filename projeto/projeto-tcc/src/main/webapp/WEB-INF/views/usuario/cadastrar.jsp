@@ -1,19 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
-		<c:import url="/WEB-INF/views/commons/importScript.jsp" />
-	</head>
-	<body>
-		<div id="cabecalho" >
-			<c:import url="/WEB-INF/views/commons/cabecalho.jsp" />	
-		</div>
-		<div id="container">
-			Teste		
-		</div>
-		<div id="rodape">
-			
-		</div>
-	</body>
-</html>
+<div id="conteudoPagina">
+	<table cellspacing="10">
+		<tr>
+			<th>Nome: <input type="text" id="nome"/></th>
+			<th>Login: <input type="text" id="login"/></th>
+		</tr>
+		<tr>
+			<td><input type="button" value="Teste" onclick="javascrit:submeter()"/></td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+function submeter(){
+	$.ajax({
+		url : '/projeto-tcc/usuario/cadastrarUsuario',
+		type : "POST",
+		dataType : "html",
+		data: {
+			"nomeUsuarioSistema" : $("#nome").val(),
+			"loginUsuarioSistema" : $("#login").val()
+		},
+		success : function(data) {
+			alert("teste")
+		}
+	});	
+}
+
+</script>
