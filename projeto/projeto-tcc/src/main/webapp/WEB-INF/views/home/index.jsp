@@ -10,8 +10,7 @@
 			<c:import url="/WEB-INF/views/commons/cabecalho.jsp" />	
 		</div>
 		<div id="container">
-		
-		
+			<c:import url="/WEB-INF/views/${url}.jsp" />
 		</div>
 		<div id="rodape">
 			

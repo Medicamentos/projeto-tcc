@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.medicamento.insumo.bean.UsuarioSistema;
@@ -20,10 +21,11 @@ public class HomeController {
 	private UsuarioSistemaDAO usuarioDAO;
 	
 	@RequestMapping("index")
-	public String abrirHome(){
+	public String abrirHome(Model model){
 		if(sessao.getAttribute("usuario") == null){
 			this.guardarUsuario();
-		}		
+		}
+		model.addAttribute("url", "home/home");
 		return "home/index";
 	}
 	

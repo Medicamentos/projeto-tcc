@@ -2,46 +2,34 @@
 <div id="headerCabecalho"></div>
 <div id="menu">
 	<ul class="dropdown">
-		<li class="menu_nivel1"><a href='<c:url value="/index"/>'>HOME</a></li>
-		<li class="menu_nivel1"><a href="#">USUÁRIO</a>
+		<li class="menu_nivel1"><a href='<c:url value="/index"/>'>INICIO</a></li>
+		<li class="menu_nivel1"><a href="#">ESTOQUE</a>
 			<ul class="sub_menu">
-				<li><a href='#' onclick='javacript:ajaxPagina("usuario/cadastrar")'>Cadastrar</a></li>
-				<li><a href="#" onclick='javacript:ajaxPagina("usuario/consultar")'>Consultar</a></li>
-				<li><a href="#">Alterar</a></li>
+				<li><a href='#' onclick=''>Entrada</a></li>
+				<li><a href="#" onclick='")'>Consultar</a></li>
+			</ul></li>
+		<li class="menu_nivel1"><a href="#">PEDIDIOS</a>
+			<ul class="sub_menu">
+				<li><a href="#">Entregar</a></li>
+				<li><a href="#">Consultar</a></li>
 			</ul></li>
 		<li class="menu_nivel1"><a href="#">MATERIAL</a>
 			<ul class="sub_menu">
-				<li><a href="#">Baseball - Softball</a></li>
-				<li><a href="#">Batting Practice Equipment</a></li>
-				<li><a href="#">Batting Cages</a></li>
-				<li><a href="#">Portable Mounds</a></li>
-				<li><a href="#">Football</a></li>
-				<li><a href="#">Soccer</a></li>
-				<li><a href="#"> - VIEW ALL - </a></li>
+				<li><a href="#">Cadastrar</a></li>
+				<li><a href="#">Consultar</a></li>
 			</ul></li>
-		<li class="menu_nivel1"><a href="#">MENU 3</a>
+		<li class="menu_nivel1"><a href="#">UNIDADES</a>
 			<ul class="sub_menu">
-				<li><a href="#">Ladders &amp; Sticks</a></li>
-				<li><a href="#">Hurdles</a></li>
-				<li><a href="#">Training Accessories</a></li>
-				<li><a href="#">Smart-Cart Training System</a></li>
-				<li><a href="#">Smart-Hurdle Collection</a></li>
-				<li><a href="#"> - VIEW ALL - </a></li>
+				<li><a href="#">Cadastrar</a></li>
+				<li><a href="#">Consultar</a></li>
 			</ul></li>
-		<li class="menu_nivel1"><a href="#">MENU 4</a>
+		<li class="menu_nivel1"><a href="#">USUÁRIOS</a>
 			<ul class="sub_menu">
-				<li><a href="#">Field Design &amp; Maintenance</a></li>
-				<li><a href="#">Turf Management</a></li>
-				<li><a href="#">Training</a></li>
-				<li><a href="#"> - VIEW ALL - </a></li>
+				<li><a href='<c:url value="usuario/abrirCadastrarUsuario"/>'>Cadastrar</a></li>
+				<li><a href="#">Consultar</a></li>
+				<li><a href="#">Meu Cadastro</a></li>
 			</ul></li>
-		<li class="menu_nivel1"><a href="#">MENU 5</a>
-			<ul class="sub_menu">
-				<li><a href="#">Field Design &amp; Maintenance</a></li>
-				<li><a href="#">Turf Management</a></li>
-				<li><a href="#">Training</a></li>
-				<li><a href="#"> - VIEW ALL - </a></li>
-			</ul></li>
-		<li class="menu_nivel1"><a href='<c:url value="/logout"/>'>SAIR</a></li>
+		<li class="menu_nivel1"><a href='<c:url value=""/>'>LINHA DIRETA</a></li>
+		<li class="menu_nivel1"><a href='<c:url value="/logout"/>'>RELATÓRIOS</a></li>
 	</ul>
 </div>
