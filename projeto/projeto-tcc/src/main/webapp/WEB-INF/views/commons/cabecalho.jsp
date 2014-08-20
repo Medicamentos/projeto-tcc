@@ -20,7 +20,7 @@
 			</ul></li>
 		<li class="menu_nivel1"><a href="#">UNIDADES</a>
 			<ul class="sub_menu">
-				<li><a href="#">Cadastrar</a></li>
+				<li><a href='<c:url value="unidade/abrirCadastrarUnidade"/>'>Cadastrar</a></li>
 				<li><a href="#">Consultar</a></li>
 			</ul></li>
 		<li class="menu_nivel1"><a href="#">USUÁRIOS</a>

@@ -10,6 +10,7 @@
 		
 		<!-- entidade mapeada -->
 		<class>br.com.medicamento.insumo.bean.UsuarioSistema</class>
+		<class>br.com.medicamento.insumo.bean.Unidade</class>
 		
 		<properties>
 			<!-- dados da conexao -->
