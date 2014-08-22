@@ -1,40 +1,32 @@
 <div id="conteudoPagina">
+<h1>Cadastro de Usuásios do Sistema</h1>
 	<table cellspacing="10">
 		<tr>
-			<td>Unidade:</td><td> <input type="text" id="unidade"/></td>
+			<td>Nome:</td><td> <input type="text" id="nome"/></td>
 		</tr>
 		<tr>
-			<td>Endereço:</td> <td><input type="text" id="endereco"/></td>
+			<td>Login:</td> <td><input type="text" id="login"/></td>
 		</tr>	
 		<tr>
-			<td>CEP:</td> <td><input type="text" id="cep"/></td>
+			<td>senha:</td> <td><input type="text" id="senha"/></td>
 		</tr>
 		<tr>
-			<td>Telefone 1:</td> <td><input type="text" id="telefone1"/></td>
+			<td>Cargo:</td> <td><input type="text" id="cargo"/></td>
 		</tr>
 		<tr>
-			<td>Telefone 2:</td> <td><input type="text" id="telefone2"/></td>
+			<td>Nível de acesso:</td> <td><input type="text" id="nivelDeAcesso"/></td>
 		</tr>
 		<tr>
-			<td>Bairro:</td> <td> <select type="text" id="bairro">
-			<option>Campo Grande</option>
-			<option>Vila Belmiro</option>
-			<option>Marapé</option>
-			<option>Gonzaga</option>
-			<option>Aparecida</option>
-			<option>Ponta da Praia</option>
-			<option>Boqueirão</option>
-			<option>Encruzilhada</option>
+			<td>Unidade:</td> <td> <select type="text" id="unidade">
+			<option>Policlínica Gonzaga</option>
+			<option>Policlínica Conselhiero Nébias</option>
+			<option>Policlínica Chico de Paula</option>
 			</select></td>
 		</tr>
-		<tr>
-			<td>Tipo:</td> <td> <select type="text" id="tipo">
-			<option>Unidade de Saúde</option>
-			<option>Pronto Socorro</option>
-			<option>Hospital</option>
-			<option>Outros</option>
-			</select></td>
-		</tr>
+		<!-- <tr>
+				<input type="radio" name="status" value="ativo">Ativo<br> 
+				<input type="radio" name="status" value="inativo">Inativo
+		</tr> -->
 		<tr>
 			<td><input type="button" value="Casdastrar" onclick="javascrit:submeter()" class="btnSubmit"/></td>
 		</tr>

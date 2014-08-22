@@ -15,17 +15,17 @@
 			</ul></li>
 		<li class="menu_nivel1"><a href="#">MATERIAL</a>
 			<ul class="sub_menu">
-				<li><a href="#">Cadastrar</a></li>
+				<li><a href='<c:url value="/material/abrirCadastroMaterial"/>'>Cadastrar</a></li>
 				<li><a href="#">Consultar</a></li>
 			</ul></li>
 		<li class="menu_nivel1"><a href="#">UNIDADES</a>
 			<ul class="sub_menu">
-				<li><a href='<c:url value="unidade/abrirCadastrarUnidade"/>'>Cadastrar</a></li>
+				<li><a href='<c:url value="/unidade/abrirCadastrarUnidade"/>'>Cadastrar</a></li>
 				<li><a href="#">Consultar</a></li>
 			</ul></li>
 		<li class="menu_nivel1"><a href="#">USUÁRIOS</a>
 			<ul class="sub_menu">
-				<li><a href='<c:url value="usuario/abrirCadastrarUsuario"/>'>Cadastrar</a></li>
+				<li><a href='<c:url value="/usuario/abrirCadastrarUsuario"/>'>Cadastrar</a></li>
 				<li><a href="#">Consultar</a></li>
 				<li><a href="#">Meu Cadastro</a></li>
 			</ul></li>

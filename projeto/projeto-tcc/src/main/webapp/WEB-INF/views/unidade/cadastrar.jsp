@@ -1,28 +1,24 @@
 <div id="conteudoPagina">
+<h1>Cadastro de Unidade </h1>
 	<table cellspacing="10">
 		<tr>
-			<td>Nome:</td><td> <input type="text" id="nome"/></td>
+			<td>Unidade:</td><td> <input type="text" id="unidade"/></td>
 		</tr>
 		<tr>
-			<td>Login:</td> <td><input type="text" id="login"/></td>
+			<td>Endereço:</td> <td><input type="text" id="endereco"/></td>
 		</tr>	
 		<tr>
-			<td>Senha:</td> <td><input type="password" id="senha"/></td>
+			<td>CEP:</td> <td><input type="text" id="cep"/></td>
 		</tr>
 		<tr>
-			<td>Cargo:</td> <td><select type="text" id="cargo">
-				<option>Selecionar...</option>
-				<option></option>
-			</select></td>
+			<td>Telefone 1:</td> <td><input type="text" id="telefone1"/></td>
 		</tr>
 		<tr>
-			<td>Nível de Acesso:</td> <td> <select type="text" id="nivelacesso">
-			<option>Administrador</option>
-			<option>Usuário comum</option>
-			</select></td>
+			<td>Telefone 2:</td> <td><input type="text" id="telefone2"/></td>
 		</tr>
 		<tr>
-			<td>Unidade:</td> <td> <select type="text" id="Unidade">
+			<td>Bairro:</td> <td> <select type="text" id="bairro">
+			<option tabindex="1">...</option>
 			<option>Campo Grande</option>
 			<option>Vila Belmiro</option>
 			<option>Marapé</option>
@@ -31,6 +27,14 @@
 			<option>Ponta da Praia</option>
 			<option>Boqueirão</option>
 			<option>Encruzilhada</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>Tipo:</td> <td> <select type="text" id="tipo">
+			<option tabindex="1">...</option>
+			<option>Hospital</option>
+			<option>Policlínica</option>
+			<option>Almoxarifado</option>
 			</select></td>
 		</tr>
 		<tr>
