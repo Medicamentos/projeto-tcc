@@ -14,7 +14,7 @@
 		</tr>
 		<tr>
 			<td colspan="2"><input type="text" id="login" class="inputPequeno"/></td>
-			<td colspan="2"><input type="text" id="senha" class="inputPequeno"/></td>
+			<td colspan="2"><input type="password" id="senha" class="inputPequeno"/></td>
 		</tr>
 		<tr>
 			<td colspan="2">Cargo:</td>

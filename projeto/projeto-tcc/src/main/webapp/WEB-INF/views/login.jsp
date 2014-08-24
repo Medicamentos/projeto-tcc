@@ -23,7 +23,7 @@
 					</tr>
 					<tr>
 						<td colspan="2" align="right">
-							<input type="submit" class="btnSubmit" value="Entrar" />
+							<input type="submit" class="botaoEstilo" value="Entrar" />
 						</td>
 					</tr>
 				</table>
