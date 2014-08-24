@@ -77,3 +77,15 @@ div{
 .menu_nivel1  ul li a{
 	margin-left: -8px;
 }
+
+.inputGrande {
+	width: 500px;
+}
+
+.inputPequeno {
+	width: 243px;
+}
+
+select {
+	width: 190px
+}

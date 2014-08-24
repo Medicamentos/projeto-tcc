@@ -4,7 +4,7 @@ $(function() {
 });
 
 function estiloBotaoSubmit(){
-	$(".btnSubmit").livequery(function(){
+	$(".botaoEstilo").livequery(function(){
 		$(this).button();
 	});
 }
