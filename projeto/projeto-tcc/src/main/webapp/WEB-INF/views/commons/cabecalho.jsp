@@ -5,10 +5,10 @@
 		<li class="menu_nivel1"><a href='<c:url value="/index"/>'>INICIO</a></li>
 		<li class="menu_nivel1"><a href="#">ESTOQUE</a>
 			<ul class="sub_menu">
-				<li><a href='#' onclick=''>Entrada</a></li>
-				<li><a href="#" onclick='")'>Consultar</a></li>
+				<li><a href='<c:url value="/estoque/cadastrarNotaFiscal"/>'>Entrada</a></li>
+				<li><a href='<c:url value="/estoque/abrirCadastrarItensNotaFiscal"/>'>Consulta</a></li>
 			</ul></li>
-		<li class="menu_nivel1"><a href="#">PEDIDIOS</a>
+		<li class="menu_nivel1"><a href="#">PEDIDOS</a>
 			<ul class="sub_menu">
 				<li><a href="#">Entregar</a></li>
 				<li><a href="#">Consultar</a></li>
@@ -29,7 +29,11 @@
 				<li><a href="#">Consultar</a></li>
 				<li><a href="#">Meu Cadastro</a></li>
 			</ul></li>
-		<li class="menu_nivel1"><a href='<c:url value=""/>'>LINHA DIRETA</a></li>
+		<li class="menu_nivel1"><a href="#">LINHA DIRETA</a>
+			<ul class="sub_menu">
+				<li><a href='<c:url value="/linhaDireta/abrirEscreverMensagem"/>'>Escrever</a></li>
+				<li><a href='<c:url value="/linhaDireta/abrirListarMensagem"/>'>Listar</a></li>
+			</ul></li>
 		<li class="menu_nivel1"><a href='<c:url value="/logout"/>'>RELATÓRIOS</a></li>
 	</ul>
 </div>
