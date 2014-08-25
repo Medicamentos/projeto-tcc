@@ -25,18 +25,18 @@
 				<select>
 					<option>SELECIONE</option>
 					<c:forEach items="${cadastrar.listaCargo}" var="listaCargo">
-						<option></option>
+						<option value="${listaCargo.descricaoCargo}">${listaCargo.codigoCargo}</option>
 					</c:forEach>
 				</select>
 			</td>
 			<td>
-				<input title="Adicionar" type="button" value="+" class="botaoEstilo"/>
+				<input onclick="javascript:abrirCadastrarNivelAcesso()" title="Adicionar" type="button" value="+" class="botaoEstilo"/>
 			</td>
 			<td>
 				<select>
 					<option>SELECIONE</option>
 					<c:forEach items="${cadastrar.listaNivelAcesso}" var="listaNivelAcesso">
-						<option></option>
+						<option value="${listaNivelAcesso.codigoNivelAcesso}">${listaNivelAcesso.descricaoNivelAcesso}</option>
 					</c:forEach>
 				</select>
 			</td>
@@ -72,3 +72,10 @@
 		</tr>
 	</table>
 </div>
+<script type="text/javascript">
+	function abrirCadastrarNivelAcesso(){
+		$("#popupCadastrarNivelAcesso").dialog("open");
+	}
+</script>
+
+<c:import url="/WEB-INF/views/nivelAcesso/cadastrar.jsp"/>

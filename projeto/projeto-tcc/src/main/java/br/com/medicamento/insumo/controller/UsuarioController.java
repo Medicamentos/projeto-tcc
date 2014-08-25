@@ -5,26 +5,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.medicamento.insumo.bean.UsuarioSistema;
+import br.com.medicamento.insumo.viewmodel.CadastrarUsuarioViewModel;
 
 @Controller
-public class UsuarioController {
+public class UsuarioController extends ControllerBase {
 
 	@RequestMapping("usuario/abrirCadastrarUsuario")
 	public String abrirCadastroUsuario(Model model){
+		CadastrarUsuarioViewModel cadastrar = super.usuarioLogica.cadastrarUsuario();
+		model.addAttribute("cadastrar", cadastrar);
 		model.addAttribute("url", "usuario/cadastrar");
 		return "home/index";
-	}
-	
-	@RequestMapping("usuario/consultar")
-	public String abrirConsulta(){
-		return "usuario/consultar";
-	}
-	
-	@RequestMapping("usuario/cadastrarUsuario")
-	public String cadastrarUsuario(UsuarioSistema user){
-		System.out.println(user.getNomeUsuarioSistema());
-		System.out.println(user.getLoginUsuarioSistema());
-		return null;
 	}
 	
 }

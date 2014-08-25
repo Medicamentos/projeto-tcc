@@ -6,7 +6,7 @@
 		<c:import url="/WEB-INF/views/commons/importScript.jsp" />
 	</head>
 	<body>
-		<div id="cabecalho" >
+		<div id="cabecalho">
 			<c:import url="/WEB-INF/views/commons/cabecalho.jsp" />	
 		</div>
 		<div id="container">

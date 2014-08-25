@@ -3,10 +3,6 @@ body {
 	width: 1024px !important;
 }
 
-div{
-	float: left;
-}
-
 #conteudoPagina{
 	margin-left: 25px;
 	margin-top: 25px;
@@ -18,6 +14,7 @@ div{
 	border-bottom: solid 1px;
 	width: 1024px;
 	min-height: 500px;
+	float: left;
 }
 
 #loginContainer {
@@ -43,6 +40,7 @@ div{
 	width: 1024px;
 	background-color: #1E90FF;
 	border: 1px solid;
+	float: left;
 }
 
 #menu{
