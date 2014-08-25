@@ -12,6 +12,7 @@ public class NotaFiscal {
 	@Id
 	@GeneratedValue
     private Integer codigoNumeroNota;
+	private Integer numero;
     private Date dataEmissao;
     private Long valorTotalNota;
     
@@ -20,6 +21,12 @@ public class NotaFiscal {
 	}
 	public void setCodigoNumeroNota(Integer codigoNumeroNota) {
 		this.codigoNumeroNota = codigoNumeroNota;
+	}
+	public Integer getNumero() {
+		return numero;
+	}
+	public void setNumero(Integer numero) {
+		this.numero = numero;
 	}
 	public Date getDataEmissao() {
 		return dataEmissao;
@@ -42,6 +49,7 @@ public class NotaFiscal {
 				+ ((codigoNumeroNota == null) ? 0 : codigoNumeroNota.hashCode());
 		result = prime * result
 				+ ((dataEmissao == null) ? 0 : dataEmissao.hashCode());
+		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
 		result = prime * result
 				+ ((valorTotalNota == null) ? 0 : valorTotalNota.hashCode());
 		return result;
@@ -65,13 +73,16 @@ public class NotaFiscal {
 				return false;
 		} else if (!dataEmissao.equals(other.dataEmissao))
 			return false;
+		if (numero == null) {
+			if (other.numero != null)
+				return false;
+		} else if (!numero.equals(other.numero))
+			return false;
 		if (valorTotalNota == null) {
 			if (other.valorTotalNota != null)
 				return false;
 		} else if (!valorTotalNota.equals(other.valorTotalNota))
 			return false;
 		return true;
-	}
-    
-    
+	}   
 }

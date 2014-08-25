@@ -2,7 +2,7 @@
 <h1>Cadastro de Material </h1>
 	<table cellspacing="10">
 		<tr>
-			<td>Material:</td><td> <input type="text" id="material"/></td>
+			<td>Nome:</td><td> <input type="text" id="nome"/></td>
 		</tr>
 		<tr>
 			<td>Princípio Ativo:</td> <td><input type="text" id="principioAtivo"/></td>
@@ -60,9 +60,6 @@
 		</tr>
 		<tr>
 			<td>Estoque Mínimo:</td> <td><input type="text" id="estoqueMinimo"/></td>
-		</tr>
-		<tr>
-			<td>Qtd. Estoque:</td> <td><input type="text" id="qtdEstoque"/></td>
 		</tr>
 		<tr>
 			<td><input type="button" value="Casdastrar" onclick="javascrit:submeter()" class="btnSubmit"/></td>
