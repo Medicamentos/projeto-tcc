@@ -87,3 +87,7 @@ body {
 select {
 	width: 190px
 }
+
+#selectNivelAcesso{
+	width: 235px;
+}

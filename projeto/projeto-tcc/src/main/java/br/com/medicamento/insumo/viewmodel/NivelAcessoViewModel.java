@@ -21,7 +21,7 @@ public class NivelAcessoViewModel {
 	}
 
 	public String getDescricaoNivelAcesso() {
-		return descricaoNivelAcesso;
+		return descricaoNivelAcesso.replace("ROLE_", "");
 	}
 
 	public void setDescricaoNivelAcesso(String descricaoNivelAcesso) {

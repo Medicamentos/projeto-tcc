@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import br.com.medicamento.insumo.dao.CargoDAO;
 import br.com.medicamento.insumo.dao.NivelAcessoDAO;
 import br.com.medicamento.insumo.dao.UsuarioSistemaDAO;
 
@@ -18,6 +19,9 @@ public abstract class LogicaBase {
 	
 	@Autowired
 	protected NivelAcessoDAO nivelAcessoDAO;
+	
+	@Autowired
+	protected CargoDAO cargoDAO;
 	
 	
 }

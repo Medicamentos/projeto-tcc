@@ -16,7 +16,7 @@
 		<intercept-url pattern="/resources/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 
 		<!-- Restrict access to ALL other pages -->
-		<intercept-url pattern="/**" access="ROLE_DEV" />
+		<intercept-url pattern="/**" access="ROLE_DESENVOLVIMENTO" />
 
 		<!-- Set the login proprieties -->
 		<form-login login-page="/login" default-target-url="/index"
