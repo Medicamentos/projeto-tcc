@@ -112,8 +112,8 @@
 					<td>editar - apagar</td>
 				</tr>
 			</table>
-			<br> <input type="button" value="Finalizar Entrada"
-				onclick="javascrit:submeter()" class="btnSubmit" />
+			<br> <input type="button" value="Finalizar Entrada" onclick="javascrit:submeter()" class="btnSubmit" />
+			
 		</fieldset>
 		<br>
 	</div>

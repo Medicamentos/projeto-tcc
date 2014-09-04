@@ -12,5 +12,11 @@ public class MaterialController {
 		model.addAttribute("url", "material/cadastroMaterial");
 		return "home/index";
 	}
+	
+	@RequestMapping("material/abrirConsultaMaterial")
+	public String abrirConsultaMaterial(Model model){
+		model.addAttribute("url", "material/consultaMaterial");
+		return "home/index";
+	}
 
 }

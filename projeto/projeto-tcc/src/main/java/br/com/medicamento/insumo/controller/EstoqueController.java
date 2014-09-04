@@ -18,4 +18,10 @@ public class EstoqueController {
 		model.addAttribute("url", "estoque/cadastroItensNotaFiscal");
 	return "home/index";	
 	}
+	
+	@RequestMapping("estoque/abrirConsultarEstoque")
+	public String abrirConsultarEstoque(Model model){
+		model.addAttribute("url", "estoque/ConsultaEstoque");
+	return "home/index";	
+	}
 }

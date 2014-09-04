@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div id="conteudoPagina">
 <h1>Entrada no Estoque - Passo 1 </h1>
 
@@ -13,6 +14,7 @@
 		</tr>
 		<tr>
 			<td><input type="button" value="Continuar" onclick="javascrit:submeter()" class="btnSubmit"/></td>
+			<td><a href='<c:url value="/estoque/abrirCadastrarItensNotaFiscal"/>'>Continuar</a></td>
 		</tr>
 	</table>
 </div>

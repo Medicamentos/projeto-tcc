@@ -20,6 +20,12 @@ public class UsuarioController extends ControllerBase {
 		return "home/index";
 	}
 	
+	@RequestMapping("usuario/abrirConsultarUsuario")
+	public String abrirConsultarUsuario(Model model){
+		model.addAttribute("url", "usuario/consultaUsuario");
+		return "home/index";
+	}
+	
 	@RequestMapping(value="/usuario/cadastrarCargo", produces="application/json")
 	@ResponseBody
 	public String cadastrarCargo(Cargo cargo){

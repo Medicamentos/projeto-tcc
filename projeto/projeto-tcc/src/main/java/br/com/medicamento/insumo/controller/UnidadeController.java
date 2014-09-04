@@ -12,5 +12,11 @@ public class UnidadeController {
 		model.addAttribute("url" , "unidade/cadastrar");
 		return "home/index";
 	}
+	
+	@RequestMapping("unidade/abrirConsultarUnidade")
+	public String abrirConsultarUnidade(Model model){
+		model.addAttribute("url" , "unidade/consultaUnidade");
+		return "home/index";
+	}
 
 }

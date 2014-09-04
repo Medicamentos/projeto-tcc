@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
-<h1>Cadastro de Unidades </h1>
+<h1>Consulta de Unidades </h1>
 	<table cellspacing="10">
 		<tr>
 			<td colspan="4">Unidade:</td>
@@ -35,21 +35,9 @@
 			</select></td>
 		</td>
 		</tr>
+		
 		<tr>
-			<td>Tipo:</td>
-			<td>Telefone:</td>
-		</tr>
-		<tr>
-		<td> <select type="text" id="tipo">
-			<option tabindex="1">...</option>
-			<option>Hospital</option>
-			<option>Policlínica</option>
-			<option>Almoxarifado</option>
-			</select></td>
-			 <td><input type="text" id="telefone" class="inputPequeno"/></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="Casdastrar" onclick="javascrit:submeter()" class="btnSubmit"/></td>
+			<td><input type="button" value="Consultar" onclick="javascrit:submeter()" class="btnSubmit"/></td>
 		</tr>
 	</table>
 </div>
