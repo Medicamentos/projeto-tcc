@@ -1,24 +1,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div id="conteudoPagina">
 <h1>Cadastro de Usuásios do Sistema</h1>
-	<table cellspacing="10">
+	<table cellspacing="12">
 		<tr>
-			<td colspan="4">Nome:</td>
+			<td colspan="4">Nome*:</td>
 		</tr>
 		<tr>
 			<td colspan="4"><input type="text" id="nome" class="inputGrande"/></td>
 		</tr>
 		<tr>
-			<td colspan="2">Login:</td>
-			<td colspan="2">Senha:</td>
+			<td colspan="2">Login*:</td>
+			<td colspan="2">Senha*:</td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="text" id="login" class="inputPequeno"/></td>
 			<td colspan="2"><input type="password" id="senha" class="inputPequeno"/></td>
 		</tr>
 		<tr>
-			<td colspan="2">Cargo:</td>
-			<td colspan="2">Nível de acesso:</td>
+			<td colspan="2">Cargo*:</td>
+			<td colspan="2">Nível de acesso*:</td>
 		</tr>
 		<tr>
 			<td>
@@ -44,8 +44,8 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2">Unidade:</td>
-			<td>Status:</td> 
+			<td colspan="2">Unidade*:</td>
+			<td>Status*:</td> 
 		</tr>
 		<tr>
 			<td> 
@@ -60,8 +60,11 @@
 				<input title="Adicionar" type="button" value="+" class="botaoEstilo"/>
 			</td>
 			<td>
-				<input type="radio" name="status" value="ativo">Ativo
-				<input type="radio" name="status" value="inativo">Inativo
+				<select>
+					<option>SELECIONE</option>
+					<option value="1">Ativo</option>
+					<option value="0">Inatívo</option>
+				</select>
 			</td>
 		</tr>
 		<tr>

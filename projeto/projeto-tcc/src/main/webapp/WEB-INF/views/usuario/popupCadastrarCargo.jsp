@@ -2,17 +2,39 @@
 <div id="popupCadastrarCargo" title="Cadastrar Cargo">
 	<table cellspacing="10">
 		<tr>
-			<td><label for="cargo">Cargo</label></td>
+			<td><label for="cargo">Cargo*</label></td>
 		</tr>
 		<tr>
-			<td><input type="text" id="cargo" name="cargo" class="inputPequeno" /></td>
+			<td><input type="text" id="cargo" name="cargo" oninput="javascript:$('#avisoCargo').fadeTo(500, 0)" class="inputPequeno" /></td>
+		</tr>
+		<tr>
+			<td><span class="aviso" id="avisoCargo">Por favor preenchar o campo cargo.</span></td>
+		</tr>
+	</table>
+</div>
+
+<div id="sucessoCadastroCargo" title="Sucesso">
+	<table cellspacing="10">
+		<tr>
+			<td>Cargo cadastrado com suceso.</td>
 		</tr>
 	</table>
 </div>
 
 <script>
 	transformarEmPopup("popupCadastrarCargo", cadastrarCargo);
+	transformarEmPopup("sucessoCadastroCargo", fecharSucesso);
+	
+	function fecharSucesso(){
+		$("#sucessoCadastroCargo").dialog("close");
+	}
+	
 	function cadastrarCargo(){
+		if($("#cargo").val().length < 1){
+			$("#avisoCargo").fadeTo(500, 1);
+			$("#cargo").focus();
+			return;
+		}
 		$.ajax({
             url: "<c:url value='/usuario/cadastrarCargo'/>" ,
             type: "POST",
@@ -23,6 +45,7 @@
             	$("#selectCargo").val(data["codigoCargo"]);
             	$("#cargo").val("");
 				$("#popupCadastrarCargo").dialog("close");
+				$("#sucessoCadastroCargo").dialog("open");
             }
 		});
 	}
