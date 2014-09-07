@@ -16,18 +16,15 @@
 <div id="sucessoCadastroCargo" title="Sucesso">
 	<table cellspacing="10">
 		<tr>
+			<td><img class="iconePopup" src='<c:url value="/resources/imagens/popup/sucesso.ico"/>'/></td>
 			<td>Cargo cadastrado com suceso.</td>
 		</tr>
 	</table>
 </div>
 
 <script>
-	transformarEmPopup("popupCadastrarCargo", cadastrarCargo);
-	transformarEmPopup("sucessoCadastroCargo", fecharSucesso);
-	
-	function fecharSucesso(){
-		$("#sucessoCadastroCargo").dialog("close");
-	}
+	transformarEmPopupCadastrar("popupCadastrarCargo", cadastrarCargo);
+	transformarEmPopupMensagem("sucessoCadastroCargo");
 	
 	function cadastrarCargo(){
 		if($("#cargo").val().length < 1){

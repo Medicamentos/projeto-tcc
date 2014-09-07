@@ -23,7 +23,7 @@
 		<tr>
 			<td>
 				<select id="selectCargo">
-					<option>SELECIONE</option>
+					<option value="0">SELECIONE</option>
 					<c:forEach items="${cadastrar.listaCargo}" var="listaCargo">
 						<option value="${listaCargo.codigoCargo}">${listaCargo.descricaoCargo}</option>
 					</c:forEach>
@@ -48,16 +48,13 @@
 			<td>Status*:</td> 
 		</tr>
 		<tr>
-			<td> 
-				<select>
+			<td colspan="2"> 
+				<select id="selectUnidade">
 					<option>SELECIONE</option>
 					<c:forEach items="${cadastrar.listaUnidade}" var="listaUnidade">
 						<option></option>
 					</c:forEach>
 				</select>
-			</td>
-			<td>
-				<input title="Adicionar" type="button" value="+" class="botaoEstilo"/>
 			</td>
 			<td>
 				<select>

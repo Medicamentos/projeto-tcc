@@ -24,10 +24,12 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<bean id="userDao" class="br.com.medicamento.insumo.dao.UsuarioSistemaDAO"/>
 	<bean id="nivelAcessoDao" class="br.com.medicamento.insumo.dao.NivelAcessoDAO"/>
 	<bean id="cargoDao" class="br.com.medicamento.insumo.dao.CargoDAO"/>
+	<bean id="tipoUnidadeDao" class="br.com.medicamento.insumo.dao.TipoUnidadeDAO"/>
 	
 	<!-- Injeção de classes de logica -->
 	<bean id="homeLogica" class="br.com.medicamento.insumo.logica.HomeLogica"/>
 	<bean id="usuarioLogica" class="br.com.medicamento.insumo.logica.UsuarioLogica"/>
+	<bean id="unidadeLogica" class="br.com.medicamento.insumo.logica.UnidadeLogica"/>
 
 	<bean id="mysqlDataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">

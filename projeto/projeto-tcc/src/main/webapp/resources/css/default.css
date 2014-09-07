@@ -3,6 +3,10 @@ body {
 	width: 1024px !important;
 }
 
+.iconePopup{
+	width: 45px;
+}
+
 #conteudoPagina{
 	margin-left: 25px;
 	margin-top: 25px;
