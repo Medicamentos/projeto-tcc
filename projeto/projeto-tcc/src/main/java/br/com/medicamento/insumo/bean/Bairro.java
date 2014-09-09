@@ -11,17 +11,17 @@ public class Bairro {
 
 	@Id
 	@GeneratedValue
-	private Long codigoBairro;
+	private Integer codigoBairro;
 	@ManyToOne
 	@JoinColumn(name = "codigoRegiao")
 	private Regiao regiao;
 	private String nomeBairro;
 
-	public Long getCodigoBairro() {
+	public Integer getCodigoBairro() {
 		return codigoBairro;
 	}
 
-	public void setCodigoBairro(Long codigoBairro) {
+	public void setCodigoBairro(Integer codigoBairro) {
 		this.codigoBairro = codigoBairro;
 	}
 
