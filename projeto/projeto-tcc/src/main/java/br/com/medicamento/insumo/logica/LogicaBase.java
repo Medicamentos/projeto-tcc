@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.medicamento.insumo.bean.TipoUnidade;
+import br.com.medicamento.insumo.dao.BairroDAO;
 import br.com.medicamento.insumo.dao.CargoDAO;
 import br.com.medicamento.insumo.dao.NivelAcessoDAO;
 import br.com.medicamento.insumo.dao.TipoUnidadeDAO;
@@ -28,5 +29,7 @@ public abstract class LogicaBase {
 	@Autowired 
 	protected TipoUnidadeDAO tipoUnidadeDAO;
 	
+	@Autowired
+	protected BairroDAO bairroDAO;
 	
 }

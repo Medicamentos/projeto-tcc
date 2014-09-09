@@ -26,15 +26,10 @@
 			<td><input type="text" id="cep" class="inputPequeno" /></td>
 			<td>
 				<select type="text" id="bairro">
-					<option tabindex="1">...</option>
-					<option>Campo Grande</option>
-					<option>Vila Belmiro</option>
-					<option>Marapé</option>
-					<option>Gonzaga</option>
-					<option>Aparecida</option>
-					<option>Ponta da Praia</option>
-					<option>Boqueirão</option>
-					<option>Encruzilhada</option>
+					<option value="0">SELECIONE</option>
+					<c:forEach items="${unidade.listaBairro}" var="listaBairro">
+						<option value="${listaBairro.codigoBairro}">${listaBairro.nomeBairro}</option>
+					</c:forEach>
 				</select>
 			</td>
 		</tr>
