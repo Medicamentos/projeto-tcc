@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
-	<h1>Cadastro de Unidades</h1>
+	<h1>Adicionar/Editar Unidades</h1>
 	<table cellspacing="10">
 		<tr>
 			<td colspan="4">Unidade:</td>
@@ -50,7 +50,7 @@
 		</tr>
 		<tr>
 			<td align="right" colspan="4">
-				<input type="button" value="Cadastrar" onclick="javascrit:submeter()" class="botaoEstilo" />
+				<input type="button" value="Salvar" onclick="javascrit:submeter()" class="botaoEstilo" />
 			</td>
 		</tr>
 	</table>

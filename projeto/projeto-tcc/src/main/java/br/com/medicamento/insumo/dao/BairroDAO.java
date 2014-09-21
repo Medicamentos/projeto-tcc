@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.medicamento.insumo.bean.Bairro;
-import br.com.medicamento.insumo.bean.Cargo;
 
 @Transactional
 @Repository

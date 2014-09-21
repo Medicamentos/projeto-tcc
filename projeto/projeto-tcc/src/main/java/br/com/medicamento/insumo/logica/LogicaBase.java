@@ -9,6 +9,7 @@ import br.com.medicamento.insumo.dao.BairroDAO;
 import br.com.medicamento.insumo.dao.CargoDAO;
 import br.com.medicamento.insumo.dao.NivelAcessoDAO;
 import br.com.medicamento.insumo.dao.TipoUnidadeDAO;
+import br.com.medicamento.insumo.dao.UnidadeDAO;
 import br.com.medicamento.insumo.dao.UsuarioSistemaDAO;
 
 public abstract class LogicaBase {
@@ -32,4 +33,6 @@ public abstract class LogicaBase {
 	@Autowired
 	protected BairroDAO bairroDAO;
 	
+	@Autowired
+	protected UnidadeDAO unidadeDAO;
 }

@@ -26,6 +26,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<bean id="cargoDao" class="br.com.medicamento.insumo.dao.CargoDAO"/>
 	<bean id="tipoUnidadeDao" class="br.com.medicamento.insumo.dao.TipoUnidadeDAO"/>
 	<bean id="bairroDao" class="br.com.medicamento.insumo.dao.BairroDAO"/>
+	<bean id="unidadeDao" class="br.com.medicamento.insumo.dao.UnidadeDAO"/>
 	
 	<!-- Injeção de classes de logica -->
 	<bean id="homeLogica" class="br.com.medicamento.insumo.logica.HomeLogica"/>
