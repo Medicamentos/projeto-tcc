@@ -4,6 +4,10 @@
 
 <div id="conteudoPagina">
 	<h1>Consulta de Unidades</h1>
+	<br/>
+	
+	<form:form id="formUnidade" action="unidade/abrirEditarUnidade" method="POST" name="formUnidade">
+
 	<table  border="1"  cellspacing="0" >
 		<tr>
 			<th>Código</th>
@@ -16,7 +20,7 @@
 			<th>Ações</th>
 		</tr>
 		
-		<c:forEach items="${listaUnidades.unidades}" var="unidade" varStatus="indece">
+		<c:forEach items="${listaUnidades.unidades}" var="unidade" varStatus="indice">
 		<tr>
 			<td>${unidade.codigoUnidade}</td>
 			<td>${unidade.nomeUnidade}</td>
@@ -25,15 +29,23 @@
 			<td>${unidade.cep}</td>
 			<td>${unidade.numeroTelefone1}</td>
 			<td>${unidade.tipoUnidade.descricaoTipoUnidade}</td>
-			<td> <a href="#">Editar</a> - <a href="#">Apagar</a></td>
+			<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href="#">Apagar</a></td>
 			</tr>
+		
 		</c:forEach>
 		
 	</table>
-	<br/>
 	
-	<form:form>
-		<input type="submit" value="Adicionar">
+	<br/>
+
+
+		<table>
+			<td align="right" colspan="4">
+			<input type="button" value="Adicionar" onclick="javascrit:submeter()" class="botaoEstilo" />
+			</td>
+		</table>
+
+
 	</form:form>
 	
 </div>
