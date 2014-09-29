@@ -6,7 +6,7 @@
 	<h1>Consulta de Unidades</h1>
 	<br/>
 	
-	<form:form id="formUnidade" action="unidade/abrirEditarUnidade" method="POST" name="formUnidade">
+	<form:form id="formUnidade" action="abrirCadastrarUnidade" method="POST" name="formUnidade">
 
 	<table  border="1"  cellspacing="0" >
 		<tr>
@@ -29,7 +29,7 @@
 			<td>${unidade.cep}</td>
 			<td>${unidade.numeroTelefone1}</td>
 			<td>${unidade.tipoUnidade.descricaoTipoUnidade}</td>
-			<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href="#">Apagar</a></td>
+			<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/unidade/abrirApagarUnidade/${indice.index}"/>'>Apagar</a></td>
 			</tr>
 		
 		</c:forEach>
@@ -41,11 +41,14 @@
 
 		<table>
 			<td align="right" colspan="4">
-			<input type="button" value="Adicionar" onclick="javascrit:submeter()" class="botaoEstilo" />
+			<input type="submit" value="Adicionar"  class="botaoEstilo" />
 			</td>
 		</table>
 
 
 	</form:form>
 	
+	
+	
 </div>
+
