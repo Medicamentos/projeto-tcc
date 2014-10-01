@@ -11,6 +11,8 @@ import br.com.medicamento.insumo.viewmodel.EditarUnidadeViewModel;
 
 public class UnidadeLogica extends LogicaBase {
 	
+	
+	
 	public CadastrarUnidadeViewModel abrirCadastrarUnidade(){
 		List<TipoUnidade> listaTipoUnidade = super.tipoUnidadeDAO.buscarTodos();
 		List<Bairro> listaBairro = super.bairroDAO.buscarTodos();
@@ -48,6 +50,24 @@ public class UnidadeLogica extends LogicaBase {
 		EditarUnidadeViewModel editarUnidadeViewModel = new EditarUnidadeViewModel(unidade, listaBairro, listaTipoUnidade);
 		
 		return editarUnidadeViewModel;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void apagarUnidade(Integer id){
+		
+		List<Unidade> listaUnidade = (List<Unidade>) sessao.getAttribute("listaUnidade");
+		
+		Unidade unidadeSelecionada = new Unidade();
+		
+		unidadeSelecionada.setCodigoUnidade(listaUnidade.get(id).getCodigoUnidade());
+		unidadeSelecionada.setNomeUnidade(listaUnidade.get(id).getNomeUnidade());
+		unidadeSelecionada.setDescricaoEndereco(listaUnidade.get(id).getDescricaoEndereco());
+		unidadeSelecionada.setNumeroTelefone1(listaUnidade.get(id).getNumeroTelefone1());
+		unidadeSelecionada.setCep(listaUnidade.get(id).getCep());
+		unidadeSelecionada.setBairro(listaUnidade.get(id).getBairro());
+		unidadeSelecionada.setTipoUnidade(listaUnidade.get(id).getTipoUnidade());
+		
+		super.unidadeDAO.deletar(unidadeSelecionada);
 	}
 	
 }

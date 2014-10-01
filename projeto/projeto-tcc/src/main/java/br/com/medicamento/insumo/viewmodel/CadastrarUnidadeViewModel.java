@@ -10,7 +10,8 @@ public class CadastrarUnidadeViewModel {
 	
 	private List<TipoUnidadeViewModel> listaTipoUnidade;
 	private List<BairroViewModel> listaBairro;
-	
+
+
 	public CadastrarUnidadeViewModel(){
 		
 	}

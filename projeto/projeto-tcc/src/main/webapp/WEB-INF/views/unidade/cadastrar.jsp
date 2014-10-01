@@ -1,7 +1,11 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
 	<h1>Adicionar/Editar Unidades</h1>
+	
+	<form:form id="formUnidade" action="unidade/salvarUnidade" method="POST" name="formUnidade"  >
 	<table cellspacing="10">
 		<tr>
 			<td colspan="4">Unidade:</td>
@@ -46,12 +50,13 @@
 					</c:forEach>
 				</select>
 			</td>
-			<td><input type="text" id="telefone" class="inputPequeno" /></td>
+			<td><input type="text" id="telefone" class="inputPequeno" name="telefone"/></td>
 		</tr>
 		<tr>
 			<td align="right" colspan="4">
-				<input type="button" value="Salvar" onclick="javascrit:submeter()" class="botaoEstilo" />
+				<input type="submit" value="Salvar" class="botaoEstilo" />
 			</td>
 		</tr>
 	</table>
+</form:form>	
 </div>

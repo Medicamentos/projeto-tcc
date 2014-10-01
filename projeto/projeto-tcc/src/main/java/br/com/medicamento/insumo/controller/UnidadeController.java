@@ -1,14 +1,10 @@
 package br.com.medicamento.insumo.controller;
 
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.medicamento.insumo.bean.Unidade;
-import br.com.medicamento.insumo.dao.UnidadeDAO;
 import br.com.medicamento.insumo.viewmodel.CadastrarUnidadeViewModel;
 import br.com.medicamento.insumo.viewmodel.ConsultarUnidadeViewModel;
 import br.com.medicamento.insumo.viewmodel.EditarUnidadeViewModel;
@@ -23,6 +19,7 @@ public class UnidadeController extends ControllerBase{
 		model.addAttribute("url" , "unidade/cadastrar");
 		return "home/index";
 	}
+	
 	
 	@RequestMapping("unidade/abrirConsultarUnidade")
 	public String abrirConsultarUnidade(Model model){
@@ -43,24 +40,10 @@ public class UnidadeController extends ControllerBase{
 	}
 	
 	@RequestMapping("unidade/abrirApagarUnidade/{id}")
-	public String abrirApagarUnidade( @PathVariable("id") Integer id){
-		
-		@SuppressWarnings("unchecked")
-		List<Unidade> listaUnidade = (List<Unidade>) sessao.getAttribute("listaUnidade");
-		
-		Unidade unidade = new Unidade();
-		
-		unidade.setNomeUnidade(listaUnidade.get(id).getNomeUnidade());
-		unidade.setDescricaoEndereco(listaUnidade.get(id).getDescricaoEndereco());
-		unidade.setNumeroTelefone1(listaUnidade.get(id).getNumeroTelefone1());
-		unidade.setCep(listaUnidade.get(id).getCep());
-		unidade.setBairro(listaUnidade.get(id).getBairro());
-		unidade.setTipoUnidade(listaUnidade.get(id).getTipoUnidade());
-		
-		UnidadeDAO dao = new UnidadeDAO();
-		dao.deletar(unidade);
-		
-		
-		return "unidade/abrirConsultarUnidade";
+	public String abrirApagarUnidade( Model model , @PathVariable("id") Integer id){
+	
+		this.unidadeLogica.apagarUnidade(id);
+		 
+		return abrirConsultarUnidade(model);
 	}
 }
