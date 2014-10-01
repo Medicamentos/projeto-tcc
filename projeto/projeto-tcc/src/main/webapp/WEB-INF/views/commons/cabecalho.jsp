@@ -21,11 +21,8 @@
 				<li><a href='<c:url value="/material/abrirCadastroMaterial"/>'>Cadastrar</a></li>
 				<li><a href='<c:url value="/material/abrirConsultaMaterial"/>'>Consultar</a></li>
 			</ul></li>
-		<li class="menu_nivel1"><a href="#">UNIDADES</a>
-			<ul class="sub_menu">
-				<li><a href='<c:url value="/unidade/abrirCadastrarUnidade"/>'>Cadastrar</a></li>
-				<li><a href='<c:url value="/unidade/abrirConsultarUnidade"/>'>Consultar</a></li>
-			</ul></li>
+		<li class="menu_nivel1"><a href='<c:url value="/unidade/abrirConsultarUnidade"/>'>UNIDADES</a>
+			
 		<li class="menu_nivel1"><a href="#">USUÁRIOS</a>
 			<ul class="sub_menu">
 				<li><a href='<c:url value="/usuario/abrirCadastrarUsuario"/>'>Cadastrar</a></li>

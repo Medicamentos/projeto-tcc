@@ -50,6 +50,9 @@
 		</tr>
 		<tr>
 			<td align="right" colspan="4">
+				<input type="button" value="Voltar" onclick="history.go(-1)" class="botaoEstilo" />
+			</td>
+			<td align="right" colspan="4">
 				<input type="button" value="Salvar" onclick="javascrit:submeter()" class="botaoEstilo" />
 			</td>
 		</tr>
