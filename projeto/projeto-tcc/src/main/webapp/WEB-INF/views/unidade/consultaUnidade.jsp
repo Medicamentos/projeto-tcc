@@ -41,10 +41,12 @@
 	<br/>
 
 
-		<table>
-			<td align="right" colspan="4">
-			<input type="submit" value="Adicionar"  class="botaoEstilo" />
-			</td>
+		<table style="width: 100%">
+			<tr>
+				<td align="right">
+					<input type="submit" value="Adicionar"  class="botaoEstilo" />
+				</td>
+			</tr>
 		</table>
 
 
