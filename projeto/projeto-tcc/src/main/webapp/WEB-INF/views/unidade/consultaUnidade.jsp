@@ -6,34 +6,36 @@
 	<h1>Consulta de Unidades</h1>
 	<br/>
 	
-	<form:form id="formUnidade" action="abrirCadastrarUnidade" method="POST" name="formUnidade">
+	<form id="formUnidade" action="abrirCadastrarUnidade" method="POST" name="formUnidade">
 
-	<table  border="1"  cellspacing="0" >
-		<tr>
-			<th>Código</th>
-			<th>Unidade</th>
-			<th>Endereço</th>
-			<th>Bairro</th>
-			<th>Cep</th>
-			<th>Telefone</th>
-			<th>Tipo</th>
-			<th>Ações</th>
-		</tr>
-		
-		<c:forEach items="${listaUnidades.unidades}" var="unidade" varStatus="indice">
-		<tr>
-			<td>${unidade.codigoUnidade}</td>
-			<td>${unidade.nomeUnidade}</td>
-			<td>${unidade.descricaoEndereco}</td>
-			<td>${unidade.bairro.nomeBairro}</td>
-			<td>${unidade.cep}</td>
-			<td>${unidade.numeroTelefone1}</td>
-			<td>${unidade.tipoUnidade.descricaoTipoUnidade}</td>
-			<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/unidade/abrirApagarUnidade/${indice.index}"/>'>Apagar</a></td>
+	<table class="tablesorter">
+		<thead>
+			<tr>
+				<th>Código</th>
+				<th>Unidade</th>
+				<th>Endereço</th>
+				<th>Bairro</th>
+				<th>Cep</th>
+				<th>Telefone</th>
+				<th>Tipo</th>
+				<th>Ações</th>
 			</tr>
-		
-		</c:forEach>
-		
+		</thead>
+		<tbody>
+			<c:forEach items="${listaUnidades.unidades}" var="unidade" varStatus="indice">
+				<tr>
+					<td>${unidade.codigoUnidade}</td>
+					<td>${unidade.nomeUnidade}</td>
+					<td>${unidade.descricaoEndereco}</td>
+					<td>${unidade.bairro.nomeBairro}</td>
+					<td>${unidade.cep}</td>
+					<td>${unidade.numeroTelefone1}</td>
+					<td>${unidade.tipoUnidade.descricaoTipoUnidade}</td>
+					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/unidade/abrirApagarUnidade/${indice.index}"/>'>Apagar</a></td>
+				</tr>
+			
+			</c:forEach>
+		</tbody>
 	</table>
 	
 	<br/>
@@ -46,9 +48,19 @@
 		</table>
 
 
-	</form:form>
+	</form>
 	
-	
+	<script type="text/javascript">
+		$(".tablesorter").tablesorter({headers: {
+				1:{sorter: false}, 
+				2:{sorter: false}, 
+				3:{sorter:false},
+				4:{sorter:false},
+				5:{sorter:false},
+				6:{sorter:false},
+				7:{sorter:false}
+			}}); 
+	</script>
 	
 </div>
 
