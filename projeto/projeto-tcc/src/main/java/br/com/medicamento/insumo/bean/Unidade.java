@@ -16,7 +16,8 @@ public class Unidade {
 	    private String descricaoEndereco;
 	    private Integer cep;
 	    private Long numeroTelefone1;
-	    private Long numeroTelefone2;
+	    private boolean status;
+	    
 	    @ManyToOne
 	    @JoinColumn(name="codigoBairro")
 	    private Bairro bairro;
@@ -54,12 +55,6 @@ public class Unidade {
 		public void setNumeroTelefone1(Long numeroTelefone1) {
 			this.numeroTelefone1 = numeroTelefone1;
 		}
-		public Long getNumeroTelefone2() {
-			return numeroTelefone2;
-		}
-		public void setNumeroTelefone2(Long numeroTelefone2) {
-			this.numeroTelefone2 = numeroTelefone2;
-		}
 		public Bairro getBairro() {
 			return bairro;
 		}
@@ -71,6 +66,14 @@ public class Unidade {
 		}
 		public void setTipoUnidade(TipoUnidade tipoUnidade) {
 			this.tipoUnidade = tipoUnidade;
+		}
+		
+		public boolean isStatus() {
+			return status;
+		}
+		
+		public void setStatus(boolean status) {
+			this.status = status;
 		}
 		@Override
 		public int hashCode() {
@@ -91,10 +94,7 @@ public class Unidade {
 					* result
 					+ ((numeroTelefone1 == null) ? 0 : numeroTelefone1
 							.hashCode());
-			result = prime
-					* result
-					+ ((numeroTelefone2 == null) ? 0 : numeroTelefone2
-							.hashCode());
+			result = prime * result + (status ? 1231 : 1237);
 			result = prime * result
 					+ ((tipoUnidade == null) ? 0 : tipoUnidade.hashCode());
 			return result;
@@ -138,10 +138,7 @@ public class Unidade {
 					return false;
 			} else if (!numeroTelefone1.equals(other.numeroTelefone1))
 				return false;
-			if (numeroTelefone2 == null) {
-				if (other.numeroTelefone2 != null)
-					return false;
-			} else if (!numeroTelefone2.equals(other.numeroTelefone2))
+			if (status != other.status)
 				return false;
 			if (tipoUnidade == null) {
 				if (other.tipoUnidade != null)
@@ -151,6 +148,4 @@ public class Unidade {
 			return true;
 		}
 	    
-	    
-
 }
