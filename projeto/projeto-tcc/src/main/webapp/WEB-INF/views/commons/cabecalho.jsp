@@ -21,7 +21,7 @@
 				<li><a href='<c:url value="/material/abrirCadastroMaterial"/>'>Cadastrar</a></li>
 				<li><a href='<c:url value="/material/abrirConsultaMaterial"/>'>Consultar</a></li>
 			</ul></li>
-		<li class="menu_nivel1"><a href='<c:url value="/unidade/abrirConsultarUnidade"/>'>UNIDADES</a>
+		<li class="menu_nivel1"><a href='<c:url value="/unidade/abrirListarUnidades"/>'>UNIDADES</a>
 			
 		<li class="menu_nivel1"><a href="#">USUÁRIOS</a>
 			<ul class="sub_menu">

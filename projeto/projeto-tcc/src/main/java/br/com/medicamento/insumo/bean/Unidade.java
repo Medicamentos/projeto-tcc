@@ -15,7 +15,7 @@ public class Unidade {
 	    private String nomeUnidade;
 	    private String descricaoEndereco;
 	    private Integer cep;
-	    private Long numeroTelefone1;
+	    private Long numeroTelefone;
 	    private boolean status;
 	    
 	    @ManyToOne
@@ -49,11 +49,11 @@ public class Unidade {
 		public void setCep(Integer cep) {
 			this.cep = cep;
 		}
-		public Long getNumeroTelefone1() {
-			return numeroTelefone1;
+		public Long getNumeroTelefone() {
+			return numeroTelefone;
 		}
-		public void setNumeroTelefone1(Long numeroTelefone1) {
-			this.numeroTelefone1 = numeroTelefone1;
+		public void setNumeroTelefone(Long numeroTelefone) {
+			this.numeroTelefone = numeroTelefone;
 		}
 		public Bairro getBairro() {
 			return bairro;
@@ -92,8 +92,7 @@ public class Unidade {
 					+ ((nomeUnidade == null) ? 0 : nomeUnidade.hashCode());
 			result = prime
 					* result
-					+ ((numeroTelefone1 == null) ? 0 : numeroTelefone1
-							.hashCode());
+					+ ((numeroTelefone == null) ? 0 : numeroTelefone.hashCode());
 			result = prime * result + (status ? 1231 : 1237);
 			result = prime * result
 					+ ((tipoUnidade == null) ? 0 : tipoUnidade.hashCode());
@@ -133,10 +132,10 @@ public class Unidade {
 					return false;
 			} else if (!nomeUnidade.equals(other.nomeUnidade))
 				return false;
-			if (numeroTelefone1 == null) {
-				if (other.numeroTelefone1 != null)
+			if (numeroTelefone == null) {
+				if (other.numeroTelefone != null)
 					return false;
-			} else if (!numeroTelefone1.equals(other.numeroTelefone1))
+			} else if (!numeroTelefone.equals(other.numeroTelefone))
 				return false;
 			if (status != other.status)
 				return false;
@@ -147,5 +146,4 @@ public class Unidade {
 				return false;
 			return true;
 		}
-	    
 }

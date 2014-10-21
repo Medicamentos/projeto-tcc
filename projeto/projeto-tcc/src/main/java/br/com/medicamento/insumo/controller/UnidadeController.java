@@ -5,72 +5,65 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.medicamento.insumo.bean.Bairro;
-import br.com.medicamento.insumo.bean.TipoUnidade;
-import br.com.medicamento.insumo.bean.Unidade;
-import br.com.medicamento.insumo.viewmodel.CadastrarUnidadeViewModel;
-import br.com.medicamento.insumo.viewmodel.ConsultarUnidadeViewModel;
-import br.com.medicamento.insumo.viewmodel.EditarUnidadeViewModel;
+import br.com.medicamento.insumo.viewmodel.UnidadeViewModel;
 
 @Controller
 public class UnidadeController extends ControllerBase{
 	
+	//OK
+	@RequestMapping("unidade/abrirListarUnidades")
+	public String abrirListarUnidades(Model model){
+		UnidadeViewModel UnidadeViewModel = this.unidadeLogica.listarUnidades();
+		model.addAttribute("UnidadeViewModel",UnidadeViewModel);
+		model.addAttribute("url" , "unidade/listarUnidades");
+		return "home/index";
+	}
+	
+	//OK
 	@RequestMapping("unidade/abrirCadastrarUnidade")
 	public String abrirCadastrarUnidade(Model model){
-		CadastrarUnidadeViewModel cadastraUnidadeViewModel = this.unidadeLogica.abrirCadastrarUnidade();
-		model.addAttribute("cadastraUnidadeViewModel", cadastraUnidadeViewModel);
-		model.addAttribute("url" , "unidade/cadastrar");
+		UnidadeViewModel unidadeViewModel = this.unidadeLogica.cadastrarUnidade();
+		model.addAttribute("unidadeViewModel", unidadeViewModel);
+		model.addAttribute("url" , "unidade/cadastrarUnidade");
 		return "home/index";
 	}
 	
-	
-	@RequestMapping("unidade/abrirConsultarUnidade")
-	public String abrirConsultarUnidade(Model model){
-		ConsultarUnidadeViewModel listaUnidadeViewModel = this.unidadeLogica.abrirConsultarUnidade();
-		model.addAttribute("listaUnidades",listaUnidadeViewModel);
-		model.addAttribute("url" , "unidade/consultaUnidade");
-		return "home/index";
+	//OK
+	@RequestMapping("unidade/efetivarCadastroUnidade")
+	public String efetivarCadastroUnidade(UnidadeViewModel unidadeViewModel, Model model){
+		
+		this.unidadeLogica.efetivarCadastroUnidade(unidadeViewModel);
+		
+		return abrirListarUnidades(model);
 	}
+	
 
+	//OK
 	@RequestMapping("unidade/abrirEditarUnidade/{id}")
 	public String abrirEditarUnidade(Model model, @PathVariable("id") Integer id){
 		sessao.setAttribute("id", id);
 		
-		EditarUnidadeViewModel editarUnidade = this.unidadeLogica.editarUnidadeViewModel();
-		model.addAttribute("unidade", editarUnidade);
+		UnidadeViewModel unidadeViewModel = this.unidadeLogica.editarUnidade();
+		model.addAttribute("unidade", unidadeViewModel);
 		model.addAttribute("url" , "unidade/editarUnidade");
 		return "home/index";
 	}
 	
-	@RequestMapping("unidade/abrirApagarUnidade/{id}")
-	public String abrirApagarUnidade( Model model , @PathVariable("id") Integer id){
+	@RequestMapping("unidade/efetivarEdicaoUnidade")
+	public String efetivarEdicaoUnidade(UnidadeViewModel unidadeViewModel, Model model){
+
+		this.unidadeLogica.efetivarEdicaoUnidade(unidadeViewModel);
+		
+		return abrirListarUnidades(model);
+	}
+	
+	@RequestMapping("unidade/apagarUnidade/{id}")
+	public String apagarUnidade( Model model , @PathVariable("id") Integer id){
 	
 		this.unidadeLogica.apagarUnidade(id);
 		 
-		return abrirConsultarUnidade(model);
+		return abrirListarUnidades(model);
 	}
 	
-	@RequestMapping("unidade/salvarUnidade")
-	public String salvarUnidade(CadastrarUnidadeViewModel cadastrarUnidadeViewModel, Model model){
-		
-		Unidade unidade = new Unidade();
-		
-		Bairro bairro = new Bairro();
-		bairro.setCodigoBairro(cadastrarUnidadeViewModel.getCodigoBairroSelecionado());
-		
-		TipoUnidade tipoUnidade = new TipoUnidade();
-		tipoUnidade.setCodigoTipoUnidade(cadastrarUnidadeViewModel.getCodigoTipoUnidadeSelecionado());
-		
-		unidade.setNomeUnidade(cadastrarUnidadeViewModel.getNomeUnidade());
-		unidade.setDescricaoEndereco(cadastrarUnidadeViewModel.getDescricaoEndereco());
-		unidade.setBairro(bairro);
-		unidade.setCep(cadastrarUnidadeViewModel.getCep());
-		unidade.setTipoUnidade(tipoUnidade);
-		unidade.setNumeroTelefone1(cadastrarUnidadeViewModel.getNumeroTelefone1());
-		unidade.setStatus(true);
-		
-		this.unidadeLogica.salvarUnidade(unidade);
-		
-		return abrirConsultarUnidade(model);
-	}
+
 }

@@ -3,16 +3,16 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
-	<h1>Adicionar/Editar Unidades</h1>
+	<h1>Adicionar Unidades</h1>
 
-	<form:form id="formUnidade" action="salvarUnidade" method="POST" name="formUnidade">
+	<form id="formUnidade" action="efetivarCadastroUnidade" method="POST" name="formUnidade">
 		<table cellspacing="10">
 			<tr>
 				<td colspan="4">Unidade:</td>
 			</tr>
 			<tr>
 				<td colspan="4">
-					<input type="text" id="unidade" class="inputGrande" name="nomeUnidade" value="${cadastraUnidadeViewModel.nomeUnidade}"/>
+					<input type="text" id="unidade" class="inputGrande" name="nomeUnidade" value="${unidadeViewModel.descricaoUnidade}"/>
 				</td>
 			</tr>
 			<tr>
@@ -20,7 +20,7 @@
 			</tr>
 			<tr>
 				<td colspan="4">
-				<input type="text" id="endereco" class="inputGrande" name="descricaoEndereco" value="${cadastraUnidadeViewModel.descricaoEndereco}" />
+				<input type="text" id="endereco" class="inputGrande" name="descricaoEndereco" value="${unidadeViewModel.descricaoEndereco}" />
 				</td>
 			</tr>
 			<tr>
@@ -30,12 +30,12 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="text" id="cep" class="inputPequeno" value="${cadastraUnidadeViewModel.cep}" name="cep"/>
+					<input type="text" id="cep" class="inputPequeno" value="${unidadeViewModel.cep}" name="cep"/>
 				</td>
 				<td>
 				<select type="text" id="bairro" name="codigoBairroSelecionado">
 						<option value="0">SELECIONE</option>
-						<c:forEach items="${cadastraUnidadeViewModel.listaBairro}" var="listaBairro">
+						<c:forEach items="${unidadeViewModel.listaBairro}" var="listaBairro">
 							<option value="${listaBairro.codigoBairro}">${listaBairro.nomeBairro}</option>
 						</c:forEach>
 				</select>
@@ -49,14 +49,14 @@
 				<td>
 					<select type="text" id="tipo" name="codigoTipoUnidadeSelecionado">
 						<option value="0">SELECIONE</option>
-						<c:forEach items="${cadastraUnidadeViewModel.listaTipoUnidade}"
+						<c:forEach items="${unidadeViewModel.listaTipoUnidade}"
 							var="listaTipoUnidade">
 							<option value="${listaTipoUnidade.codigoTipoUnidade}">${listaTipoUnidade.descricaoTipoUnidade}</option>
 						</c:forEach>
 					</select>
 				</td>
 				<td>
-					<input type="text" id="telefone" class="inputPequeno" name="numeroTelefone1" value="${cadastraUnidadeViewModel.numeroTelefone1}"/>
+					<input type="text" id="telefone" class="inputPequeno" name="numeroTelefone" value="${unidadeViewModel.numeroTelefone}"/>
 				</td>
 			</tr>
 			<tr>
@@ -68,5 +68,5 @@
 				</td>
 			</tr>
 		</table>
-	</form:form>
+	</form>
 </div>

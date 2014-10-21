@@ -42,4 +42,9 @@ public class UnidadeDAO {
 		return listaUnidades;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<Unidade> buscarUnidadesAtivas(){
+		List<Unidade> listaUnidadesAtivas = em.createQuery("SELECT u FROM unidade u where status = 1").getResultList();
+		return listaUnidadesAtivas;
+	}
 }

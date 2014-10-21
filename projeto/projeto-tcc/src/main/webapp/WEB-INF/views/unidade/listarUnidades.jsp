@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
-	<h1>Consulta de Unidades</h1>
+	<h1>Lista de Unidades</h1>
 	<br/>
 	
 	<form id="formUnidade" action="abrirCadastrarUnidade" method="POST" name="formUnidade">
@@ -22,16 +22,16 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${listaUnidades.unidades}" var="unidade" varStatus="indice">
+			<c:forEach items="${UnidadeViewModel.listaUnidadesAtivasViewModel}" var="unidade" varStatus="indice">
 				<tr>
 					<td>${unidade.codigoUnidade}</td>
-					<td>${unidade.nomeUnidade}</td>
+					<td>${unidade.descricaoUnidade}</td>
 					<td>${unidade.descricaoEndereco}</td>
 					<td>${unidade.bairro.nomeBairro}</td>
 					<td>${unidade.cep}</td>
-					<td>${unidade.numeroTelefone1}</td>
+					<td>${unidade.numeroTelefone}</td>
 					<td>${unidade.tipoUnidade.descricaoTipoUnidade}</td>
-					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/unidade/abrirApagarUnidade/${indice.index}"/>'>Apagar</a></td>
+					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/unidade/apagarUnidade/${indice.index}"/>'>Apagar</a></td>
 				</tr>
 			
 			</c:forEach>
@@ -62,6 +62,8 @@
 				6:{sorter:false},
 				7:{sorter:false}
 			}}); 
+
+		
 	</script>
 	
 </div>

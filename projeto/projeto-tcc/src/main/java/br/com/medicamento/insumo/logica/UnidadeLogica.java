@@ -1,100 +1,122 @@
 package br.com.medicamento.insumo.logica;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.medicamento.insumo.bean.Bairro;
 import br.com.medicamento.insumo.bean.TipoUnidade;
 import br.com.medicamento.insumo.bean.Unidade;
-import br.com.medicamento.insumo.viewmodel.CadastrarUnidadeViewModel;
-import br.com.medicamento.insumo.viewmodel.ConsultarUnidadeViewModel;
-import br.com.medicamento.insumo.viewmodel.EditarUnidadeViewModel;
+import br.com.medicamento.insumo.viewmodel.UnidadeViewModel;
 
-/**
- * @author FABRICIO LUIZ FLECK
- * @since  08/2014
- * @
- * */
+
 public class UnidadeLogica extends LogicaBase {
 	
-	/**
-	 * @return cadastrarUnidadeViewMdoel
-	 */
-	public CadastrarUnidadeViewModel abrirCadastrarUnidade(){
+	//OK
+	public UnidadeViewModel listarUnidades() {
+		
+		List<Unidade> listaUnidadesAtivas = super.unidadeDAO.buscarUnidadesAtivas();
+		this.sessao.setAttribute("listaUnidadeAtivas", listaUnidadesAtivas);
+		UnidadeViewModel UnidadeViewModel = new UnidadeViewModel(listaUnidadesAtivas);
+		return UnidadeViewModel;
+	}
+	
+	//OK
+	public UnidadeViewModel cadastrarUnidade(){
 		List<TipoUnidade> listaTipoUnidade = super.tipoUnidadeDAO.buscarTodos();
 		List<Bairro> listaBairro = super.bairroDAO.buscarTodos();
-		CadastrarUnidadeViewModel cadastrarUnidadeViewMdoel = new CadastrarUnidadeViewModel(listaTipoUnidade, listaBairro);
-		return cadastrarUnidadeViewMdoel;	
+		UnidadeViewModel unidadeViewMdoel = new UnidadeViewModel(listaTipoUnidade, listaBairro);
+		return unidadeViewMdoel;	
+	}
+	
+	//OK
+	public void efetivarCadastroUnidade(UnidadeViewModel unidadeViewModel){
+
+		Unidade unidade = new Unidade();
+		
+		Bairro bairro = new Bairro();
+		bairro.setCodigoBairro(unidadeViewModel.getCodigoBairroSelecionado());
+		
+		TipoUnidade tipoUnidade = new TipoUnidade();
+		tipoUnidade.setCodigoTipoUnidade(unidadeViewModel.getCodigoTipoUnidadeSelecionado());
+		
+		unidade.setNomeUnidade(unidadeViewModel.getDescricaoUnidade());
+		unidade.setDescricaoEndereco(unidadeViewModel.getDescricaoEndereco());
+		unidade.setBairro(bairro);
+		unidade.setCep(unidadeViewModel.getCep());
+		unidade.setTipoUnidade(tipoUnidade);
+		unidade.setNumeroTelefone(unidadeViewModel.getNumeroTelefone());
+		unidade.setStatus(true);
+		
+		super.unidadeDAO.salvar(unidade); 
+		
 	}
 
-	public ConsultarUnidadeViewModel abrirConsultarUnidade() {	
-		List<Unidade> listaUnidade = super.unidadeDAO.buscarTodos();	
-		List<Unidade> listaUnidadeAtivas =  new ArrayList<Unidade>();
-
-		for (Unidade unidade : listaUnidade) {
-
-			if(unidade.isStatus()){
-				Unidade unidadeAtiva = new Unidade();
-				unidadeAtiva.setCodigoUnidade(unidade.getCodigoUnidade());
-				unidadeAtiva.setBairro(unidade.getBairro());
-				unidadeAtiva.setCep(unidade.getCep());
-				unidadeAtiva.setDescricaoEndereco(unidade.getDescricaoEndereco());
-				unidadeAtiva.setNomeUnidade(unidade.getNomeUnidade());
-				unidadeAtiva.setNumeroTelefone1(unidade.getNumeroTelefone1());
-				unidadeAtiva.setTipoUnidade(unidade.getTipoUnidade());
-				listaUnidadeAtivas.add(unidadeAtiva);
-			}
-		}
-
-		this.sessao.setAttribute("listaUnidade", listaUnidade);
-		ConsultarUnidadeViewModel consultarUnidadeViewModel = new ConsultarUnidadeViewModel(listaUnidadeAtivas);
-		return consultarUnidadeViewModel;
-}
 	
+	//OK
 	@SuppressWarnings("unchecked")
-	public EditarUnidadeViewModel editarUnidadeViewModel(){
+	public UnidadeViewModel editarUnidade(){
 		List<TipoUnidade> listaTipoUnidade = super.tipoUnidadeDAO.buscarTodos();
 		List<Bairro> listaBairro = super.bairroDAO.buscarTodos();
 		
-		List<Unidade> listaUnidade = (List<Unidade>) sessao.getAttribute("listaUnidade");
+		List<Unidade> listaUnidadeAtivas = (List<Unidade>) sessao.getAttribute("listaUnidadeAtivas");
 		Integer id = (Integer) sessao.getAttribute("id");	
 		
 		Unidade unidade = new Unidade();
-		unidade.setNomeUnidade(listaUnidade.get(id).getNomeUnidade());
-		unidade.setDescricaoEndereco(listaUnidade.get(id).getDescricaoEndereco());
-		unidade.setNumeroTelefone1(listaUnidade.get(id).getNumeroTelefone1());
-		unidade.setCep(listaUnidade.get(id).getCep());
-		unidade.setBairro(listaUnidade.get(id).getBairro());
-		unidade.setTipoUnidade(listaUnidade.get(id).getTipoUnidade());
+		unidade.setNomeUnidade(listaUnidadeAtivas.get(id).getNomeUnidade());
+		unidade.setDescricaoEndereco(listaUnidadeAtivas.get(id).getDescricaoEndereco());
+		unidade.setNumeroTelefone(listaUnidadeAtivas.get(id).getNumeroTelefone());
+		unidade.setCep(listaUnidadeAtivas.get(id).getCep());
+		unidade.setBairro(listaUnidadeAtivas.get(id).getBairro());
+		unidade.setTipoUnidade(listaUnidadeAtivas.get(id).getTipoUnidade());
+		unidade.setStatus(true);
 		
-		EditarUnidadeViewModel editarUnidadeViewModel = new EditarUnidadeViewModel(unidade, listaBairro, listaTipoUnidade);
+		UnidadeViewModel unidadeViewModel = new UnidadeViewModel(unidade, listaBairro, listaTipoUnidade);
 		
-		return editarUnidadeViewModel;
+		return unidadeViewModel;
+	}
+	
+	//OK
+	public void efetivarEdicaoUnidade(UnidadeViewModel unidadeViewModel){
+		
+		Unidade unidade = new Unidade();
+		
+		Bairro bairro = new Bairro();
+		bairro.setCodigoBairro(unidadeViewModel.getCodigoBairroSelecionado());
+		
+		TipoUnidade tipoUnidade = new TipoUnidade();
+		tipoUnidade.setCodigoTipoUnidade(unidadeViewModel.getCodigoTipoUnidadeSelecionado());
+		
+		unidade.setNomeUnidade(unidadeViewModel.getDescricaoUnidade());
+		unidade.setDescricaoEndereco(unidadeViewModel.getDescricaoEndereco());
+		unidade.setBairro(bairro);
+		unidade.setCep(unidadeViewModel.getCep());
+		unidade.setTipoUnidade(tipoUnidade);
+		unidade.setNumeroTelefone(unidadeViewModel.getNumeroTelefone());
+		unidade.setStatus(true);
+	
+		super.unidadeDAO.atualizar(unidade);
 	}
 	
 	@SuppressWarnings("unchecked")
 	public void apagarUnidade(Integer id){
 		
-		List<Unidade> listaUnidade = (List<Unidade>) sessao.getAttribute("listaUnidade");
+		List<Unidade> listaUnidadeAtivas = (List<Unidade>) sessao.getAttribute("listaUnidadeAtivas");
+																			
 		
 		Unidade unidadeSelecionada = new Unidade();
 		
-		unidadeSelecionada.setCodigoUnidade(listaUnidade.get(id).getCodigoUnidade());
-		unidadeSelecionada.setNomeUnidade(listaUnidade.get(id).getNomeUnidade());
-		unidadeSelecionada.setDescricaoEndereco(listaUnidade.get(id).getDescricaoEndereco());
-		unidadeSelecionada.setNumeroTelefone1(listaUnidade.get(id).getNumeroTelefone1());
-		unidadeSelecionada.setCep(listaUnidade.get(id).getCep());
-		unidadeSelecionada.setBairro(listaUnidade.get(id).getBairro());
-		unidadeSelecionada.setTipoUnidade(listaUnidade.get(id).getTipoUnidade());
+		unidadeSelecionada.setCodigoUnidade(listaUnidadeAtivas.get(id).getCodigoUnidade());
+		unidadeSelecionada.setNomeUnidade(listaUnidadeAtivas.get(id).getNomeUnidade());
+		unidadeSelecionada.setDescricaoEndereco(listaUnidadeAtivas.get(id).getDescricaoEndereco());
+		unidadeSelecionada.setNumeroTelefone(listaUnidadeAtivas.get(id).getNumeroTelefone());
+		unidadeSelecionada.setCep(listaUnidadeAtivas.get(id).getCep());
+		unidadeSelecionada.setBairro(listaUnidadeAtivas.get(id).getBairro());
+		unidadeSelecionada.setTipoUnidade(listaUnidadeAtivas.get(id).getTipoUnidade());
 		unidadeSelecionada.setStatus(false);
 		
 		super.unidadeDAO.atualizar(unidadeSelecionada);
 		
 	}
 	
-	public void salvarUnidade(Unidade unidade){
-		
-		super.unidadeDAO.salvar(unidade); 
-	}
+	
 	
 }
