@@ -8,10 +8,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.medicamento.insumo.bean.Cargo;
 import br.com.medicamento.insumo.viewmodel.CadastrarUsuarioViewModel;
+import br.com.medicamento.insumo.viewmodel.UsuarioSistemaViewModel;
 
 @Controller
-public class UsuarioController extends ControllerBase {
+public class UsuarioSistemaController extends ControllerBase {
 
+	@RequestMapping("usuario/abrirConsultarUsuario")
+	public String abrirConsultarUsuario(Model model){
+		
+		UsuarioSistemaViewModel lista = this.usuarioLogica.listarUsuarioSistema();
+		model.addAttribute("lista", lista);
+		model.addAttribute("url", "usuario/consultaUsuario");
+		return "home/index";
+	}
+	
 	@RequestMapping("usuario/abrirCadastrarUsuario")
 	public String abrirCadastroUsuario(Model model){
 		CadastrarUsuarioViewModel cadastrar = super.usuarioLogica.abrirTelaCadastrarUsuario();
@@ -20,11 +30,7 @@ public class UsuarioController extends ControllerBase {
 		return "home/index";
 	}
 	
-	@RequestMapping("usuario/abrirConsultarUsuario")
-	public String abrirConsultarUsuario(Model model){
-		model.addAttribute("url", "usuario/consultaUsuario");
-		return "home/index";
-	}
+	
 	
 	@RequestMapping(value="/usuario/cadastrarCargo", produces="application/json")
 	@ResponseBody

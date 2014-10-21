@@ -4,7 +4,7 @@
 
 <div id="conteudoPagina">
 	<h1>Editar Unidades</h1>
-	<form:form id="formUnidade" action="unidade/efetivarEdicaoUnidade" method="POST" name="formUnidade">
+	<form:form id="formUnidade" action="efetivarEdicaoUnidade" method="POST" name="formUnidade">
 	<table cellspacing="10">
 		<tr>
 			<td colspan="4">Unidade:</td>
