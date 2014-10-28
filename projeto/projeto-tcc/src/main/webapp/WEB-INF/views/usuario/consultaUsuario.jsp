@@ -3,10 +3,10 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
-	<h1>Lista de Unidades</h1>
+	<h1>Lista de Usuários do Sistema</h1>
 	<br/>
 	
-	<form:form id="formUnidade" action="abrirCadastrarUnidade" method="POST" name="formUnidade">
+	<form:form id="formUnidade" action="abrirCadastrarUsuario" method="POST" name="formUnidade">
 
 	<table class="tablesorter">
 		<thead>
@@ -31,7 +31,7 @@
 					<td>${usuario.nivelAcesso.descricaoNivelAcesso}</td>
 					<td>${usuario.unidade.nomeUnidade}</td>
 					<td>${usuario.status}</td>
-					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/unidade/apagarUnidade/${indice.index}"/>'>Apagar</a></td>
+					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/usuario/apagarUsuario/${indice.index}"/>'>Apagar</a></td>
 				</tr>
 			
 			</c:forEach>

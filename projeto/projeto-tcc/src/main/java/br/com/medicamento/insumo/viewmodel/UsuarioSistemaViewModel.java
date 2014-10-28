@@ -13,6 +13,7 @@ public class UsuarioSistemaViewModel {
 	private Integer codigoUsuarioSistema;
 	private String nomeUsuarioSistema;
 	private String loginUsuarioSistema;
+	private String senhaUsuarioSistema;
 	private Boolean status;
 	private Cargo cargo;
 	private NivelAcesso nivelAcesso;
@@ -22,9 +23,9 @@ public class UsuarioSistemaViewModel {
 	private List<Cargo> listaCargo;
 	private List<NivelAcesso> listaNivelAcesso;
 	private List<Unidade> listaUnidade;
-	private Integer codigoSelecioandoCargo;
-	private Integer codigoSelecioandoUnidade;
-	private Integer codigoSelecioandoNivelAcesso;
+	private Integer codigoSelecionadoCargo;
+	private Integer codigoSelecionadoUnidade;
+	private Integer codigoSelecionadoNivelAcesso;
 
 	//Construtor padrao
 	public UsuarioSistemaViewModel(){
@@ -51,6 +52,13 @@ public class UsuarioSistemaViewModel {
 			listaUsuarioSistemaViewModel.add(usuarioSistemaViewModel);
 		}
 		
+	}
+
+	//construtor para a tela de cadastro de usuario
+	public UsuarioSistemaViewModel(List<Cargo> listaCargo,List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade) {
+		this.listaCargo = listaCargo;
+		this.listaNivelAcesso = listaNivelAcesso;
+		this.listaUnidade = listaUnidade;
 	}
 
 	public Integer getCodigoUsuarioSistema() {
@@ -119,27 +127,27 @@ public class UsuarioSistemaViewModel {
 	}
 	
 	public Integer getCodigoSelecioandoCargo() {
-		return codigoSelecioandoCargo;
+		return codigoSelecionadoCargo;
 	}
 
 	public void setCodigoSelecioandoCargo(Integer codigoSelecioandoCargo) {
-		this.codigoSelecioandoCargo = codigoSelecioandoCargo;
+		this.codigoSelecionadoCargo = codigoSelecioandoCargo;
 	}
 
 	public Integer getCodigoSelecioandoUnidade() {
-		return codigoSelecioandoUnidade;
+		return codigoSelecionadoUnidade;
 	}
 
 	public void setCodigoSelecioandoUnidade(Integer codigoSelecioandoUnidade) {
-		this.codigoSelecioandoUnidade = codigoSelecioandoUnidade;
+		this.codigoSelecionadoUnidade = codigoSelecioandoUnidade;
 	}
 
 	public Integer getCodigoSelecioandoNivelAcesso() {
-		return codigoSelecioandoNivelAcesso;
+		return codigoSelecionadoNivelAcesso;
 	}
 
 	public void setCodigoSelecioandoNivelAcesso(Integer codigoSelecioandoNivelAcesso) {
-		this.codigoSelecioandoNivelAcesso = codigoSelecioandoNivelAcesso;
+		this.codigoSelecionadoNivelAcesso = codigoSelecioandoNivelAcesso;
 	}
 	
 	public Cargo getCargo() {
@@ -164,6 +172,14 @@ public class UsuarioSistemaViewModel {
 
 	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
+	}
+
+	public String getSenhaUsuarioSistema() {
+		return senhaUsuarioSistema;
+	}
+
+	public void setSenhaUsuarioSistema(String senhaUsuarioSistema) {
+		this.senhaUsuarioSistema = senhaUsuarioSistema;
 	}
 	
 }

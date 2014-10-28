@@ -23,12 +23,8 @@
 			</ul></li>
 		<li class="menu_nivel1"><a href='<c:url value="/unidade/abrirListarUnidades"/>'>UNIDADES</a>
 			
-		<li class="menu_nivel1"><a href="#">USUÁRIOS</a>
-			<ul class="sub_menu">
-				<li><a href='<c:url value="/usuario/abrirCadastrarUsuario"/>'>Cadastrar</a></li>
-				<li><a href='<c:url value="/usuario/abrirConsultarUsuario"/>'>Consultar</a></li>
-				<li><a href="#">Meu Cadastro</a></li>
-			</ul></li>
+		<li class="menu_nivel1"><a href='<c:url value="/usuario/abrirConsultarUsuario"/>'>USUÁRIOS</a>
+		
 		<li class="menu_nivel1"><a href="#">LINHA DIRETA</a>
 			<ul class="sub_menu">
 				<li><a href='<c:url value="/linhaDireta/abrirEscreverMensagem"/>'>Escrever</a></li>

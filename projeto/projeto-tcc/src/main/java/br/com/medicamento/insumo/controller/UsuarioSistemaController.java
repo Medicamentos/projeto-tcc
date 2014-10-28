@@ -3,16 +3,17 @@ package br.com.medicamento.insumo.controller;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.medicamento.insumo.bean.Cargo;
-import br.com.medicamento.insumo.viewmodel.CadastrarUsuarioViewModel;
 import br.com.medicamento.insumo.viewmodel.UsuarioSistemaViewModel;
 
 @Controller
 public class UsuarioSistemaController extends ControllerBase {
 
+	//FUNCIONANDO
 	@RequestMapping("usuario/abrirConsultarUsuario")
 	public String abrirConsultarUsuario(Model model){
 		
@@ -21,16 +22,33 @@ public class UsuarioSistemaController extends ControllerBase {
 		model.addAttribute("url", "usuario/consultaUsuario");
 		return "home/index";
 	}
-	
+
+	//FUNCIONANDO
 	@RequestMapping("usuario/abrirCadastrarUsuario")
 	public String abrirCadastroUsuario(Model model){
-		CadastrarUsuarioViewModel cadastrar = super.usuarioLogica.abrirTelaCadastrarUsuario();
-		model.addAttribute("cadastrar", cadastrar);
+		
+		UsuarioSistemaViewModel usuarioSistemaViewModel = super.usuarioLogica.abrirTelaCadastrarUsuario();
+		model.addAttribute("usuarioSistemaViewModel", usuarioSistemaViewModel);
 		model.addAttribute("url", "usuario/cadastrarUsuario");
 		return "home/index";
 	}
 	
+	//ERRO
+	@RequestMapping("usuario/cadastrarUsuario")
+	public String cadastrarUsuario(Model model, UsuarioSistemaViewModel usuarioSistemaViewModel){
+		
+		this.usuarioLogica.cadastrarUsuarioSistema(usuarioSistemaViewModel);
+		
+		return  abrirConsultarUsuario( model);
+	}
 	
+	@RequestMapping("usuario/apagarUsuario/{id}")
+	public String apagarUsuario(Model model, @PathVariable("id") Integer id){
+		
+		this.usuarioLogica.apagarUsuario(id);
+		
+		return abrirConsultarUsuario(model);
+	}
 	
 	@RequestMapping(value="/usuario/cadastrarCargo", produces="application/json")
 	@ResponseBody
