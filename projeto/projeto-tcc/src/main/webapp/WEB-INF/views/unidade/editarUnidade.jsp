@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
 	<h1>Editar Unidades</h1>
-	<form:form id="formUnidade" action="efetivarEdicaoUnidade" method="POST" name="formUnidade">
+	<form id="formUnidade" action= '<c:url value ="efetivarEdicaoUnidade"/>'  method="POST" name="formUnidade">
 	<table cellspacing="10">
 		<tr>
 			<td colspan="4">Unidade:</td>
@@ -60,5 +61,5 @@
 				</td>
 		</tr>
 	</table>
-	</form:form>
+	</form>
 </div>

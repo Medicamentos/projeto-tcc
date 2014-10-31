@@ -7,8 +7,7 @@
 	</head>
 	<body>
 		<div class="container" id="loginContainer">
-			<form action='<c:url value ="j_spring_security_check"/>'
-				method="post" id="loginForm">
+			<form action='<c:url value ="j_spring_security_check"/>' method="post" id="loginForm">
 				<table cellspacing="10">
 					<tr>
 						<td colspan="2" align="center"><h2>Login</h2></td>

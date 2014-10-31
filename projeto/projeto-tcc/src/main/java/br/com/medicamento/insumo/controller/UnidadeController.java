@@ -28,7 +28,7 @@ public class UnidadeController extends ControllerBase{
 		return "home/index";
 	}
 	
-	//OK
+	
 	@RequestMapping("unidade/efetivarCadastroUnidade")
 	public String efetivarCadastroUnidade(UnidadeViewModel unidadeViewModel, Model model){
 		
@@ -57,6 +57,7 @@ public class UnidadeController extends ControllerBase{
 		return abrirListarUnidades(model);
 	}
 	
+	//OK
 	@RequestMapping("unidade/apagarUnidade/{id}")
 	public String apagarUnidade( Model model , @PathVariable("id") Integer id){
 	

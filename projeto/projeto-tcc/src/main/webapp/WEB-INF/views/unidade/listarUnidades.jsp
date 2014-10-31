@@ -6,7 +6,7 @@
 	<h1>Lista de Unidades</h1>
 	<br/>
 	
-	<form:form id="formUnidade" action="abrirCadastrarUnidade" method="POST" name="formUnidade">
+	<form id="formUnidade" action='<c:url value ="abrirCadastrarUnidade"/>' method="POST" name="formUnidade">
 
 	<table class="tablesorter">
 		<thead>
@@ -50,7 +50,7 @@
 		</table>
 
 
-	</form:form>
+	</form>
 	
 	<script type="text/javascript">
 		$(".tablesorter").tablesorter({headers: {

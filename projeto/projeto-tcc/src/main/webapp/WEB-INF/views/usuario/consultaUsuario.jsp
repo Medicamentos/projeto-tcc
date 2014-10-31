@@ -28,9 +28,18 @@
 					<td>${usuario.nomeUsuarioSistema}</td>
 					<td>${usuario.loginUsuarioSistema}</td>
 					<td>${usuario.cargo.descricaoCargo}</td>
-					<td>${usuario.nivelAcesso.descricaoNivelAcesso}</td>
+					<td>
+					<c:choose >
+						 <c:when test="${usuario.nivelAcesso.codigoNivelAcesso == 1}"> DESENVOLVEDOR </c:when>		 
+					</c:choose>
+					</td>
 					<td>${usuario.unidade.nomeUnidade}</td>
-					<td>${usuario.status}</td>
+					<td>
+						<c:choose >
+							<c:when test="${usuario.status == true}">ATIVO</c:when>
+							<c:when test="${usuario.status == false}">INATIVO</c:when>
+						</c:choose>
+					</td>
 					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/usuario/apagarUsuario/${indice.index}"/>'>Apagar</a></td>
 				</tr>
 			
