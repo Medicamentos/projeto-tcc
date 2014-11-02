@@ -10,7 +10,7 @@ import br.com.medicamento.insumo.viewmodel.UnidadeViewModel;
 @Controller
 public class UnidadeController extends ControllerBase{
 	
-	//OK
+	
 	@RequestMapping("unidade/abrirListarUnidades")
 	public String abrirListarUnidades(Model model){
 		UnidadeViewModel UnidadeViewModel = this.unidadeLogica.listarUnidades();
@@ -19,7 +19,6 @@ public class UnidadeController extends ControllerBase{
 		return "home/index";
 	}
 	
-	//OK
 	@RequestMapping("unidade/abrirCadastrarUnidade")
 	public String abrirCadastrarUnidade(Model model){
 		UnidadeViewModel unidadeViewModel = this.unidadeLogica.cadastrarUnidade();
@@ -27,7 +26,6 @@ public class UnidadeController extends ControllerBase{
 		model.addAttribute("url" , "unidade/cadastrarUnidade");
 		return "home/index";
 	}
-	
 	
 	@RequestMapping("unidade/efetivarCadastroUnidade")
 	public String efetivarCadastroUnidade(UnidadeViewModel unidadeViewModel, Model model){
@@ -38,7 +36,6 @@ public class UnidadeController extends ControllerBase{
 	}
 	
 
-	//OK
 	@RequestMapping("unidade/abrirEditarUnidade/{id}")
 	public String abrirEditarUnidade(Model model, @PathVariable("id") Integer id){
 		sessao.setAttribute("id", id);
@@ -57,7 +54,6 @@ public class UnidadeController extends ControllerBase{
 		return abrirListarUnidades(model);
 	}
 	
-	//OK
 	@RequestMapping("unidade/apagarUnidade/{id}")
 	public String apagarUnidade( Model model , @PathVariable("id") Integer id){
 	
@@ -66,5 +62,4 @@ public class UnidadeController extends ControllerBase{
 		return abrirListarUnidades(model);
 	}
 	
-
 }

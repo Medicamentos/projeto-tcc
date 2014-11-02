@@ -38,7 +38,7 @@ public class MaterialDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<Material> buscarTodos() {
-		List<Material> listaMaterial = em.createQuery("SELECT m FROM Material m").getResultList();
+		List<Material> listaMaterial = em.createQuery("SELECT m FROM material m").getResultList();
 		return listaMaterial;
 	}
 

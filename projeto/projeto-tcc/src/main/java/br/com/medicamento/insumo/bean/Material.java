@@ -16,7 +16,7 @@ public class Material {
 	private String descricaoPrincipioAtivo;
 	private Long valorMiligramagem;
 	private Long quantidadeEstoqueMinimo;
-	private Long quantidadeEstoque;
+	private Long quantidadeEstoque; //estudar se esse atributo deve realmente ser aqui ou na tabela 'Material_Unidade'
 	@ManyToOne
 	@JoinColumn(name="codigoTipoMedicamento")
 	private TipoMedicamento tipoMedicamento;

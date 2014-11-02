@@ -4,10 +4,13 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.medicamento.insumo.bean.TipoUnidade;
 import br.com.medicamento.insumo.dao.BairroDAO;
 import br.com.medicamento.insumo.dao.CargoDAO;
+import br.com.medicamento.insumo.dao.MaterialDAO;
 import br.com.medicamento.insumo.dao.NivelAcessoDAO;
+import br.com.medicamento.insumo.dao.TipoConteudoDAO;
+import br.com.medicamento.insumo.dao.TipoControleDAO;
+import br.com.medicamento.insumo.dao.TipoMedicamentoDAO;
 import br.com.medicamento.insumo.dao.TipoUnidadeDAO;
 import br.com.medicamento.insumo.dao.UnidadeDAO;
 import br.com.medicamento.insumo.dao.UsuarioSistemaDAO;
@@ -35,4 +38,16 @@ public abstract class LogicaBase {
 	
 	@Autowired
 	protected UnidadeDAO unidadeDAO;
+	
+	@Autowired
+	protected MaterialDAO materialDAO;
+	
+	@Autowired
+	protected TipoConteudoDAO tipoConteudoDAO;
+	
+	@Autowired
+	protected TipoControleDAO tipoControleDAO;
+	
+	@Autowired
+	protected TipoMedicamentoDAO tipoMedicamentoDAO;
 }
