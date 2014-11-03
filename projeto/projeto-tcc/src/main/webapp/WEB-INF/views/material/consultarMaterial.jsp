@@ -19,22 +19,20 @@
 				<th>Tipo</th>
 				<th>Controle</th>
 				<th>Conteúdo</th>
-				<th>Status</th>
 				<th>Ações</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${MaterialViewModel.materiais}" var="material" varStatus="indice">
+			<c:forEach items="${materialViewModel.materiais}" var="material" varStatus="indice">
 				<tr>
 					<td>${material.codigoMaterial}</td>
 					<td>${material.descricaoMaterial}</td>
 					<td>${material.descricaoPrincipioAtivo}</td>
-					<td>${material.bairro.valorMiligramagem}</td>
+					<td>${material.valorMiligramagem}</td>
 					<td>${material.quantidadeEstoqueMinimo}</td>
-					<td>${material.tiposMedicamentos.descricaoTipoMedicamento}</td>
-					<td>${material.tiposControles.descricaoTipoControle}</td>
-					<td>${material.tiposConteudos.descricaoTipoConteudo}</td>
-					<td>${material.status}</td>
+					<td>${material.tipoMedicamento.descricaoTipoMedicamento}</td>
+					<td>${material.tipoControle.descricaoTipoControle}</td>
+					<td>${material.tipoConteudo.descricaoTipoConteudo}</td>
 					<td> <a href='<c:url value="/material/abrirTelaEditarMaterial/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/material/apagarMaterial/${indice.index}"/>'>Apagar</a></td>
 				</tr>
 			

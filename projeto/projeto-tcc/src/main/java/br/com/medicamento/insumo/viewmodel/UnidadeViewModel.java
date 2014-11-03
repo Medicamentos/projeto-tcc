@@ -36,19 +36,9 @@ public class UnidadeViewModel {
 		this.status = unidade.isStatus();
 	}
 	
-	public List<UnidadeViewModel> getListaUnidadesAtivasViewModel() {
-		return listaUnidadesAtivasViewModel;
-	}
-
-	public void setListaUnidadesAtivasViewModel(
-			List<UnidadeViewModel> listaUnidadesAtivasViewModel) {
-		this.listaUnidadesAtivasViewModel = listaUnidadesAtivasViewModel;
-	}
-
-	//Construtor usado para listar Unidades
+	//Construtor usado para a tela de listar Unidades
 	public UnidadeViewModel(List<Unidade> listaUnidadeAtivas){
 		
-		//transformando unidade em unidadeViewmModel
 		for (Unidade unidade : listaUnidadeAtivas) {
 			
 			UnidadeViewModel unidadeViewModel = new UnidadeViewModel();
@@ -58,8 +48,8 @@ public class UnidadeViewModel {
 			unidadeViewModel.setDescricaoEndereco(unidade.getDescricaoEndereco());
 			unidadeViewModel.setCep(unidade.getCep());
 			unidadeViewModel.setNumeroTelefone(unidade.getNumeroTelefone());
-			unidadeViewModel.setListaBairro(listaBairro);
-			unidadeViewModel.setListaTipoUnidade(listaTipoUnidade);
+			unidadeViewModel.setBairro(unidade.getBairro());
+			unidadeViewModel.setTipoUnidade(unidade.getTipoUnidade());
 			unidadeViewModel.setStatus(unidade.isStatus());
 		
 			listaUnidadesAtivasViewModel.add(unidadeViewModel);
@@ -83,9 +73,7 @@ public class UnidadeViewModel {
 	
 	//contrutor para editar unidade
 	public UnidadeViewModel(Unidade unidade,  List<Bairro> listaBairro, List<TipoUnidade> listaTipoUnidade){
-		
-	
-		
+			
 		this.setCodigoUnidade(unidade.getCodigoUnidade());
 		this.setDescricaoUnidade(unidade.getNomeUnidade());
 		this.setDescricaoEndereco(unidade.getDescricaoEndereco());
@@ -205,5 +193,15 @@ public class UnidadeViewModel {
 	public void setCodigoTipoUnidadeSelecionado(int codigoTipoUnidadeSelecionado) {
 		this.codigoTipoUnidadeSelecionado = codigoTipoUnidadeSelecionado;
 	}
+	
+	public List<UnidadeViewModel> getListaUnidadesAtivasViewModel() {
+		return listaUnidadesAtivasViewModel;
+	}
+
+	public void setListaUnidadesAtivasViewModel(
+			List<UnidadeViewModel> listaUnidadesAtivasViewModel) {
+		this.listaUnidadesAtivasViewModel = listaUnidadesAtivasViewModel;
+	}
+
 	
 }

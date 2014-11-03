@@ -12,9 +12,7 @@ public class MaterialLogica extends LogicaBase {
 	public MaterialViewModel consultarMaterial() {
 
 		List<Material> materiais = super.materialDAO.buscarTodos();
-		//List<TipoConteudo> tiposConteudos = super.tipoConteudoDAO.buscarTodos();
-		//List<TipoControle> tiposControles = super.tipoControleDAO.buscarTodos();
-		//List<TipoMedicamento> tiposMedicamentos = super.tipoMedicamentoDAO.buscarTodos();
+		
 		
 		MaterialViewModel materialViewModel = new MaterialViewModel(materiais);
 		return materialViewModel;

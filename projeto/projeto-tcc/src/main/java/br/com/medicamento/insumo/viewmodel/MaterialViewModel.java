@@ -1,5 +1,6 @@
 package br.com.medicamento.insumo.viewmodel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.medicamento.insumo.bean.Material;
@@ -20,7 +21,7 @@ public class MaterialViewModel {
 	private TipoControle  tipoControle; 
 	private TipoConteudo  tipoConteudo;
 	
-	private List<Material> materiais;
+	private List<MaterialViewModel> materiais;
 	private List<TipoMedicamento> tiposMedicamentos;
 	private List<TipoControle> tiposControles;
 	private List<TipoConteudo> tiposConteudos;
@@ -34,8 +35,22 @@ public class MaterialViewModel {
 				}
 		
 	//Construtor para a tela ConsultarMedicamento.jsp
-	public MaterialViewModel(List<Material> materiais) {
-		this.materiais = materiais;
+	public MaterialViewModel(List<Material> listaMateriais) {
+		this.materiais = new ArrayList<MaterialViewModel>();
+		for (Material material : listaMateriais) {
+			
+			MaterialViewModel materialViewModel = new MaterialViewModel();
+			
+			materialViewModel.setCodigoMaterial(material.getCodigoMaterial());
+			materialViewModel.setDescricaoMaterial(material.getDescricaoMaterial());
+			materialViewModel.setDescricaoPrincipioAtivo(material.getDescricaoPrincipioAtivo());
+			materialViewModel.setValorMiligramagem(material.getValorMiligramagem());
+			materialViewModel.setQuantidadeEstoqueMinimo(material.getQuantidadeEstoqueMinimo());
+			materialViewModel.setTipoConteudo(material.getTipoConteudo());
+			materialViewModel.setTipoControle(material.getTipoControle());
+			materialViewModel.setTipoMedicamento(material.getTipoMedicamento());
+			this.materiais.add(materialViewModel);
+		}
 				}
 	
 	
@@ -102,10 +117,10 @@ public class MaterialViewModel {
 	public void setTipoConteudo(TipoConteudo tipoConteudo) {
 		this.tipoConteudo = tipoConteudo;
 	}
-	public List<Material> getMateriais() {
+	public List<MaterialViewModel> getMateriais() {
 		return materiais;
 	}
-	public void setMateriais(List<Material> materiais) {
+	public void setMateriais(List<MaterialViewModel> materiais) {
 		this.materiais = materiais;
 	}
 	public List<TipoMedicamento> getTiposMedicamentos() {
