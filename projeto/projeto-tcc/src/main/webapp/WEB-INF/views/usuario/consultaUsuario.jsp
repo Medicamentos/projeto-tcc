@@ -30,14 +30,14 @@
 					<td>${usuario.cargo.descricaoCargo}</td>
 					<td>
 					<c:choose >
-						 <c:when test="${usuario.nivelAcesso.codigoNivelAcesso == 1}"> DESENVOLVEDOR </c:when>		 
+						 <c:when test="${usuario.nivelAcesso.codigoNivelAcesso == 1}"> Desenvolvedor </c:when>		 
 					</c:choose>
 					</td>
 					<td>${usuario.unidade.nomeUnidade}</td>
 					<td>
 						<c:choose >
-							<c:when test="${usuario.status == true}">ATIVO</c:when>
-							<c:when test="${usuario.status == false}">INATIVO</c:when>
+							<c:when test="${usuario.status == true}">Ativo</c:when>
+							<c:when test="${usuario.status == false}">Inativo</c:when>
 						</c:choose>
 					</td>
 					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/usuario/apagarUsuario/${indice.index}"/>'>Apagar</a></td>

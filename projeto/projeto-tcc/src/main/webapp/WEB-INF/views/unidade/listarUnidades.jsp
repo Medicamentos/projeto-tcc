@@ -18,11 +18,12 @@
 				<th>Cep</th>
 				<th>Telefone</th>
 				<th>Tipo</th>
+				<th>Status</th>
 				<th>Ações</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${UnidadeViewModel.listaUnidadesAtivasViewModel}" var="unidade" varStatus="indice">
+			<c:forEach items="${UnidadeViewModel.listaUnidades}" var="unidade" varStatus="indice">
 				<tr>
 					<td>${unidade.codigoUnidade}</td>
 					<td>${unidade.descricaoUnidade}</td>
@@ -31,7 +32,13 @@
 					<td>${unidade.cep}</td>
 					<td>${unidade.numeroTelefone}</td>
 					<td>${unidade.tipoUnidade.descricaoTipoUnidade}</td>
-					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/unidade/apagarUnidade/${indice.index}"/>'>Apagar</a></td>
+					<td>
+						<c:choose >
+							<c:when test="${unidade.status == true}">Ativo</c:when>
+							<c:when test="${unidade.status == false}">Inativo</c:when>
+						</c:choose>
+					</td>
+					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a></td>
 				</tr>
 			
 			</c:forEach>

@@ -22,9 +22,8 @@ public class UnidadeViewModel {
 	private TipoUnidade tipoUnidade;
 	private List<TipoUnidadeViewModel> listaTipoUnidade;
 	private List<BairroViewModel> listaBairro;
-	private List<UnidadeViewModel> listaUnidadesAtivasViewModel = new ArrayList<UnidadeViewModel>();
+	private List<UnidadeViewModel> listaUnidades;
 
-	
 	public UnidadeViewModel(Unidade unidade){
 		this.codigoUnidade = unidade.getCodigoUnidade();
 		this.descricaoUnidade = unidade.getNomeUnidade();
@@ -39,6 +38,8 @@ public class UnidadeViewModel {
 	//Construtor usado para a tela de listar Unidades
 	public UnidadeViewModel(List<Unidade> listaUnidadeAtivas){
 		
+		this.listaUnidades = new ArrayList<UnidadeViewModel>();
+		
 		for (Unidade unidade : listaUnidadeAtivas) {
 			
 			UnidadeViewModel unidadeViewModel = new UnidadeViewModel();
@@ -52,7 +53,7 @@ public class UnidadeViewModel {
 			unidadeViewModel.setTipoUnidade(unidade.getTipoUnidade());
 			unidadeViewModel.setStatus(unidade.isStatus());
 		
-			listaUnidadesAtivasViewModel.add(unidadeViewModel);
+			listaUnidades.add(unidadeViewModel);
 		}
 	}
 	
@@ -194,13 +195,12 @@ public class UnidadeViewModel {
 		this.codigoTipoUnidadeSelecionado = codigoTipoUnidadeSelecionado;
 	}
 	
-	public List<UnidadeViewModel> getListaUnidadesAtivasViewModel() {
-		return listaUnidadesAtivasViewModel;
+	public List<UnidadeViewModel> getListaUnidades() {
+		return listaUnidades;
 	}
 
-	public void setListaUnidadesAtivasViewModel(
-			List<UnidadeViewModel> listaUnidadesAtivasViewModel) {
-		this.listaUnidadesAtivasViewModel = listaUnidadesAtivasViewModel;
+	public void setListaUnidades(List<UnidadeViewModel> listaUnidades) {
+		this.listaUnidades = listaUnidades;
 	}
 
 	

@@ -13,9 +13,9 @@ public class UnidadeLogica extends LogicaBase {
 	//OK
 	public UnidadeViewModel listarUnidades() {
 		
-		List<Unidade> listaUnidadesAtivas = super.unidadeDAO.buscarUnidadesAtivas();
-		this.sessao.setAttribute("listaUnidadeAtivas", listaUnidadesAtivas);
-		UnidadeViewModel UnidadeViewModel = new UnidadeViewModel(listaUnidadesAtivas);
+		List<Unidade> listaUnidades = super.unidadeDAO.buscarTodos();
+		this.sessao.setAttribute("listaUnidades", listaUnidades);
+		UnidadeViewModel UnidadeViewModel = new UnidadeViewModel(listaUnidades);
 		return UnidadeViewModel;
 	}
 	
@@ -57,17 +57,17 @@ public class UnidadeLogica extends LogicaBase {
 		List<TipoUnidade> listaTipoUnidade = super.tipoUnidadeDAO.buscarTodos();
 		List<Bairro> listaBairro = super.bairroDAO.buscarTodos();
 		
-		List<Unidade> listaUnidadeAtivas = (List<Unidade>) sessao.getAttribute("listaUnidadeAtivas");
+		List<Unidade> listaUnidades = (List<Unidade>) sessao.getAttribute("listaUnidades");
 		Integer id = (Integer) sessao.getAttribute("id");	
 		
 		Unidade unidade = new Unidade();
-		unidade.setNomeUnidade(listaUnidadeAtivas.get(id).getNomeUnidade());
-		unidade.setDescricaoEndereco(listaUnidadeAtivas.get(id).getDescricaoEndereco());
-		unidade.setNumeroTelefone(listaUnidadeAtivas.get(id).getNumeroTelefone());
-		unidade.setCep(listaUnidadeAtivas.get(id).getCep());
-		unidade.setBairro(listaUnidadeAtivas.get(id).getBairro());
-		unidade.setTipoUnidade(listaUnidadeAtivas.get(id).getTipoUnidade());
-		unidade.setStatus(true);
+		unidade.setNomeUnidade(listaUnidades.get(id).getNomeUnidade());
+		unidade.setDescricaoEndereco(listaUnidades.get(id).getDescricaoEndereco());
+		unidade.setNumeroTelefone(listaUnidades.get(id).getNumeroTelefone());
+		unidade.setCep(listaUnidades.get(id).getCep());
+		unidade.setBairro(listaUnidades.get(id).getBairro());
+		unidade.setTipoUnidade(listaUnidades.get(id).getTipoUnidade());
+		unidade.setStatus(listaUnidades.get(id).isStatus());
 		
 		UnidadeViewModel unidadeViewModel = new UnidadeViewModel(unidade, listaBairro, listaTipoUnidade);
 		

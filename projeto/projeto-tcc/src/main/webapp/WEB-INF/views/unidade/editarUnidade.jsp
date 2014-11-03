@@ -24,6 +24,7 @@
 		<tr>
 			<td>CEP:</td>
 			<td>Bairro:</td>
+			<td>Status:</td>
 			<td>
 		</tr>
 		<tr>
@@ -36,6 +37,8 @@
 					</c:forEach>
 				</select>
 			</td>
+			<td><input type="text" id="status" class="inputPequeno" value="${unidade.status}" name="status"/></td>
+			
 		</tr>
 		<tr>
 			<td>Tipo:</td>
