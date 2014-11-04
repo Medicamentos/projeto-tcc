@@ -37,8 +37,14 @@
 					</c:forEach>
 				</select>
 			</td>
-			<td><input type="text" id="status" class="inputPequeno" value="${unidade.status}" name="status"/></td>
 			
+			<td>
+				<select type="text" id="status" name="status" >
+					<option>SELECIONE</option>
+					<option value="1">Ativo</option>
+					<option value="0">Inatívo</option>
+				</select>
+			</td>
 		</tr>
 		<tr>
 			<td>Tipo:</td>

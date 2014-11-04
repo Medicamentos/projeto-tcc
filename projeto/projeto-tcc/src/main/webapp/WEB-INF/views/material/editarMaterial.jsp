@@ -1,68 +1,98 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <div id="conteudoPagina">
-<h1>Cadastro de Material </h1>
-	<table cellspacing="10">
-		<tr>
-			<td>Nome:</td><td> <input type="text" id="nome"/></td>
-		</tr>
-		<tr>
-			<td>Princípio Ativo:</td> <td><input type="text" id="principioAtivo"/></td>
-		</tr>
+	<h1>Cadastrar Material</h1>
+
+	<form id="formMaterial" action='<c:url value ="#"/>' method="POST"
+		name="formMaterial">
+
+		<table cellspacing="10">
 			<tr>
-			<td>Tipo Medicamento:</td> <td> <select type="text" id="tipoMedicamento">
-			<option tabindex="1"></option>
-			<option >alopático</option>
-			<option>controlado</option>
-			<option>de referência</option>
-			<option>venda livre</option>
-			<option>fitoterápico</option>
-			<option>genérico</option>
-			<option>importado</option>
-			<option>manipulado</option>
-			<option>similare</option>
-			<option>outro...</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>Miligramagem:</td> <td> <select type="text" id="miligramagem">
-			<option>5mg</option>
-			<option>10mg</option>
-			<option>15mg</option>
-			<option>20mg</option>
-			<option>25mg</option>
-			<option>30mg</option>
-			<option>35mg</option>
-			<option>40mg</option>
-			<option>45mg</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>Controle:</td> <td> <select type="text" id="controle">
-			<option tabindex="1">...</option>
-			<option >Tarja Vermelha</option>
-			<option>Tarja Preta</option>
-			<option>Tarja Preta com retenção</option>
-			<option>Tarja Amarela</option>
-			<option>Não Tarjados</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>Conteúdo:</td> <td> <select type="text" id="controle">
-			<option tabindex="1">...</option>
-			<option >Pírulas</option>
-			<option>Comprimidos</option>
-			<option>Líquido</option>
-			<option>Enfervescente</option>
-			<option>Pó</option>
-			<option>Drágeas</option>
-			<option>Supositório</option>
-			<option>outro...</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>Estoque Mínimo:</td> <td><input type="text" id="estoqueMinimo"/></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="Casdastrar" onclick="javascrit:submeter()" class="btnSubmit"/></td>
-		</tr>
-	</table>
+				<td colspan="4">Material:</td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="text" id="descricaoMaterial"
+					class="inputGrande" name="descricaoMaterial"
+					value="${materialViewModel.descricaoMaterial}" /></td>
+			</tr>
+			<tr>
+				<td colspan="4">Princípio Ativo:</td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="text" id="descricaoPrincipioAtivo"
+					class="inputGrande" name="descricaoPrincipioAtivo"
+					value="${materialViewModel.descricaoPrincipioAtivo}" /></td>
+			</tr>
+			<tr>
+				<td>Miligramagem:</td>
+				<td>Qtd Mínima Estoque:</td>
+				<td>
+			</tr>
+			<tr>
+
+				<td><select type="text" id="valorMiligramagem" name="valorMiligramagem">
+						<option value="0">SELECIONE</option>
+						<option value="${materialViewModel.valorMiligramagem}">5mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">10mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">15mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">20mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">25mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">30mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">35mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">40mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">45mg</option>
+				</select></td>
+
+				<td><input type="text" id="quantidadeEstoqueMinimo"
+					class="inputPequeno"
+					value="${materialViewModel.quantidadeEstoqueMinimo}"
+					name="quantidadeEstoqueMinimo" /></td>
+
+
+			</tr>
+			<tr>
+				<td>Tipo Medicamento:</td>
+				<td>Tipo Controle:</td>
+				<td>Tipo Conteudo:</td>
+			</tr>
+			<tr>
+
+				<td><select type="text" id="status" name="tiposMedicamentos">
+						<option value="0">SELECIONE</option>
+						<c:forEach items="${materialViewModel.tiposMedicamentos}"
+							var="tipoMedicamento">
+							<option value="${tipoMedicamento.codigoTipoMedicamento}">${tipoMedicamento.descricaoTipoMedicamento}</option>
+						</c:forEach>
+				</select></td>
+
+				<td><select type="text" id="tipo" name="tiposControles">
+						<option value="0">SELECIONE</option>
+						<c:forEach items="${materialViewModel.tiposControles}"
+							var="tipoControle">
+							<option value="${tipoControle.codigoTipoControle}">${tipoControle.descricaoTipoControle}</option>
+						</c:forEach>
+				</select></td>
+
+
+				<td><select type="text" id="tipo" name="tiposConteudos">
+						<option value="0">SELECIONE</option>
+						<c:forEach items="${materialViewModel.tiposConteudos}"
+							var="tipoConteudo">
+							<option value="${tipoConteudo.codigoTipoConteudo}">${tipoConteudo.descricaoTipoConteudo}</option>
+						</c:forEach>
+				</select></td>
+
+			</tr>
+			<tr>
+				<td align="right" colspan="4"><input type="button"
+					value="Voltar" onclick="history.go(-1)" class="botaoEstilo" /></td>
+				<td align="right" colspan="4"><input type="submit"
+					value="Cadastrar" class="botaoEstilo" /></td>
+			</tr>
+		</table>
+	</form>
 </div>

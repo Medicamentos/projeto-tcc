@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
-	<h1>Lista de Usuários do Sistema</h1>
+	<h1>Consultar Usuários</h1>
 	<br/>
 	
 	<form:form id="formUnidade" action="abrirCadastrarUsuario" method="POST" name="formUnidade">
@@ -40,7 +40,7 @@
 							<c:when test="${usuario.status == false}">Inativo</c:when>
 						</c:choose>
 					</td>
-					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/usuario/apagarUsuario/${indice.index}"/>'>Apagar</a></td>
+					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a></td>
 				</tr>
 			
 			</c:forEach>

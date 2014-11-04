@@ -2,6 +2,7 @@ package br.com.medicamento.insumo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.medicamento.insumo.viewmodel.MaterialViewModel;
@@ -11,7 +12,7 @@ public class MaterialController extends ControllerBase {
 	
 	@RequestMapping("material/abrirTelaCadastrarMaterial")
 	public String abrirTelaCadastrarMaterial(Model model){
-		model.addAttribute("url", "material/cadastroMaterial");
+		model.addAttribute("url", "material/cadastrarMaterial");
 		return "home/index";
 	}
 	
@@ -25,9 +26,11 @@ public class MaterialController extends ControllerBase {
 		return "home/index";
 	}
 	
-	@RequestMapping("material/abrirTelaEditarMaterial")
-	public String abrirTelaEditarMaterial(Model model){
-		model.addAttribute("url", "material/cadastroMaterial");
+	@RequestMapping("material/abrirTelaEditarMaterial/{id}")
+	public String abrirTelaEditarMaterial(Model model, @PathVariable("id") Integer id){
+		sessao.setAttribute("id", id);
+		
+		model.addAttribute("url", "material/editarMaterial");
 		return "home/index";
 	}
 

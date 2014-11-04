@@ -13,8 +13,16 @@ public class MaterialLogica extends LogicaBase {
 
 		List<Material> materiais = super.materialDAO.buscarTodos();
 		
-		
 		MaterialViewModel materialViewModel = new MaterialViewModel(materiais);
+		return materialViewModel;
+	}
+	
+	public MaterialViewModel editarMaterial(Integer id){
+		
+		
+		MaterialViewModel materialViewModel = new MaterialViewModel();
+		
+		//TODO fazer a logica
 		return materialViewModel;
 	}
 }

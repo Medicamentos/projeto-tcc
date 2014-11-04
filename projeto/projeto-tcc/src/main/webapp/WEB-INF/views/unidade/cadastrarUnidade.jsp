@@ -28,6 +28,7 @@
 			<tr>
 				<td>CEP:</td>
 				<td>Bairro:</td>
+				<td>Status:</td>
 				<td>
 			</tr>
 			<tr>
@@ -42,6 +43,13 @@
 						</c:forEach>
 				</select>
 				</td>
+					<td>
+				<select type="text" id="status" name="status" >
+					<option>SELECIONE</option>
+					<option value="1">Ativo</option>
+					<option value="0">Inatívo</option>
+				</select>
+			</td>
 			</tr>
 			<tr>
 				<td>Tipo:</td>
@@ -66,7 +74,7 @@
 					<input type="button" value="Voltar" onclick="history.go(-1)" class="botaoEstilo" />
 				</td>
 				<td align="right" colspan="4">
-					<input type="submit" value="Salvar" class="botaoEstilo" />
+					<input type="submit" value="Cadastrar" class="botaoEstilo" />
 				</td>
 			</tr>
 		</table>

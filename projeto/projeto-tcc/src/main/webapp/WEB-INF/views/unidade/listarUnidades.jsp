@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
-	<h1>Lista de Unidades</h1>
+	<h1>Consultar Unidades</h1>
 	<br/>
 	
 	<form id="formUnidade" action='<c:url value ="abrirCadastrarUnidade"/>' method="POST" name="formUnidade">

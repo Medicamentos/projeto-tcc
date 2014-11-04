@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
-	<h1>Lista de Materiais</h1>
+	<h1>Consultar Materiais</h1>
 	<br/>
 	
 	<form id="formMaterial" action='<c:url value ="abrirTelaCadastrarMaterial"/>' method="POST" name="formMaterial">
@@ -33,7 +33,7 @@
 					<td>${material.tipoMedicamento.descricaoTipoMedicamento}</td>
 					<td>${material.tipoControle.descricaoTipoControle}</td>
 					<td>${material.tipoConteudo.descricaoTipoConteudo}</td>
-					<td> <a href='<c:url value="/material/abrirTelaEditarMaterial/${indice.index}"/>'>Editar</a> - <a href='<c:url value="/material/apagarMaterial/${indice.index}"/>'>Apagar</a></td>
+					<td> <a href='<c:url value="/material/abrirTelaEditarMaterial/${indice.index}"/>'>Editar</a></td>
 				</tr>
 			
 			</c:forEach>
