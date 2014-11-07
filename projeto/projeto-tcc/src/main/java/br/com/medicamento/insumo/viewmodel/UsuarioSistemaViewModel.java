@@ -9,7 +9,7 @@ import br.com.medicamento.insumo.bean.Unidade;
 import br.com.medicamento.insumo.bean.UsuarioSistema;
 
 public class UsuarioSistemaViewModel {
-	
+
 	private Integer codigoUsuarioSistema;
 	private String nomeUsuarioSistema;
 	private String loginUsuarioSistema;
@@ -18,7 +18,7 @@ public class UsuarioSistemaViewModel {
 	private Cargo cargo;
 	private NivelAcesso nivelAcesso;
 	private Unidade unidade;
-	
+
 	private List<UsuarioSistemaViewModel> listaUsuarioSistemaViewModel;
 	private List<Cargo> listaCargo;
 	private List<NivelAcesso> listaNivelAcesso;
@@ -27,35 +27,41 @@ public class UsuarioSistemaViewModel {
 	private Integer codigoSelecionadoUnidade;
 	private Integer codigoSelecionadoNivelAcesso;
 
-	//Construtor padrao
-	public UsuarioSistemaViewModel(){
-		
+	// Construtor padrao
+	public UsuarioSistemaViewModel() {
+
 	}
 
-	//Construtor para a TelaListarUsuarios
+	// Construtor para a TelaListarUsuarios
 	public UsuarioSistemaViewModel(List<UsuarioSistema> listaUsuarioSistema) {
-		
+
 		listaUsuarioSistemaViewModel = new ArrayList<UsuarioSistemaViewModel>();
-		
-		//transformando um usuario em usuariosViewModel
+
+		// transformando um usuario em usuariosViewModel
 		for (UsuarioSistema usuarioSistema : listaUsuarioSistema) {
 			UsuarioSistemaViewModel usuarioSistemaViewModel = new UsuarioSistemaViewModel();
-			
-			usuarioSistemaViewModel.setCodigoUsuarioSistema(usuarioSistema.getCodigoUsuarioSistema());
-			usuarioSistemaViewModel.setNomeUsuarioSistema(usuarioSistema.getNomeUsuarioSistema());
-			usuarioSistemaViewModel.setLoginUsuarioSistema(usuarioSistema.getLoginUsuarioSistema());
-			usuarioSistemaViewModel.setStatus(usuarioSistema.getStatusAtivacao());
+
+			usuarioSistemaViewModel.setCodigoUsuarioSistema(usuarioSistema
+					.getCodigoUsuarioSistema());
+			usuarioSistemaViewModel.setNomeUsuarioSistema(usuarioSistema
+					.getNomeUsuarioSistema());
+			usuarioSistemaViewModel.setLoginUsuarioSistema(usuarioSistema
+					.getLoginUsuarioSistema());
+			usuarioSistemaViewModel.setStatus(usuarioSistema
+					.getStatusAtivacao());
 			usuarioSistemaViewModel.setCargo(usuarioSistema.getCargo());
-			usuarioSistemaViewModel.setNivelAcesso(usuarioSistema.getNivelAcesso());
+			usuarioSistemaViewModel.setNivelAcesso(usuarioSistema
+					.getNivelAcesso());
 			usuarioSistemaViewModel.setUnidade(usuarioSistema.getUnidade());
-			
+
 			listaUsuarioSistemaViewModel.add(usuarioSistemaViewModel);
 		}
-		
+
 	}
 
-	//construtor para a tela de cadastro de usuario
-	public UsuarioSistemaViewModel(List<Cargo> listaCargo,List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade) {
+	// construtor para a tela de cadastro de usuario
+	public UsuarioSistemaViewModel(List<Cargo> listaCargo,
+			List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade) {
 		this.listaCargo = listaCargo;
 		this.listaNivelAcesso = listaNivelAcesso;
 		this.listaUnidade = listaUnidade;
@@ -101,7 +107,7 @@ public class UsuarioSistemaViewModel {
 			List<UsuarioSistemaViewModel> listaUsuarioSistemaViewModel) {
 		this.listaUsuarioSistemaViewModel = listaUsuarioSistemaViewModel;
 	}
-	
+
 	public List<Cargo> getListaCargo() {
 		return listaCargo;
 	}
@@ -125,31 +131,32 @@ public class UsuarioSistemaViewModel {
 	public void setListaUnidade(List<Unidade> listaUnidade) {
 		this.listaUnidade = listaUnidade;
 	}
-	
-	public Integer getCodigoSelecioandoCargo() {
+
+	public Integer getCodigoSelecionadoCargo() {
 		return codigoSelecionadoCargo;
 	}
 
-	public void setCodigoSelecioandoCargo(Integer codigoSelecioandoCargo) {
-		this.codigoSelecionadoCargo = codigoSelecioandoCargo;
+	public void setCodigoSelecionadoCargo(Integer codigoSelecionadoCargo) {
+		this.codigoSelecionadoCargo = codigoSelecionadoCargo;
 	}
 
-	public Integer getCodigoSelecioandoUnidade() {
+	public Integer getCodigoSelecionadoUnidade() {
 		return codigoSelecionadoUnidade;
 	}
 
-	public void setCodigoSelecioandoUnidade(Integer codigoSelecioandoUnidade) {
-		this.codigoSelecionadoUnidade = codigoSelecioandoUnidade;
+	public void setCodigoSelecionadoUnidade(Integer codigoSelecionadoUnidade) {
+		this.codigoSelecionadoUnidade = codigoSelecionadoUnidade;
 	}
 
-	public Integer getCodigoSelecioandoNivelAcesso() {
+	public Integer getCodigoSelecionadoNivelAcesso() {
 		return codigoSelecionadoNivelAcesso;
 	}
 
-	public void setCodigoSelecioandoNivelAcesso(Integer codigoSelecioandoNivelAcesso) {
-		this.codigoSelecionadoNivelAcesso = codigoSelecioandoNivelAcesso;
+	public void setCodigoSelecionadoNivelAcesso(
+			Integer codigoSelecionadoNivelAcesso) {
+		this.codigoSelecionadoNivelAcesso = codigoSelecionadoNivelAcesso;
 	}
-	
+
 	public Cargo getCargo() {
 		return cargo;
 	}
@@ -181,5 +188,5 @@ public class UsuarioSistemaViewModel {
 	public void setSenhaUsuarioSistema(String senhaUsuarioSistema) {
 		this.senhaUsuarioSistema = senhaUsuarioSistema;
 	}
-	
+
 }

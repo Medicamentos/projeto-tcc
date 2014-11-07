@@ -38,13 +38,13 @@ public class UsuarioLogica extends LogicaBase {
 		UsuarioSistema usuarioSistema = new UsuarioSistema();
 		
 		Cargo cargo = new Cargo();
-		cargo.setCodigoCargo(usuarioSistemaViewModel.getCodigoSelecioandoCargo());
+		cargo.setCodigoCargo(usuarioSistemaViewModel.getCodigoSelecionadoCargo());
 		
 		NivelAcesso nivelAcesso = new NivelAcesso();
-		nivelAcesso.setCodigoNivelAcesso(usuarioSistemaViewModel.getCodigoSelecioandoNivelAcesso());
+		nivelAcesso.setCodigoNivelAcesso(usuarioSistemaViewModel.getCodigoSelecionadoNivelAcesso());
 		
 		Unidade unidade = new Unidade();
-		unidade.setCodigoUnidade(usuarioSistemaViewModel.getCodigoSelecioandoUnidade());
+		unidade.setCodigoUnidade(usuarioSistemaViewModel.getCodigoSelecionadoUnidade());
 		
 		usuarioSistema.setCargo(cargo);
 		usuarioSistema.setNivelAcesso(nivelAcesso);

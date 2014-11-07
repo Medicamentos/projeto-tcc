@@ -33,13 +33,13 @@ public class UsuarioSistemaController extends ControllerBase {
 		return "home/index";
 	}
 	
-	//ERRO
+	//OKs
 	@RequestMapping("usuario/cadastrarUsuario")
 	public String cadastrarUsuario(Model model, UsuarioSistemaViewModel usuarioSistemaViewModel){
 		
 		this.usuarioLogica.cadastrarUsuarioSistema(usuarioSistemaViewModel);
 		
-		return  abrirConsultarUsuario( model);
+		return abrirConsultarUsuario(model);
 	}
 	
 	@RequestMapping("usuario/apagarUsuario/{id}")
