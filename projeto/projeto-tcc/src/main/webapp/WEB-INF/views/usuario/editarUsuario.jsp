@@ -11,7 +11,7 @@
 			<td colspan="4">Nome*:</td>
 		</tr>
 		<tr>
-			<td colspan="4"><input type="text" id="nomeUsuarioSistema" class="inputGrande" name="nomeUsuarioSistema" value="${RR.nomeUsuarioSistema}"/></td>
+			<td colspan="4"><input type="text" id="nomeUsuarioSistema" class="inputGrande" name="nomeUsuarioSistema" value="${usuarioSistemaViewModel.nomeUsuarioSistema}"/></td>
 		</tr>
 		<tr>
 			<td colspan="2">Login*:</td>

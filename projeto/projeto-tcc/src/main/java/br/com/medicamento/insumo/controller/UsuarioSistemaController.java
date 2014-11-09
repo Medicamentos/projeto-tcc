@@ -25,8 +25,12 @@ public class UsuarioSistemaController extends ControllerBase {
 
 	@RequestMapping("usuario/abrirTelaEditarUsuario/{id}")
 	public String abrirTelaEditarUsuario(Model model, @PathVariable("id") Integer id){
-		//TODO implementar edicao do usuario
-		model.addAttribute("url", "usuario/abrirTelaEditarUsuario");
+		
+		
+		UsuarioSistemaViewModel usuarioSistemaViewModel = super.usuarioLogica.editarUsuario(id);
+		
+		model.addAttribute("usuarioSistemaViewModel",usuarioSistemaViewModel);
+		model.addAttribute("url", "usuario/editarUsuario");
 		return "home/index";
 	}
 	

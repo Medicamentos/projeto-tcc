@@ -77,4 +77,24 @@ public class UsuarioLogica extends LogicaBase {
 		super.usuarioDAO.atualizar(usuarioSistemaSelecionado);
 	}
 
+	@SuppressWarnings("unchecked")
+	public UsuarioSistemaViewModel editarUsuario(Integer id) {
+		
+		List<UsuarioSistema> listaUsuarioSistema = (List<UsuarioSistema>) sessao.getAttribute("listaUsuarioSistema");
+		
+		List<Cargo> listaCargo = super.cargoDAO.buscarTodos();
+		List<NivelAcesso> listaNivelAcesso = super.nivelAcessoDAO.buscarTodos();
+		List<Unidade> listaUnidade = super.unidadeDAO.buscarTodos();
+		
+		UsuarioSistema usuarioSistema = new UsuarioSistema();
+		usuarioSistema.setNomeUsuarioSistema(listaUsuarioSistema.get(id).getNomeUsuarioSistema());
+		usuarioSistema.setLoginUsuarioSistema(listaUsuarioSistema.get(id).getLoginUsuarioSistema());
+		usuarioSistema.setSenhaUsuarioSistema(listaUsuarioSistema.get(id).getSenhaUsuarioSistema());
+		usuarioSistema.setStatusAtivacao(listaUsuarioSistema.get(id).getStatusAtivacao());
+		
+		
+		UsuarioSistemaViewModel usuarioSistemaViewModel = new UsuarioSistemaViewModel(listaCargo, listaNivelAcesso,listaUnidade, usuarioSistema );
+		return usuarioSistemaViewModel;
+	}
+
 }

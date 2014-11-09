@@ -67,6 +67,19 @@ public class UsuarioSistemaViewModel {
 		this.listaUnidade = listaUnidade;
 	}
 
+	//construtor para a tela editarUsuario.jsp
+	public UsuarioSistemaViewModel(List<Cargo> listaCargo,
+			List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade,
+			UsuarioSistema usuarioSistema) {
+		this.listaCargo = listaCargo;
+		this.listaNivelAcesso = listaNivelAcesso;
+		this.listaUnidade = listaUnidade;
+		this.nomeUsuarioSistema = usuarioSistema.getNomeUsuarioSistema();
+		this.loginUsuarioSistema = usuarioSistema.getLoginUsuarioSistema();
+		this.senhaUsuarioSistema = usuarioSistema.getSenhaUsuarioSistema();
+		this.status = usuarioSistema.getStatusAtivacao();
+	}
+
 	public Integer getCodigoUsuarioSistema() {
 		return codigoUsuarioSistema;
 	}
