@@ -23,6 +23,12 @@ public class UsuarioSistemaController extends ControllerBase {
 		return "home/index";
 	}
 
+	@RequestMapping("usuario/abrirTelaEditarUsuario")
+	public String abrirTelaEditarUsuario(Model model){
+		//TODO implementar edicao do usuario
+		return "home/index";
+	}
+	
 	//FUNCIONANDO
 	@RequestMapping("usuario/abrirCadastrarUsuario")
 	public String abrirCadastroUsuario(Model model){
