@@ -40,7 +40,7 @@
 							<c:when test="${usuario.status == false}">Inativo</c:when>
 						</c:choose>
 					</td>
-					<td> <a href='<c:url value="/unidade/abrirEditarUnidade/${indice.index}"/>'>Editar</a></td>
+					<td> <a href='<c:url value="/usuario/abrirTelaEditarUsuario/${indice.index}"/>'>Editar</a></td>
 				</tr>
 			
 			</c:forEach>
