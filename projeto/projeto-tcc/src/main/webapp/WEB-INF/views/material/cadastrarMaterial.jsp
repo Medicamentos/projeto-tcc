@@ -17,7 +17,7 @@
 			<tr>
 				<td colspan="4"><input type="text" id="descricaoMaterial"
 					class="inputGrande" name="descricaoMaterial"
-					value="${materialViewModel.descricaoMaterial}" /></td>
+					value="${materialViewModel.descricaoMaterial}" required="required"/></td>
 			</tr>
 			<tr>
 				<td colspan="4">Princípio Ativo:</td>
@@ -25,32 +25,25 @@
 			<tr>
 				<td colspan="4"><input type="text" id="descricaoPrincipioAtivo"
 					class="inputGrande" name="descricaoPrincipioAtivo"
-					value="${materialViewModel.descricaoPrincipioAtivo}" /></td>
+					value="${materialViewModel.descricaoPrincipioAtivo}" required="required"/></td>
 			</tr>
 			<tr>
-				<td>Miligramagem:</td>
+				<td>Miligramagem (mg):</td>
 				<td>Qtd Mínima Estoque:</td>
 				<td>
 			</tr>
 			<tr>
 
-				<td><select type="text" id="valorMiligramagem" name="valorMiligramagem">
-						<option value="0">SELECIONE</option>
-						<option value="${materialViewModel.valorMiligramagem}">5mg</option>
-						<option value="${materialViewModel.valorMiligramagem}">10mg</option>
-						<option value="${materialViewModel.valorMiligramagem}">15mg</option>
-						<option value="${materialViewModel.valorMiligramagem}">20mg</option>
-						<option value="${materialViewModel.valorMiligramagem}">25mg</option>
-						<option value="${materialViewModel.valorMiligramagem}">30mg</option>
-						<option value="${materialViewModel.valorMiligramagem}">35mg</option>
-						<option value="${materialViewModel.valorMiligramagem}">40mg</option>
-						<option value="${materialViewModel.valorMiligramagem}">45mg</option>
-				</select></td>
+				<td>
+					<input type="number" id="valorMiligramagem" class="inputPequeno" 
+					value="${materialViewModel.valorMiligramagem}" name="valorMiligramagem" required="required" min="1"/>	
+				</td>
 
-				<td><input type="text" id="quantidadeEstoqueMinimo"
-					class="inputPequeno"
+				<td>
+				<input type="number" id="quantidadeEstoqueMinimo" class="inputPequeno"
 					value="${materialViewModel.quantidadeEstoqueMinimo}"
-					name="quantidadeEstoqueMinimo" /></td>
+					name="quantidadeEstoqueMinimo" required="required" min="1"/>
+				</td>
 
 
 			</tr>
