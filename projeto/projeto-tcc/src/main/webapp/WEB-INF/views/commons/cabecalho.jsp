@@ -12,7 +12,7 @@
 		<li class="menu_nivel1"><a href='<c:url value="/notaFiscal/abrirTelaConsultarNotaFiscal"/>'>NOTA FISCAL</a>
 		<li class="menu_nivel1"><a href='<c:url value="#"/>'>ESTOQUE</a>
 		<li class="menu_nivel1"><a href='<c:url value="/pedidos/abrirPedidos"/>'>PEDIDOS</a>
-		<li class="menu_nivel1"><a href='<c:url value="/material/abrirTelaConsultarMaterial"/>'>MATERIAL</a>
+		
 		<li class="menu_nivel1"><a href="#">LINHA DIRETA</a>
 			<ul class="sub_menu">
 				<li><a href='<c:url value="/linhaDireta/abrirEscreverMensagem"/>'>Escrever</a></li>
@@ -21,15 +21,16 @@
 			
 		<li class="menu_nivel1"><a href="#">RELATÓRIOS</a>
 			<ul class="sub_menu">
-				<li><a href='<c:url value="/relatorios/abrirRelatorioMaterial"/>'>por material</a></li>
-				<li><a href='<c:url value="/relatorios/abrirRelatorioPedidos"/>'>por pedidos</a></li>
-				<li><a href='<c:url value="/relatorios/abrirRelatorioUnidades"/>'>por unidades</a></li>
+				<li><a href='<c:url value="/relatorios/abrirRelatorioMaterial"/>'>de material</a></li>
+				<li><a href='<c:url value="/relatorios/abrirRelatorioPedidos"/>'>de pedido</a></li>
+				<li><a href='<c:url value="/relatorios/abrirRelatorioUnidades"/>'>de unidade</a></li>
 			</ul></li>
 			
 				<li class="menu_nivel1"><a href="#">MANUTENÇÃO</a>
 			<ul class="sub_menu">
 				<li><a href='<c:url value="/unidade/abrirListarUnidades"/>'>unidades</a>
 				<li><a href='<c:url value="/usuario/abrirConsultarUsuario"/>'>usuários</a>
+				<li><a href='<c:url value="/material/abrirTelaConsultarMaterial"/>'>material</a>
 			</ul></li>
 
 	</ul>
