@@ -8,6 +8,7 @@ import br.com.medicamento.insumo.dao.BairroDAO;
 import br.com.medicamento.insumo.dao.CargoDAO;
 import br.com.medicamento.insumo.dao.MaterialDAO;
 import br.com.medicamento.insumo.dao.NivelAcessoDAO;
+import br.com.medicamento.insumo.dao.NotaFiscalDAO;
 import br.com.medicamento.insumo.dao.TipoConteudoDAO;
 import br.com.medicamento.insumo.dao.TipoControleDAO;
 import br.com.medicamento.insumo.dao.TipoMedicamentoDAO;
@@ -50,6 +51,9 @@ public abstract class LogicaBase {
 	
 	@Autowired
 	protected TipoMedicamentoDAO tipoMedicamentoDAO;
+	
+	@Autowired
+	protected NotaFiscalDAO notaFiscalDAO;
 	
 	
 }

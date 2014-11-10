@@ -31,12 +31,14 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<bean id="tipoConteudoDAO" class="br.com.medicamento.insumo.dao.TipoConteudoDAO"/>
 	<bean id="tipoControleDAO" class="br.com.medicamento.insumo.dao.TipoControleDAO"/>
 	<bean id="tipoMedicamentoDAO" class="br.com.medicamento.insumo.dao.TipoMedicamentoDAO"/>
+	<bean id="notaFiscalDAO" class="br.com.medicamento.insumo.dao.NotaFiscalDAO"/>
 	
 	<!-- Injeção de classes de logica -->
 	<bean id="homeLogica" class="br.com.medicamento.insumo.logica.HomeLogica"/>
 	<bean id="usuarioLogica" class="br.com.medicamento.insumo.logica.UsuarioLogica"/>
 	<bean id="unidadeLogica" class="br.com.medicamento.insumo.logica.UnidadeLogica"/>
 	<bean id="materialLogica" class="br.com.medicamento.insumo.logica.MaterialLogica"/>
+	<bean id="notaFiscalLogica" class="br.com.medicamento.insumo.logica.NotaFiscalLogica"/>
 
 	<bean id="mysqlDataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">

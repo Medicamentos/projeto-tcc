@@ -36,7 +36,7 @@
 
 				<td>
 					<input type="number" id="valorMiligramagem" class="inputPequeno" 
-					value="${materialViewModel.valorMiligramagem}" name="valorMiligramagem" required="required" min="1"/>	
+					value="${materialViewModel.valorMiligramagem}" name="valorMiligramagem" required="required" min="1" step="0.5"/>	
 				</td>
 
 				<td>

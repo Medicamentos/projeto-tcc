@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.medicamento.insumo.logica.HomeLogica;
 import br.com.medicamento.insumo.logica.MaterialLogica;
+import br.com.medicamento.insumo.logica.NotaFiscalLogica;
 import br.com.medicamento.insumo.logica.UnidadeLogica;
 import br.com.medicamento.insumo.logica.UsuarioLogica;
 
@@ -25,6 +26,9 @@ public class ControllerBase {
 	
 	@Autowired
 	protected MaterialLogica materialLogica;
+	
+	@Autowired
+	protected NotaFiscalLogica notaFiscalLogica;
 	
 
 
