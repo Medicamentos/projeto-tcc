@@ -14,7 +14,7 @@
 			</tr>
 			<tr>
 				<td colspan="4">
-					<input type="text" id="unidade" class="inputGrande" name="nomeUnidade" value="${unidadeViewModel.descricaoUnidade}"/>
+					<input type="text" id="unidade" class="inputGrande" name="nomeUnidade" value="${unidadeViewModel.descricaoUnidade}" required="required"/>
 				</td>
 			</tr>
 			<tr>
@@ -22,7 +22,7 @@
 			</tr>
 			<tr>
 				<td colspan="4">
-				<input type="text" id="endereco" class="inputGrande" name="descricaoEndereco" value="${unidadeViewModel.descricaoEndereco}" />
+				<input type="text" id="endereco" class="inputGrande" name="descricaoEndereco" value="${unidadeViewModel.descricaoEndereco}" required="required"/>
 				</td>
 			</tr>
 			<tr>
@@ -33,7 +33,7 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="text" id="cep" class="inputPequeno" value="${unidadeViewModel.cep}" name="cep"/>
+					<input type="text" id="cep" class="inputPequeno" value="${unidadeViewModel.cep}" name="cep" placeholder="Exemplo: 00000-000" required pattern="\d{5}-?\d{3}"/>
 				</td>
 				<td>
 				<select type="text" id="bairro" name="codigoBairroSelecionado">
@@ -66,7 +66,7 @@
 					</select>
 				</td>
 				<td>
-					<input type="text" id="telefone" class="inputPequeno" name="numeroTelefone" value="${unidadeViewModel.numeroTelefone}"/>
+					<input type="text" id="telefone" class="inputPequeno" name="numeroTelefone" value="${unidadeViewModel.numeroTelefone}" required pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}" placeholder="Exemplo: (99) 1234-1234"/>
 				</td>
 			</tr>
 			<tr>

@@ -25,5 +25,7 @@ public class ControllerBase {
 	
 	@Autowired
 	protected MaterialLogica materialLogica;
+	
+
 
 }

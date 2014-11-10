@@ -11,15 +11,15 @@
 			<td colspan="4">Nome*:</td>
 		</tr>
 		<tr>
-			<td colspan="4"><input type="text" id="nomeUsuarioSistema" class="inputGrande" name="nomeUsuarioSistema" value="${RR.nomeUsuarioSistema}"/></td>
+			<td colspan="4"><input type="text" id="nomeUsuarioSistema" class="inputGrande" name="nomeUsuarioSistema" value="${RR.nomeUsuarioSistema}" required="required" autofocus="autofocus"/></td>
 		</tr>
 		<tr>
 			<td colspan="2">Login*:</td>
 			<td colspan="2">Senha*:</td>
 		</tr>
 		<tr>
-			<td colspan="2"><input type="text" id="loginUsuarioSistema" class="inputPequeno" name="loginUsuarioSistema" value="${usuarioSistemaViewModel.loginUsuarioSistema}"/></td>
-			<td colspan="2"><input type="password" id="senhaUsuarioSistema" class="inputPequeno" name="senhaUsuarioSistema" value="${usuarioSistemaViewModel.senhaUsuarioSistema}"/></td>
+			<td colspan="2"><input type="text" id="loginUsuarioSistema" class="inputPequeno" name="loginUsuarioSistema" value="${usuarioSistemaViewModel.loginUsuarioSistema}" required="required" /></td>
+			<td colspan="2"><input type="password" id="senhaUsuarioSistema" class="inputPequeno" name="senhaUsuarioSistema" value="${usuarioSistemaViewModel.senhaUsuarioSistema}" required pattern="\d{5}" placeholder="senha de no máximo 5 números"/></td>
 		</tr>
 		<tr>
 			<td colspan="2">Cargo*:</td>
@@ -27,10 +27,10 @@
 		</tr>
 		<tr>
 			<td>
-				<select id="selectCargo" name="codigoSelecionadoCargo" >
+				<select id="selectCargo" name="codigoSelecionadoCargo" required="required">
 					<option value="0">SELECIONE</option>
-					<c:forEach items="${usuarioSistemaViewModel.listaCargo}" var="cargo">
-						<option value="${cargo.codigoCargo}">${cargo.descricaoCargo}</option>
+					<c:forEach items="${usuarioSistemaViewModel.listaCargo}" var="cargo" >
+						<option value="${cargo.codigoCargo}" >${cargo.descricaoCargo}</option>
 					</c:forEach>
 				</select>
 			</td>
@@ -38,7 +38,7 @@
 				<input onclick="javascript:abrirCadastrarNivelAcesso()" title="Adicionar" type="button" value="+" class="botaoEstilo"/>
 			</td>
 			<td>
-				<select id="selectNivelAcesso" name="codigoSelecionadoNivelAcesso" >
+				<select id="selectNivelAcesso" name="codigoSelecionadoNivelAcesso" required="required">
 					<option value="0">SELECIONE</option>
 					<c:forEach items="${usuarioSistemaViewModel.listaNivelAcesso}" var="nivelAcesso">
 						<option value="${nivelAcesso.codigoNivelAcesso}">${nivelAcesso.descricaoNivelAcesso}</option>
@@ -50,11 +50,11 @@
 		</tr>
 		<tr>
 			<td colspan="2">Unidade*:</td>
-			<td>Status*:</td> 
+			<td colspan="2">Status*:</td> 
 		</tr>
 		<tr>
 			<td colspan="2"> 
-				<select id="selectUnidade" name="codigoSelecionadoUnidade" >
+				<select id="selectUnidade" name="codigoSelecionadoUnidade" required="required">
 					<option>SELECIONE</option>
 					<c:forEach items="${usuarioSistemaViewModel.listaUnidade}" var="unidade">
 						<option value="${unidade.codigoUnidade}">${unidade.nomeUnidade}</option>
@@ -62,9 +62,9 @@
 				</select>
 			</td>
 			<td>
-				<select id="status" name="status" >
+				<select id="status" name="status" required="required">
 					<option>SELECIONE</option>
-					<option value="true">Ativo</option>
+					<option value="true" >Ativo</option>
 					<option value="false">Inatívo</option>
 				</select>
 			</td>

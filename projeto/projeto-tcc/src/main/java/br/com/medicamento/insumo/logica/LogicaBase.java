@@ -50,4 +50,6 @@ public abstract class LogicaBase {
 	
 	@Autowired
 	protected TipoMedicamentoDAO tipoMedicamentoDAO;
+	
+	
 }
