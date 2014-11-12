@@ -13,7 +13,7 @@ import br.com.medicamento.insumo.viewmodel.UsuarioSistemaViewModel;
 @Controller
 public class UsuarioSistemaController extends ControllerBase {
 
-	//FUNCIONANDO
+	//ok
 	@RequestMapping("usuario/abrirConsultarUsuario")
 	public String abrirConsultarUsuario(Model model){
 		
@@ -22,19 +22,8 @@ public class UsuarioSistemaController extends ControllerBase {
 		model.addAttribute("url", "usuario/consultaUsuario");
 		return "home/index";
 	}
-
-	@RequestMapping("usuario/abrirTelaEditarUsuario/{id}")
-	public String abrirTelaEditarUsuario(Model model, @PathVariable("id") Integer id){
-		
-		
-		UsuarioSistemaViewModel usuarioSistemaViewModel = super.usuarioLogica.editarUsuario(id);
-		
-		model.addAttribute("usuarioSistemaViewModel",usuarioSistemaViewModel);
-		model.addAttribute("url", "usuario/editarUsuario");
-		return "home/index";
-	}
 	
-	//FUNCIONANDO
+	//ok
 	@RequestMapping("usuario/abrirCadastrarUsuario")
 	public String abrirCadastroUsuario(Model model){
 		
@@ -44,7 +33,7 @@ public class UsuarioSistemaController extends ControllerBase {
 		return "home/index";
 	}
 	
-	//OKs
+	//ok
 	@RequestMapping("usuario/cadastrarUsuario")
 	public String cadastrarUsuario(Model model, UsuarioSistemaViewModel usuarioSistemaViewModel){
 		
@@ -52,15 +41,35 @@ public class UsuarioSistemaController extends ControllerBase {
 		
 		return abrirConsultarUsuario(model);
 	}
+
+	//ok
+	@RequestMapping("usuario/abrirTelaEditarUsuario/{id}")
+	public String abrirTelaEditarUsuario(Model model, @PathVariable("id") Integer id){
+		
+		UsuarioSistemaViewModel usuarioSistemaViewModel = super.usuarioLogica.abrirTelaEditarUsuario(id);
+		
+		model.addAttribute("usuarioSistemaViewModel",usuarioSistemaViewModel);
+		model.addAttribute("url", "usuario/editarUsuario");
+		return "home/index";
+	}
+	//testando
+	@RequestMapping("usuario/editarUsuario")
+	public String editarUsuario(Model model, UsuarioSistemaViewModel usuarioSistemaViewModel){
+		
+		this.usuarioLogica.editarUsuario(usuarioSistemaViewModel);
+		return abrirConsultarUsuario(model);
+	}
+
 	
-	@RequestMapping("usuario/apagarUsuario/{id}")
+/*	@RequestMapping("usuario/apagarUsuario/{id}")
 	public String apagarUsuario(Model model, @PathVariable("id") Integer id){
 		
 		this.usuarioLogica.apagarUsuario(id);
 		
 		return abrirConsultarUsuario(model);
-	}
+	}*/
 	
+	//ok
 	@RequestMapping(value="/usuario/cadastrarCargo", produces="application/json")
 	@ResponseBody
 	public String cadastrarCargo(Cargo cargo){
