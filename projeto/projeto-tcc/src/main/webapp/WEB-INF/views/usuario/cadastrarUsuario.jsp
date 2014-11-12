@@ -2,7 +2,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div id="conteudoPagina">
-<h1>Cadastro de Usuásios do Sistema</h1>
+<h1>Cadastrar Usuásios</h1>
 
 <form id="formUsuario" action="cadastrarUsuario" method="POST" name="formUsuario">
 
@@ -18,8 +18,8 @@
 			<td colspan="2">Senha*:</td>
 		</tr>
 		<tr>
-			<td colspan="2"><input type="text" id="loginUsuarioSistema" class="inputPequeno" name="loginUsuarioSistema" value="${usuarioSistemaViewModel.loginUsuarioSistema}" required="required" /></td>
-			<td colspan="2"><input type="password" id="senhaUsuarioSistema" class="inputPequeno" name="senhaUsuarioSistema" value="${usuarioSistemaViewModel.senhaUsuarioSistema}" required pattern="\d{5}" placeholder="senha de no máximo 5 números"/></td>
+			<td colspan="2"><input type="text" id="loginUsuarioSistema" class="inputPequeno" name="loginUsuarioSistema" value="${usuarioSistemaViewModel.loginUsuarioSistema}" required /></td>
+			<td colspan="2"><input type="password" id="senhaUsuarioSistema" class="inputPequeno" name="senhaUsuarioSistema" value="${usuarioSistemaViewModel.senhaUsuarioSistema}" required pattern="\d{3}" placeholder="senha de 3 números"/></td>
 		</tr>
 		<tr>
 			<td colspan="2">Cargo*:</td>
@@ -27,8 +27,8 @@
 		</tr>
 		<tr>
 			<td>
-				<select id="selectCargo" name="codigoSelecionadoCargo" required="required">
-					<option value="0">SELECIONE</option>
+				<select id="selectCargo" name="codigoSelecionadoCargo" required>
+					<option value="">SELECIONE</option>
 					<c:forEach items="${usuarioSistemaViewModel.listaCargo}" var="cargo" >
 						<option value="${cargo.codigoCargo}" >${cargo.descricaoCargo}</option>
 					</c:forEach>
@@ -38,8 +38,8 @@
 				<input onclick="javascript:abrirCadastrarNivelAcesso()" title="Adicionar" type="button" value="+" class="botaoEstilo"/>
 			</td>
 			<td>
-				<select id="selectNivelAcesso" name="codigoSelecionadoNivelAcesso" required="required">
-					<option value="0">SELECIONE</option>
+				<select id="selectNivelAcesso" name="codigoSelecionadoNivelAcesso" required>
+					<option value="">SELECIONE</option>
 					<c:forEach items="${usuarioSistemaViewModel.listaNivelAcesso}" var="nivelAcesso">
 						<option value="${nivelAcesso.codigoNivelAcesso}">${nivelAcesso.descricaoNivelAcesso}</option>
 					</c:forEach>
@@ -54,16 +54,16 @@
 		</tr>
 		<tr>
 			<td colspan="2"> 
-				<select id="selectUnidade" name="codigoSelecionadoUnidade" required="required">
-					<option>SELECIONE</option>
+				<select id="selectUnidade" name="codigoSelecionadoUnidade" required>
+					<option value="">SELECIONE</option>
 					<c:forEach items="${usuarioSistemaViewModel.listaUnidade}" var="unidade">
 						<option value="${unidade.codigoUnidade}">${unidade.nomeUnidade}</option>
 					</c:forEach>
 				</select>
 			</td>
 			<td>
-				<select id="status" name="status" required="required">
-					<option>SELECIONE</option>
+				<select id="status" name="status" required>
+					<option value="">SELECIONE</option>
 					<option value="true" >Ativo</option>
 					<option value="false">Inatívo</option>
 				</select>

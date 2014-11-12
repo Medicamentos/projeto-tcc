@@ -12,14 +12,14 @@ import br.com.medicamento.insumo.viewmodel.UsuarioSistemaViewModel;
 
 public class UsuarioLogica extends LogicaBase {
 
-	//ok
+	
 	public UsuarioSistemaViewModel listarUsuarioSistema() {
 		List<UsuarioSistema> listaUsuarioSistema = this.usuarioDAO.buscarTodos();
 		this.sessao.setAttribute("listaUsuarioSistema", listaUsuarioSistema);
 		UsuarioSistemaViewModel usuarioSistemaViewModel = new UsuarioSistemaViewModel(listaUsuarioSistema);
 		return usuarioSistemaViewModel;
 	}
-	//ok
+	
 	public UsuarioSistemaViewModel abrirTelaCadastrarUsuario() {
 		List<Cargo> listaCargo = super.cargoDAO.buscarTodos();
 		List<NivelAcesso> listaNivelAcesso = super.nivelAcessoDAO.buscarTodos();
@@ -27,10 +27,8 @@ public class UsuarioLogica extends LogicaBase {
 		UsuarioSistemaViewModel usuarioSistemaViewModel = new UsuarioSistemaViewModel(listaCargo, listaNivelAcesso, listaUnidade);
 		return usuarioSistemaViewModel;
 	}
-	//ok
+	
 	public void cadastrarUsuarioSistema(UsuarioSistemaViewModel usuarioSistemaViewModel) {
-		
-		UsuarioSistema usuarioSistema = new UsuarioSistema();
 		
 		Cargo cargo = new Cargo();
 		cargo.setCodigoCargo(usuarioSistemaViewModel.getCodigoSelecionadoCargo());
@@ -41,6 +39,7 @@ public class UsuarioLogica extends LogicaBase {
 		Unidade unidade = new Unidade();
 		unidade.setCodigoUnidade(usuarioSistemaViewModel.getCodigoSelecionadoUnidade());
 		
+		UsuarioSistema usuarioSistema = new UsuarioSistema();
 		usuarioSistema.setCodigoUsuarioSistema(usuarioSistemaViewModel.getCodigoUsuarioSistema());
 		usuarioSistema.setCargo(cargo);
 		usuarioSistema.setNivelAcesso(nivelAcesso);
@@ -53,12 +52,11 @@ public class UsuarioLogica extends LogicaBase {
 		super.usuarioDAO.salvar(usuarioSistema);
 		
 	}
-	//ok
+
 	@SuppressWarnings("unchecked")
 	public UsuarioSistemaViewModel abrirTelaEditarUsuario(Integer id) {
 		
 		List<UsuarioSistema> listaUsuarioSistema = (List<UsuarioSistema>) sessao.getAttribute("listaUsuarioSistema");
-		
 		List<Cargo> listaCargo = super.cargoDAO.buscarTodos();
 		List<NivelAcesso> listaNivelAcesso = super.nivelAcessoDAO.buscarTodos();
 		List<Unidade> listaUnidade = super.unidadeDAO.buscarTodos();
@@ -70,14 +68,12 @@ public class UsuarioLogica extends LogicaBase {
 		usuarioSistema.setSenhaUsuarioSistema(listaUsuarioSistema.get(id).getSenhaUsuarioSistema());
 		usuarioSistema.setStatusAtivacao(listaUsuarioSistema.get(id).getStatusAtivacao());
 		
-		UsuarioSistemaViewModel usuarioSistemaViewModel = new UsuarioSistemaViewModel(listaCargo, listaNivelAcesso,listaUnidade, usuarioSistema );
+		UsuarioSistemaViewModel usuarioSistemaViewModel = new UsuarioSistemaViewModel(listaCargo, listaNivelAcesso, listaUnidade, usuarioSistema );
 		return usuarioSistemaViewModel;
 	}
-	//OK
+
 	public UsuarioSistemaViewModel editarUsuario(UsuarioSistemaViewModel usuarioSistemaViewModel) {
-		
-		UsuarioSistema usuarioSistema = new UsuarioSistema();
-		
+
 		Cargo cargo = new Cargo();
 		cargo.setCodigoCargo(usuarioSistemaViewModel.getCodigoSelecionadoCargo());
 		
@@ -87,6 +83,7 @@ public class UsuarioLogica extends LogicaBase {
 		Unidade unidade = new Unidade();
 		unidade.setCodigoUnidade(usuarioSistemaViewModel.getCodigoSelecionadoUnidade());
 		
+		UsuarioSistema usuarioSistema = new UsuarioSistema();
 		usuarioSistema.setCargo(cargo);
 		usuarioSistema.setNivelAcesso(nivelAcesso);
 		usuarioSistema.setUnidade(unidade);

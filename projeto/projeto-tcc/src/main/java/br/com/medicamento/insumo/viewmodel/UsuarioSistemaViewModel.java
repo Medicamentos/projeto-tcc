@@ -15,6 +15,7 @@ public class UsuarioSistemaViewModel {
 	private String loginUsuarioSistema;
 	private String senhaUsuarioSistema;
 	private Boolean status;
+	
 	private Cargo cargo;
 	private NivelAcesso nivelAcesso;
 	private Unidade unidade;
@@ -23,35 +24,28 @@ public class UsuarioSistemaViewModel {
 	private List<Cargo> listaCargo;
 	private List<NivelAcesso> listaNivelAcesso;
 	private List<Unidade> listaUnidade;
+	
 	private Integer codigoSelecionadoCargo;
 	private Integer codigoSelecionadoUnidade;
 	private Integer codigoSelecionadoNivelAcesso;
 
-	// Construtor padrao
-	public UsuarioSistemaViewModel() {
+	
+	public UsuarioSistemaViewModel() {}
 
-	}
-
-	// Construtor para a TelaListarUsuarios
+	//Tela Listausuario
 	public UsuarioSistemaViewModel(List<UsuarioSistema> listaUsuarioSistema) {
 
 		listaUsuarioSistemaViewModel = new ArrayList<UsuarioSistemaViewModel>();
 
-		// transformando um usuario em usuariosViewModel
 		for (UsuarioSistema usuarioSistema : listaUsuarioSistema) {
 			UsuarioSistemaViewModel usuarioSistemaViewModel = new UsuarioSistemaViewModel();
 
-			usuarioSistemaViewModel.setCodigoUsuarioSistema(usuarioSistema
-					.getCodigoUsuarioSistema());
-			usuarioSistemaViewModel.setNomeUsuarioSistema(usuarioSistema
-					.getNomeUsuarioSistema());
-			usuarioSistemaViewModel.setLoginUsuarioSistema(usuarioSistema
-					.getLoginUsuarioSistema());
-			usuarioSistemaViewModel.setStatus(usuarioSistema
-					.getStatusAtivacao());
+			usuarioSistemaViewModel.setCodigoUsuarioSistema(usuarioSistema.getCodigoUsuarioSistema());
+			usuarioSistemaViewModel.setNomeUsuarioSistema(usuarioSistema.getNomeUsuarioSistema());
+			usuarioSistemaViewModel.setLoginUsuarioSistema(usuarioSistema.getLoginUsuarioSistema());
+			usuarioSistemaViewModel.setStatus(usuarioSistema.getStatusAtivacao());
 			usuarioSistemaViewModel.setCargo(usuarioSistema.getCargo());
-			usuarioSistemaViewModel.setNivelAcesso(usuarioSistema
-					.getNivelAcesso());
+			usuarioSistemaViewModel.setNivelAcesso(usuarioSistema.getNivelAcesso());
 			usuarioSistemaViewModel.setUnidade(usuarioSistema.getUnidade());
 
 			listaUsuarioSistemaViewModel.add(usuarioSistemaViewModel);
@@ -59,18 +53,17 @@ public class UsuarioSistemaViewModel {
 
 	}
 
-	// construtor para a tela de cadastro e edicao de usuario
-	public UsuarioSistemaViewModel(List<Cargo> listaCargo,
-			List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade) {
+	//Tela de cadastrarUsuario
+	public UsuarioSistemaViewModel(List<Cargo> listaCargo, List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade) {
+		
 		this.listaCargo = listaCargo;
 		this.listaNivelAcesso = listaNivelAcesso;
 		this.listaUnidade = listaUnidade;
 	}
 
-	//construtor para a tela editarUsuario.jsp
-	public UsuarioSistemaViewModel(List<Cargo> listaCargo,
-			List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade,
-			UsuarioSistema usuarioSistema) {
+	//Tela editarUsuario.jsp
+	public UsuarioSistemaViewModel(List<Cargo> listaCargo, List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade, UsuarioSistema usuarioSistema) {
+		
 		this.codigoUsuarioSistema = usuarioSistema.getCodigoUsuarioSistema();
 		this.listaCargo = listaCargo;
 		this.listaNivelAcesso = listaNivelAcesso;
