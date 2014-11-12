@@ -41,6 +41,7 @@ public class UsuarioLogica extends LogicaBase {
 		Unidade unidade = new Unidade();
 		unidade.setCodigoUnidade(usuarioSistemaViewModel.getCodigoSelecionadoUnidade());
 		
+		usuarioSistema.setCodigoUsuarioSistema(usuarioSistemaViewModel.getCodigoUsuarioSistema());
 		usuarioSistema.setCargo(cargo);
 		usuarioSistema.setNivelAcesso(nivelAcesso);
 		usuarioSistema.setUnidade(unidade);
@@ -63,6 +64,7 @@ public class UsuarioLogica extends LogicaBase {
 		List<Unidade> listaUnidade = super.unidadeDAO.buscarTodos();
 		
 		UsuarioSistema usuarioSistema = new UsuarioSistema();
+		usuarioSistema.setCodigoUsuarioSistema(listaUsuarioSistema.get(id).getCodigoUsuarioSistema());
 		usuarioSistema.setNomeUsuarioSistema(listaUsuarioSistema.get(id).getNomeUsuarioSistema());
 		usuarioSistema.setLoginUsuarioSistema(listaUsuarioSistema.get(id).getLoginUsuarioSistema());
 		usuarioSistema.setSenhaUsuarioSistema(listaUsuarioSistema.get(id).getSenhaUsuarioSistema());
@@ -71,7 +73,7 @@ public class UsuarioLogica extends LogicaBase {
 		UsuarioSistemaViewModel usuarioSistemaViewModel = new UsuarioSistemaViewModel(listaCargo, listaNivelAcesso,listaUnidade, usuarioSistema );
 		return usuarioSistemaViewModel;
 	}
-	//testando
+	//OK
 	public UsuarioSistemaViewModel editarUsuario(UsuarioSistemaViewModel usuarioSistemaViewModel) {
 		
 		UsuarioSistema usuarioSistema = new UsuarioSistema();
@@ -88,6 +90,7 @@ public class UsuarioLogica extends LogicaBase {
 		usuarioSistema.setCargo(cargo);
 		usuarioSistema.setNivelAcesso(nivelAcesso);
 		usuarioSistema.setUnidade(unidade);
+		usuarioSistema.setCodigoUsuarioSistema(usuarioSistemaViewModel.getCodigoUsuarioSistema());
 		usuarioSistema.setLoginUsuarioSistema(usuarioSistemaViewModel.getLoginUsuarioSistema());
 		usuarioSistema.setNomeUsuarioSistema(usuarioSistemaViewModel.getNomeUsuarioSistema());
 		usuarioSistema.setSenhaUsuarioSistema(usuarioSistemaViewModel.getSenhaUsuarioSistema());

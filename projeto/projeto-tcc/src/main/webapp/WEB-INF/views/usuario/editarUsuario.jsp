@@ -4,13 +4,15 @@
 <div id="conteudoPagina">
 <h1>Editar Usuásios</h1>
 
-<form id="formUsuario" action='<c:url value="/usuario/editarUsuario" />' method="POST" >
-
+<form id="formUsuario" action='<c:url value="/usuario/editarUsuario" />' method="POST" name="formUsuario">
+<input type="hidden" id="codigoUsuarioSistema" class="inputGrande" name="codigoUsuarioSistema" value="${usuarioSistemaViewModel.codigoUsuarioSistema}" />
 	<table cellspacing="12">
 		<tr>
+			
 			<td colspan="4">Nome*:</td>
 		</tr>
 		<tr>
+			
 			<td colspan="4"><input type="text" id="nomeUsuarioSistema" class="inputGrande" name="nomeUsuarioSistema" value="${usuarioSistemaViewModel.nomeUsuarioSistema}" required="required"/></td>
 		</tr>
 		<tr>

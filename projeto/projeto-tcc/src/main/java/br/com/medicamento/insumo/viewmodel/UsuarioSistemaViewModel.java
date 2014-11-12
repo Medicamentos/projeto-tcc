@@ -59,7 +59,7 @@ public class UsuarioSistemaViewModel {
 
 	}
 
-	// construtor para a tela de cadastro de usuario
+	// construtor para a tela de cadastro e edicao de usuario
 	public UsuarioSistemaViewModel(List<Cargo> listaCargo,
 			List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade) {
 		this.listaCargo = listaCargo;
@@ -71,6 +71,7 @@ public class UsuarioSistemaViewModel {
 	public UsuarioSistemaViewModel(List<Cargo> listaCargo,
 			List<NivelAcesso> listaNivelAcesso, List<Unidade> listaUnidade,
 			UsuarioSistema usuarioSistema) {
+		this.codigoUsuarioSistema = usuarioSistema.getCodigoUsuarioSistema();
 		this.listaCargo = listaCargo;
 		this.listaNivelAcesso = listaNivelAcesso;
 		this.listaUnidade = listaUnidade;
