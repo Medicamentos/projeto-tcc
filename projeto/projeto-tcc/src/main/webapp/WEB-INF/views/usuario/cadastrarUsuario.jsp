@@ -74,7 +74,7 @@
 				<input type="button" value="Voltar" onclick="history.go(-1)" class="botaoEstilo" />
 			</td>
 			<td align="right" colspan="4">
-				<input type="submit" value="Cadastrar"  class="botaoEstilo"/>
+				<input type="submit" value="Confirmar Cadastro"  class="botaoEstilo"/>
 			</td>
 			
 		</tr>

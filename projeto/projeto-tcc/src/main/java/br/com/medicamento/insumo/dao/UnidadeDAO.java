@@ -17,11 +17,8 @@ public class UnidadeDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public Integer salvar(Unidade unidade){
+	public void salvar(Unidade unidade){
 		em.persist(unidade);
-		em.flush();
-		em.refresh(unidade);
-		return unidade.getCodigoUnidade();
 	}
 	
 	public void atualizar(Unidade unidade){

@@ -23,7 +23,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${UnidadeViewModel.listaUnidades}" var="unidade" varStatus="indice">
+			<c:forEach items="${UnidadeViewModel.listaUnidadesViewModel}" var="unidade" varStatus="indice">
 				<tr>
 					<td>${unidade.codigoUnidade}</td>
 					<td>${unidade.descricaoUnidade}</td>

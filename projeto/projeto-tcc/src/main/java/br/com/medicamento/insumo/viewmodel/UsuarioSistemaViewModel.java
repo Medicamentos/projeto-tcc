@@ -98,12 +98,44 @@ public class UsuarioSistemaViewModel {
 		this.loginUsuarioSistema = loginUsuarioSistema;
 	}
 
+	public String getSenhaUsuarioSistema() {
+		return senhaUsuarioSistema;
+	}
+
+	public void setSenhaUsuarioSistema(String senhaUsuarioSistema) {
+		this.senhaUsuarioSistema = senhaUsuarioSistema;
+	}
+
 	public Boolean getStatus() {
 		return status;
 	}
 
 	public void setStatus(Boolean status) {
 		this.status = status;
+	}
+
+	public Cargo getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
+
+	public NivelAcesso getNivelAcesso() {
+		return nivelAcesso;
+	}
+
+	public void setNivelAcesso(NivelAcesso nivelAcesso) {
+		this.nivelAcesso = nivelAcesso;
+	}
+
+	public Unidade getUnidade() {
+		return unidade;
+	}
+
+	public void setUnidade(Unidade unidade) {
+		this.unidade = unidade;
 	}
 
 	public List<UsuarioSistemaViewModel> getListaUsuarioSistemaViewModel() {
@@ -159,41 +191,10 @@ public class UsuarioSistemaViewModel {
 		return codigoSelecionadoNivelAcesso;
 	}
 
-	public void setCodigoSelecionadoNivelAcesso(
-			Integer codigoSelecionadoNivelAcesso) {
+	public void setCodigoSelecionadoNivelAcesso(Integer codigoSelecionadoNivelAcesso) {
 		this.codigoSelecionadoNivelAcesso = codigoSelecionadoNivelAcesso;
 	}
 
-	public Cargo getCargo() {
-		return cargo;
-	}
-
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
-	}
-
-	public NivelAcesso getNivelAcesso() {
-		return nivelAcesso;
-	}
-
-	public void setNivelAcesso(NivelAcesso nivelAcesso) {
-		this.nivelAcesso = nivelAcesso;
-	}
-
-	public Unidade getUnidade() {
-		return unidade;
-	}
-
-	public void setUnidade(Unidade unidade) {
-		this.unidade = unidade;
-	}
-
-	public String getSenhaUsuarioSistema() {
-		return senhaUsuarioSistema;
-	}
-
-	public void setSenhaUsuarioSistema(String senhaUsuarioSistema) {
-		this.senhaUsuarioSistema = senhaUsuarioSistema;
-	}
+	
 
 }

@@ -5,21 +5,22 @@
 
 <div id="conteudoPagina">
 	<h1>Editar Unidades</h1>
-	<form id="formUnidade" action= '<c:url value ="efetivarEdicaoUnidade"/>'  method="POST" name="formUnidade">
+	<form id="formUnidade" action= '<c:url value ="/unidade/efetivarEdicaoUnidade"/>'  method="POST" name="formUnidade">
+	<input type="hidden" id="codigoUnidade" class="inputGrande" name="codigoUnidade" value="${unidadeViewModel.codigoUnidade}" />
 	<table cellspacing="10">
 		<tr>
 			<td colspan="4">Unidade:</td>
 		</tr>
 		<tr>
 			<td colspan="4">
-				<input type="text" id="unidade" class="inputGrande" name="nomeUnidade" value="${unidade.descricaoUnidade}" /></td>
+				<input type="text" id="unidade" class="inputGrande" name="descricaoUnidade" value="${unidadeViewModel.descricaoUnidade}" /></td>
 		</tr>
 		<tr>
 			<td colspan="4">Endereço:</td>
 		</tr>
 		<tr>
 			<td colspan="4">
-				<input type="text" id="endereco" class="inputGrande" name="descricaoEndereco" value="${unidade.descricaoEndereco}" /></td>
+				<input type="text" id="endereco" class="inputGrande" name="descricaoEndereco" value="${unidadeViewModel.descricaoEndereco}" /></td>
 		</tr>
 		<tr>
 			<td>CEP:</td>
@@ -28,11 +29,11 @@
 			<td>
 		</tr>
 		<tr>
-			<td><input type="text" id="cep" class="inputPequeno" value="${unidade.cep}" name="cep"/></td>
+			<td><input type="text" id="cep" class="inputPequeno" value="${unidadeViewModel.cep}" name="cep"/></td>
 			<td>
 				<select type="text" id="bairro" name="codigoBairroSelecionado">
 					<option value="0">SELECIONE</option>
-					<c:forEach items="${unidade.listaBairro}" var="listaBairro">
+					<c:forEach items="${unidadeViewModel.listaBairro}" var="listaBairro">
 						<option value="${listaBairro.codigoBairro}">${listaBairro.nomeBairro}</option>
 					</c:forEach>
 				</select>
@@ -54,12 +55,12 @@
 			<td>
 				<select type="text" id="tipo" name="codigoTipoUnidadeSelecionado">
 					<option value="0">SELECIONE</option>
-					<c:forEach items="${unidade.listaTipoUnidade}" var="listaTipoUnidade">
+					<c:forEach items="${unidadeViewModel.listaTipoUnidade}" var="listaTipoUnidade">
 						<option value="${listaTipoUnidade.codigoTipoUnidade}">${listaTipoUnidade.descricaoTipoUnidade}</option>
 					</c:forEach>
 				</select>
 			</td>
-			<td><input type="text" id="telefone" class="inputPequeno" name="numeroTelefone1" value="${unidade.numeroTelefone}" /></td>
+			<td><input type="text" id="telefone" class="inputPequeno" name="numeroTelefone" value="${unidadeViewModel.numeroTelefone}" /></td>
 		</tr>
 		<tr>
 			<td align="right" colspan="4">

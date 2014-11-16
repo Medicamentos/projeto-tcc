@@ -6,7 +6,7 @@
 <div id="conteudoPagina">
 	<h1>Adicionar Unidades</h1>
 
-	<form id="formUnidade" action= '<c:url value ="efetivarCadastroUnidade"/>'   method="POST" name="formUnidade">
+	<form id="formUnidade" action= '<c:url value ="/unidade/efetivarCadastroUnidade"/>'   method="POST" name="formUnidade">
 												  
 		<table cellspacing="10">
 			<tr>
@@ -36,18 +36,18 @@
 					<input type="text" id="cep" class="inputPequeno" value="${unidadeViewModel.cep}" name="cep" placeholder="Exemplo: 00000-000" required pattern="\d{5}-?\d{3}"/>
 				</td>
 				<td>
-				<select type="text" id="bairro" name="codigoBairroSelecionado">
-						<option value="0">SELECIONE</option>
+				<select id="bairro" name="codigoBairroSelecionado" required>
+						<option value="">SELECIONE</option>
 						<c:forEach items="${unidadeViewModel.listaBairro}" var="listaBairro">
 							<option value="${listaBairro.codigoBairro}">${listaBairro.nomeBairro}</option>
 						</c:forEach>
 				</select>
 				</td>
 					<td>
-				<select type="text" id="status" name="status" >
-					<option>SELECIONE</option>
-					<option value="1">Ativo</option>
-					<option value="0">Inatívo</option>
+				<select id="status" name="status" required>
+					<option value="">SELECIONE</option>
+					<option value="true">Ativo</option>
+					<option value="false">Inatívo</option>
 				</select>
 			</td>
 			</tr>
@@ -57,10 +57,9 @@
 			</tr>
 			<tr>
 				<td>
-					<select type="text" id="tipo" name="codigoTipoUnidadeSelecionado">
-						<option value="0">SELECIONE</option>
-						<c:forEach items="${unidadeViewModel.listaTipoUnidade}"
-							var="listaTipoUnidade">
+					<select id="tipo" name="codigoTipoUnidadeSelecionado" required>
+						<option value="">SELECIONE</option>
+						<c:forEach items="${unidadeViewModel.listaTipoUnidade}" var="listaTipoUnidade">
 							<option value="${listaTipoUnidade.codigoTipoUnidade}">${listaTipoUnidade.descricaoTipoUnidade}</option>
 						</c:forEach>
 					</select>

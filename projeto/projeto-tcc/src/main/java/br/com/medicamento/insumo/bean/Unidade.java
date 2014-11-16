@@ -24,7 +24,6 @@ public class Unidade {
 	    @ManyToOne
 	    @JoinColumn(name="codigoTipoUnidade")
 	    private TipoUnidade tipoUnidade;
-	    
 		public Integer getCodigoUnidade() {
 			return codigoUnidade;
 		}
@@ -55,6 +54,12 @@ public class Unidade {
 		public void setNumeroTelefone(Long numeroTelefone) {
 			this.numeroTelefone = numeroTelefone;
 		}
+		public boolean getStatus() {
+			return status;
+		}
+		public void setStatus(boolean status) {
+			this.status = status;
+		}
 		public Bairro getBairro() {
 			return bairro;
 		}
@@ -66,14 +71,6 @@ public class Unidade {
 		}
 		public void setTipoUnidade(TipoUnidade tipoUnidade) {
 			this.tipoUnidade = tipoUnidade;
-		}
-		
-		public boolean isStatus() {
-			return status;
-		}
-		
-		public void setStatus(boolean status) {
-			this.status = status;
 		}
 		@Override
 		public int hashCode() {
@@ -146,4 +143,5 @@ public class Unidade {
 				return false;
 			return true;
 		}
+	    
 }

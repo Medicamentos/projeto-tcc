@@ -14,15 +14,19 @@ public class UnidadeViewModel {
 	private String descricaoEndereco;
 	private Integer cep;
 	private Long numeroTelefone;
-	private int codigoBairroSelecionado;
-	private int codigoTipoUnidadeSelecionado;
 	private boolean status;
 	
 	private Bairro bairro;
 	private TipoUnidade tipoUnidade;
-	private List<TipoUnidadeViewModel> listaTipoUnidade;
-	private List<BairroViewModel> listaBairro;
-	private List<UnidadeViewModel> listaUnidades;
+	
+	private List<TipoUnidade> listaTipoUnidade;
+	private List<Bairro> listaBairro;
+	private List<UnidadeViewModel> listaUnidadesViewModel;
+
+	private int codigoBairroSelecionado;
+	private int codigoTipoUnidadeSelecionado;
+	
+	public UnidadeViewModel(){}
 
 	public UnidadeViewModel(Unidade unidade){
 		this.codigoUnidade = unidade.getCodigoUnidade();
@@ -32,13 +36,13 @@ public class UnidadeViewModel {
 		this.numeroTelefone = unidade.getNumeroTelefone();
 		this.bairro = unidade.getBairro();
 		this.tipoUnidade = unidade.getTipoUnidade();
-		this.status = unidade.isStatus();
+		this.status = unidade.getStatus();
 	}
 	
-	//Construtor usado para a tela de listar Unidades
+	//Tela de listarUnidades
 	public UnidadeViewModel(List<Unidade> listaUnidadeAtivas){
 		
-		this.listaUnidades = new ArrayList<UnidadeViewModel>();
+		this.listaUnidadesViewModel = new ArrayList<UnidadeViewModel>();
 		
 		for (Unidade unidade : listaUnidadeAtivas) {
 			
@@ -51,52 +55,30 @@ public class UnidadeViewModel {
 			unidadeViewModel.setNumeroTelefone(unidade.getNumeroTelefone());
 			unidadeViewModel.setBairro(unidade.getBairro());
 			unidadeViewModel.setTipoUnidade(unidade.getTipoUnidade());
-			unidadeViewModel.setStatus(unidade.isStatus());
+			unidadeViewModel.setStatus(unidade.getStatus());
 		
-			listaUnidades.add(unidadeViewModel);
+			listaUnidadesViewModel.add(unidadeViewModel);
 		}
 	}
 	
-	//Construtor usado para abrir a tela de cadastrar nova unidade
-	public UnidadeViewModel(List<TipoUnidade> listaUnidade, List<Bairro> listaBairro){
-		this.listaTipoUnidade = new ArrayList<TipoUnidadeViewModel>();
-		for (TipoUnidade tipoUnidade : listaUnidade) {
-			TipoUnidadeViewModel tipoUnidadeViewModel = new TipoUnidadeViewModel(tipoUnidade);
-			this.listaTipoUnidade.add(tipoUnidadeViewModel);
-		}
-		
-		this.listaBairro = new ArrayList<BairroViewModel>();
-		for (Bairro bairro : listaBairro) {
-			BairroViewModel bairroViewModel = new BairroViewModel(bairro);
-			this.listaBairro.add(bairroViewModel);
-		}
+	//Tela cadastrarUnidade
+	public UnidadeViewModel(List<TipoUnidade> listaTipoUnidade, List<Bairro> listaBairro){
+		this.listaBairro = listaBairro;
+		this.listaTipoUnidade = listaTipoUnidade;
 	}
 	
-	//contrutor para editar unidade
+	
+	//Tela editarUnidade
 	public UnidadeViewModel(Unidade unidade,  List<Bairro> listaBairro, List<TipoUnidade> listaTipoUnidade){
-			
-		this.setCodigoUnidade(unidade.getCodigoUnidade());
-		this.setDescricaoUnidade(unidade.getNomeUnidade());
-		this.setDescricaoEndereco(unidade.getDescricaoEndereco());
-		this.setCep(unidade.getCep());
-		this.setNumeroTelefone(unidade.getNumeroTelefone());
-
-		this.setStatus(unidade.isStatus());
-		this.listaTipoUnidade = new ArrayList<TipoUnidadeViewModel>();
-		for (TipoUnidade tipoUnidade : listaTipoUnidade) {
-			TipoUnidadeViewModel tipoUnidadeViewModel = new TipoUnidadeViewModel(tipoUnidade);
-			this.listaTipoUnidade.add(tipoUnidadeViewModel);
-		}
-		
-		this.listaBairro = new ArrayList<BairroViewModel>();
-		for (Bairro bairro : listaBairro) {
-			BairroViewModel bairroViewModel = new BairroViewModel(bairro);
-			this.listaBairro.add(bairroViewModel);
-		}
-	}
 	
-	public UnidadeViewModel(){
-		
+		this.listaBairro = listaBairro;
+		this.listaTipoUnidade = listaTipoUnidade;
+		this.cep = unidade.getCep();
+		this.codigoUnidade = unidade.getCodigoUnidade();
+		this.descricaoEndereco = unidade.getDescricaoEndereco();
+		this.descricaoUnidade = unidade.getNomeUnidade();
+		this.numeroTelefone = unidade.getNumeroTelefone();
+		this.status = unidade.getStatus();
 	}
 
 	public Integer getCodigoUnidade() {
@@ -139,6 +121,14 @@ public class UnidadeViewModel {
 		this.numeroTelefone = numeroTelefone;
 	}
 
+	public boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 	public Bairro getBairro() {
 		return bairro;
 	}
@@ -155,28 +145,29 @@ public class UnidadeViewModel {
 		this.tipoUnidade = tipoUnidade;
 	}
 
-	public boolean isStatus() {
-		return status;
-	}
-
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
-
-	public List<TipoUnidadeViewModel> getListaTipoUnidade() {
+	public List<TipoUnidade> getListaTipoUnidade() {
 		return listaTipoUnidade;
 	}
 
-	public void setListaTipoUnidade(List<TipoUnidadeViewModel> listaTipoUnidade) {
+	public void setListaTipoUnidade(List<TipoUnidade> listaTipoUnidade) {
 		this.listaTipoUnidade = listaTipoUnidade;
 	}
 
-	public List<BairroViewModel> getListaBairro() {
+	public List<Bairro> getListaBairro() {
 		return listaBairro;
 	}
 
-	public void setListaBairro(List<BairroViewModel> listaBairro) {
+	public void setListaBairro(List<Bairro> listaBairro) {
 		this.listaBairro = listaBairro;
+	}
+
+	public List<UnidadeViewModel> getListaUnidadesViewModel() {
+		return listaUnidadesViewModel;
+	}
+
+	public void setListaUnidadesViewModel(
+			List<UnidadeViewModel> listaUnidadesViewModel) {
+		this.listaUnidadesViewModel = listaUnidadesViewModel;
 	}
 
 	public int getCodigoBairroSelecionado() {
@@ -194,14 +185,5 @@ public class UnidadeViewModel {
 	public void setCodigoTipoUnidadeSelecionado(int codigoTipoUnidadeSelecionado) {
 		this.codigoTipoUnidadeSelecionado = codigoTipoUnidadeSelecionado;
 	}
-	
-	public List<UnidadeViewModel> getListaUnidades() {
-		return listaUnidades;
-	}
-
-	public void setListaUnidades(List<UnidadeViewModel> listaUnidades) {
-		this.listaUnidades = listaUnidades;
-	}
-
 	
 }

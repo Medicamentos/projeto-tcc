@@ -10,7 +10,7 @@ import br.com.medicamento.insumo.viewmodel.UnidadeViewModel;
 @Controller
 public class UnidadeController extends ControllerBase{
 	
-	
+	//OK
 	@RequestMapping("unidade/abrirListarUnidades")
 	public String abrirListarUnidades(Model model){
 		UnidadeViewModel UnidadeViewModel = this.unidadeLogica.listarUnidades();
@@ -18,7 +18,7 @@ public class UnidadeController extends ControllerBase{
 		model.addAttribute("url" , "unidade/listarUnidades");
 		return "home/index";
 	}
-	
+	//OK
 	@RequestMapping("unidade/abrirCadastrarUnidade")
 	public String abrirCadastrarUnidade(Model model){
 		UnidadeViewModel unidadeViewModel = this.unidadeLogica.cadastrarUnidade();
@@ -26,26 +26,25 @@ public class UnidadeController extends ControllerBase{
 		model.addAttribute("url" , "unidade/cadastrarUnidade");
 		return "home/index";
 	}
-	
+	//erro
 	@RequestMapping("unidade/efetivarCadastroUnidade")
-	public String efetivarCadastroUnidade(UnidadeViewModel unidadeViewModel, Model model){
+	public String efetivarCadastroUnidade(Model model, UnidadeViewModel unidadeViewModel ){
 		
 		this.unidadeLogica.efetivarCadastroUnidade(unidadeViewModel);
 		
 		return abrirListarUnidades(model);
 	}
 	
-
+	//OK
 	@RequestMapping("unidade/abrirEditarUnidade/{id}")
 	public String abrirEditarUnidade(Model model, @PathVariable("id") Integer id){
-		sessao.setAttribute("id", id);
 		
-		UnidadeViewModel unidadeViewModel = this.unidadeLogica.editarUnidade();
-		model.addAttribute("unidade", unidadeViewModel);
+		UnidadeViewModel unidadeViewModel = this.unidadeLogica.editarUnidade(id);
+		model.addAttribute("unidadeViewModel", unidadeViewModel);
 		model.addAttribute("url" , "unidade/editarUnidade");
 		return "home/index";
 	}
-	
+	//implementando
 	@RequestMapping("unidade/efetivarEdicaoUnidade")
 	public String efetivarEdicaoUnidade(UnidadeViewModel unidadeViewModel, Model model){
 
@@ -54,12 +53,5 @@ public class UnidadeController extends ControllerBase{
 		return abrirListarUnidades(model);
 	}
 	
-	@RequestMapping("unidade/apagarUnidade/{id}")
-	public String apagarUnidade( Model model , @PathVariable("id") Integer id){
-	
-		this.unidadeLogica.apagarUnidade(id);
-		 
-		return abrirListarUnidades(model);
-	}
 	
 }

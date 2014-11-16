@@ -76,7 +76,7 @@
 				<input type="button" value="Voltar" onclick="history.go(-1)" class="botaoEstilo" />
 			</td>
 			<td align="right" colspan="4">
-				<input type="submit" value="editarUsuario"  class="botaoEstilo"/>
+				<input type="submit" value="Confirmar Edição"  class="botaoEstilo"/>
 			</td>
 			
 		</tr>

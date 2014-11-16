@@ -53,7 +53,7 @@
 		<table style="width: 100%">
 			<tr>
 				<td align="right">
-					<input type="submit" value="Adicionar"  class="botaoEstilo" />
+					<input type="submit" value="Cadastrar"  class="botaoEstilo" />
 				</td>
 			</tr>
 		</table>
