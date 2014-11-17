@@ -54,15 +54,17 @@ public class MaterialViewModel {
 				}
 	
 	
-	public MaterialViewModel(List<TipoMedicamento> tiposMedicamentos,  
-							 List<TipoControle> tiposControles,
-							 List<TipoConteudo> tiposConteudos) {
+	public MaterialViewModel(List<TipoMedicamento> listaTiposMedicamento,  
+							 List<TipoControle> listaTipoControle,
+							 List<TipoConteudo> listaTiposConteudo) {
 		
-		this.tiposMedicamentos = tiposMedicamentos;
-		this.tiposControles = tiposControles;
-		this.tiposConteudos = tiposConteudos;
+		this.tiposMedicamentos = listaTiposMedicamento;
+		this.tiposControles = listaTipoControle;
+		this.tiposConteudos = listaTiposConteudo;
 	}
 	
+	
+
 	public Long getCodigoMaterial() {
 		return codigoMaterial;
 	}

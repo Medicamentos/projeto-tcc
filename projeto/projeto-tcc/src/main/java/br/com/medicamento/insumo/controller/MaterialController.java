@@ -10,22 +10,26 @@ import br.com.medicamento.insumo.viewmodel.MaterialViewModel;
 @Controller
 public class MaterialController extends ControllerBase {
 	
+	//ok
+		@RequestMapping("material/abrirTelaConsultarMaterial")
+		public String abrirTelaConsultarMaterial(Model model){
+			
+			MaterialViewModel materialViewModel = this.materialLogica.consultarMaterial();
+			this.sessao.setAttribute("materialViewModel", materialViewModel);
+			model.addAttribute("materialViewModel", materialViewModel);
+			model.addAttribute("url", "material/consultarMaterial");
+			return "home/index";
+		}
+	//implementar
 	@RequestMapping("material/abrirTelaCadastrarMaterial")
 	public String abrirTelaCadastrarMaterial(Model model){
+		
+		MaterialViewModel materialViewModel = this.materialLogica.abrirTelaCadastrarMaterial();
+		model.addAttribute("materialViewModel", materialViewModel);
 		model.addAttribute("url", "material/cadastrarMaterial");
 		return "home/index";
 	}
-	
-	@RequestMapping("material/abrirTelaConsultarMaterial")
-	public String abrirTelaConsultarMaterial(Model model){
-		
-		MaterialViewModel materialViewModel = this.materialLogica.consultarMaterial();
-		this.sessao.setAttribute("materialViewModel", materialViewModel);
-		model.addAttribute("materialViewModel", materialViewModel);
-		model.addAttribute("url", "material/consultarMaterial");
-		return "home/index";
-	}
-	
+	//implementar
 	@RequestMapping("material/abrirTelaEditarMaterial/{id}")
 	public String abrirTelaEditarMaterial(Model model, @PathVariable("id") Integer id){
 		sessao.setAttribute("id", id);
