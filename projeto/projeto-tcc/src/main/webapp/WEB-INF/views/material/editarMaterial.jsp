@@ -1,15 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="conteudoPagina">
-	<h1>Cadastrar Material</h1>
+	<h1>Editar Material</h1>
 
-	<form id="formMaterial" action='<c:url value ="#"/>' method="POST"
-		name="formMaterial">
-
+	<form id="formMaterial" action='<c:url value ="/material/editarMaterial"/>' method="POST" name="formMaterial">
+	<input type="hidden" id="codigoMaterial" class="inputGrande" name="codigoMaterial" value="${materialViewModel.codigoMaterial}" />
+	
 		<table cellspacing="10">
 			<tr>
 				<td colspan="4">Material:</td>
@@ -17,7 +16,7 @@
 			<tr>
 				<td colspan="4"><input type="text" id="descricaoMaterial"
 					class="inputGrande" name="descricaoMaterial"
-					value="${materialViewModel.descricaoMaterial}" /></td>
+					value="${materialViewModel.descricaoMaterial}" required="required"/></td>
 			</tr>
 			<tr>
 				<td colspan="4">Princípio Ativo:</td>
@@ -25,7 +24,7 @@
 			<tr>
 				<td colspan="4"><input type="text" id="descricaoPrincipioAtivo"
 					class="inputGrande" name="descricaoPrincipioAtivo"
-					value="${materialViewModel.descricaoPrincipioAtivo}" /></td>
+					value="${materialViewModel.descricaoPrincipioAtivo}" required="required"/></td>
 			</tr>
 			<tr>
 				<td>Miligramagem:</td>
@@ -33,9 +32,8 @@
 				<td>
 			</tr>
 			<tr>
-
-				<td><select type="text" id="valorMiligramagem" name="valorMiligramagem">
-						<option value="0">SELECIONE</option>
+				<td><select type="text" id="valorMiligramagem" name="valorMiligramagem" required>
+						<option value="">SELECIONE</option>
 						<option value="${materialViewModel.valorMiligramagem}">5mg</option>
 						<option value="${materialViewModel.valorMiligramagem}">10mg</option>
 						<option value="${materialViewModel.valorMiligramagem}">15mg</option>
@@ -50,9 +48,7 @@
 				<td><input type="text" id="quantidadeEstoqueMinimo"
 					class="inputPequeno"
 					value="${materialViewModel.quantidadeEstoqueMinimo}"
-					name="quantidadeEstoqueMinimo" /></td>
-
-
+					name="quantidadeEstoqueMinimo" required/></td>
 			</tr>
 			<tr>
 				<td>Tipo Medicamento:</td>
@@ -61,27 +57,23 @@
 			</tr>
 			<tr>
 
-				<td><select type="text" id="status" name="tiposMedicamentos">
-						<option value="0">SELECIONE</option>
-						<c:forEach items="${materialViewModel.tiposMedicamentos}"
-							var="tipoMedicamento">
+				<td><select  id="status" name="codigoSelecionadoTipoMedicamento" required>
+						<option value="">SELECIONE</option>
+						<c:forEach items="${materialViewModel.tiposMedicamentos}" var="tipoMedicamento">
 							<option value="${tipoMedicamento.codigoTipoMedicamento}">${tipoMedicamento.descricaoTipoMedicamento}</option>
 						</c:forEach>
 				</select></td>
 
-				<td><select type="text" id="tipo" name="tiposControles">
-						<option value="0">SELECIONE</option>
-						<c:forEach items="${materialViewModel.tiposControles}"
-							var="tipoControle">
+				<td><select  id="tipo" name="codigoSelecionadoTipoControle" required>
+						<option value="">SELECIONE</option>
+						<c:forEach items="${materialViewModel.tiposControles}" var="tipoControle">
 							<option value="${tipoControle.codigoTipoControle}">${tipoControle.descricaoTipoControle}</option>
 						</c:forEach>
 				</select></td>
 
-
-				<td><select type="text" id="tipo" name="tiposConteudos">
-						<option value="0">SELECIONE</option>
-						<c:forEach items="${materialViewModel.tiposConteudos}"
-							var="tipoConteudo">
+				<td><select  id="tipo" name="codigoSelecionadoTipoConteudo" required>
+						<option value="">SELECIONE</option>
+						<c:forEach items="${materialViewModel.tiposConteudos}" var="tipoConteudo">
 							<option value="${tipoConteudo.codigoTipoConteudo}">${tipoConteudo.descricaoTipoConteudo}</option>
 						</c:forEach>
 				</select></td>
@@ -91,7 +83,7 @@
 				<td align="right" colspan="4"><input type="button"
 					value="Voltar" onclick="history.go(-1)" class="botaoEstilo" /></td>
 				<td align="right" colspan="4"><input type="submit"
-					value="Cadastrar" class="botaoEstilo" /></td>
+					value="Editar material" class="botaoEstilo" /></td>
 			</tr>
 		</table>
 	</form>

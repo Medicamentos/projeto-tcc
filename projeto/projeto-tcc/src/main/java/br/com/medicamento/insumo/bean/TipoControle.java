@@ -9,13 +9,12 @@ public class TipoControle {
 	
 	@Id
 	@GeneratedValue
-	private Integer codigoTipoControle;
+	private Long codigoTipoControle;
     private String descricaoTipoControle;
-    
-	public Integer getCodigoTipoControle() {
+	public Long getCodigoTipoControle() {
 		return codigoTipoControle;
 	}
-	public void setCodigoTipoControle(Integer codigoTipoControle) {
+	public void setCodigoTipoControle(Long codigoTipoControle) {
 		this.codigoTipoControle = codigoTipoControle;
 	}
 	public String getDescricaoTipoControle() {
@@ -60,8 +59,6 @@ public class TipoControle {
 			return false;
 		return true;
 	}
-    
-
     
     
 }

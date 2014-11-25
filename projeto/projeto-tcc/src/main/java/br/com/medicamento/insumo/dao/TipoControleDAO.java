@@ -17,7 +17,7 @@ public class TipoControleDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public Integer salvar(TipoControle tipoControle) {
+	public Long salvar(TipoControle tipoControle) {
 		em.persist(tipoControle);
 		em.flush();
 		em.refresh(tipoControle);

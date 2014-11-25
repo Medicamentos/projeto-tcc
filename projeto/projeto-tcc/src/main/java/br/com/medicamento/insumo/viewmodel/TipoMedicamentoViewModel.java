@@ -2,23 +2,34 @@ package br.com.medicamento.insumo.viewmodel;
 
 public class TipoMedicamentoViewModel {
 	
-	private Integer codigoTipoMedicamento;
+	private Long codigoTipoMedicamento;
     private String descricaoTipoMedicamento;
     
-	public TipoMedicamentoViewModel(Integer codigoTipoMedicamento, String descricaoTipoMedicamento) {
+    public TipoMedicamentoViewModel() {
+	}
+    
+    
+	public TipoMedicamentoViewModel(Long codigoTipoMedicamento, String descricaoTipoMedicamento) {
 		this.codigoTipoMedicamento = codigoTipoMedicamento;
 		this.descricaoTipoMedicamento = descricaoTipoMedicamento;
 	}
-	public Integer getCodigoTipoMedicamento() {
+	
+	public Long getCodigoTipoMedicamento() {
 		return codigoTipoMedicamento;
 	}
-	public void setCodigoTipoMedicamento(Integer codigoTipoMedicamento) {
+	
+	public void setCodigoTipoMedicamento(Long codigoTipoMedicamento) {
 		this.codigoTipoMedicamento = codigoTipoMedicamento;
 	}
+	
 	public String getDescricaoTipoMedicamento() {
 		return descricaoTipoMedicamento;
 	}
+	
 	public void setDescricaoTipoMedicamento(String descricaoTipoMedicamento) {
 		this.descricaoTipoMedicamento = descricaoTipoMedicamento;
 	}
+    
+
+    
 }

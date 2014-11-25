@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.medicamento.insumo.bean.TipoControle;
 import br.com.medicamento.insumo.bean.TipoMedicamento;
 
 @Transactional
@@ -18,7 +17,7 @@ public class TipoMedicamentoDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public Integer salvar(TipoMedicamento tipoMedicamento) {
+	public Long salvar(TipoMedicamento tipoMedicamento) {
 		em.persist(tipoMedicamento);
 		em.flush();
 		em.refresh(tipoMedicamento);

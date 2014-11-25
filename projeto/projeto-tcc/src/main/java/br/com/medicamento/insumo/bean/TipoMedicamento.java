@@ -9,13 +9,12 @@ public class TipoMedicamento {
 	
 	@Id
 	@GeneratedValue
-	private Integer codigoTipoMedicamento;
+	private Long codigoTipoMedicamento;
     private String descricaoTipoMedicamento;
-    
-	public Integer getCodigoTipoMedicamento() {
+	public Long getCodigoTipoMedicamento() {
 		return codigoTipoMedicamento;
 	}
-	public void setCodigoTipoMedicamento(Integer codigoTipoMedicamento) {
+	public void setCodigoTipoMedicamento(Long codigoTipoMedicamento) {
 		this.codigoTipoMedicamento = codigoTipoMedicamento;
 	}
 	public String getDescricaoTipoMedicamento() {
@@ -62,5 +61,4 @@ public class TipoMedicamento {
 	}
     
 	
-    
 }

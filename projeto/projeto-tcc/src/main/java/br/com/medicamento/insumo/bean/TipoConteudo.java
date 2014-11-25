@@ -9,13 +9,12 @@ public class TipoConteudo {
 	
 	@Id
 	@GeneratedValue
-	private Integer codigoTipoConteudo;
+	private Long codigoTipoConteudo;
     private String descricaoTipoConteudo;
-    
-	public Integer getCodigoTipoConteudo() {
+	public Long getCodigoTipoConteudo() {
 		return codigoTipoConteudo;
 	}
-	public void setCodigoTipoConteudo(Integer codigoTipoConteudo) {
+	public void setCodigoTipoConteudo(Long codigoTipoConteudo) {
 		this.codigoTipoConteudo = codigoTipoConteudo;
 	}
 	public String getDescricaoTipoConteudo() {
@@ -24,7 +23,6 @@ public class TipoConteudo {
 	public void setDescricaoTipoConteudo(String descricaoTipoConteudo) {
 		this.descricaoTipoConteudo = descricaoTipoConteudo;
 	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -39,7 +37,6 @@ public class TipoConteudo {
 						.hashCode());
 		return result;
 	}
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -61,4 +58,6 @@ public class TipoConteudo {
 			return false;
 		return true;
 	}
+    
+	
 }

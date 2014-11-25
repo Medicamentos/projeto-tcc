@@ -20,7 +20,7 @@ public class MaterialController extends ControllerBase {
 			model.addAttribute("url", "material/consultarMaterial");
 			return "home/index";
 		}
-	//implementar
+	//ok
 	@RequestMapping("material/abrirTelaCadastrarMaterial")
 	public String abrirTelaCadastrarMaterial(Model model){
 		
@@ -29,13 +29,21 @@ public class MaterialController extends ControllerBase {
 		model.addAttribute("url", "material/cadastrarMaterial");
 		return "home/index";
 	}
-	//implementar
+	//ok
 	@RequestMapping("material/abrirTelaEditarMaterial/{id}")
 	public String abrirTelaEditarMaterial(Model model, @PathVariable("id") Integer id){
-		sessao.setAttribute("id", id);
 		
+		MaterialViewModel materialViewModel = this.materialLogica.abrirTelaEditarMaterial(id);
+		
+		model.addAttribute("materialViewModel",materialViewModel);
 		model.addAttribute("url", "material/editarMaterial");
 		return "home/index";
 	}
-
+	//fazendo
+	@RequestMapping("material/editarMaterial")
+	public String editarMaterial(Model model, MaterialViewModel materialViewModel){
+		
+		this.materialLogica.editarMaterial(materialViewModel);
+		return abrirTelaConsultarMaterial(model);
+	}
 }
