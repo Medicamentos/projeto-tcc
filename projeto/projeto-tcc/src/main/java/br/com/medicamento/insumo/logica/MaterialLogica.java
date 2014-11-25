@@ -73,4 +73,29 @@ public class MaterialLogica extends LogicaBase {
 		this.materialDAO.atualizar(material);
 		
 	}
+
+	public void cadastrarMarerial(MaterialViewModel materialViewModel) {
+		
+		TipoConteudo tipoConteudo = new TipoConteudo();
+		tipoConteudo.setCodigoTipoConteudo(materialViewModel.getCodigoSelecionadoTipoConteudo());
+		
+		TipoControle tipoControle = new TipoControle();
+		tipoControle.setCodigoTipoControle(materialViewModel.getCodigoSelecionadoTipoControle());
+		
+		TipoMedicamento tipoMedicamento = new TipoMedicamento();
+		tipoMedicamento.setCodigoTipoMedicamento(materialViewModel.getCodigoSelecionadoTipoMedicamento());
+		
+		Material material = new Material();
+		
+		//material.setCodigoMaterial(materialViewModel.getCodigoMaterial());
+		material.setDescricaoMaterial(materialViewModel.getDescricaoMaterial());
+		material.setDescricaoPrincipioAtivo(materialViewModel.getDescricaoPrincipioAtivo());
+		material.setQuantidadeEstoqueMinimo(materialViewModel.getQuantidadeEstoqueMinimo());
+		material.setValorMiligramagem(materialViewModel.getValorMiligramagem());
+		material.setTipoConteudo(tipoConteudo);
+		material.setTipoControle(tipoControle);
+		material.setTipoMedicamento(tipoMedicamento);
+		
+		this.materialDAO.salvar(material);
+	}
 }

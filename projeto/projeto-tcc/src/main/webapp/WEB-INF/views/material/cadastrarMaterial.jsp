@@ -6,42 +6,46 @@
 <div id="conteudoPagina">
 	<h1>Cadastrar Material</h1>
 
-	<form id="formMaterial" action='<c:url value ="#"/>' method="POST" name="formMaterial">
-
+	<form id="formMaterial" action='<c:url value ="/material/cadastrarMaterial"/>' method="POST" name="formMaterial">
+	
 		<table cellspacing="10">
 			<tr>
 				<td colspan="4">Material:</td>
 			</tr>
 			<tr>
-				<td colspan="4"><input type="text" id="descricaoMaterial" class="inputGrande" name="descricaoMaterial"
+				<td colspan="4"><input type="text" id="descricaoMaterial"
+					class="inputGrande" name="descricaoMaterial"
 					value="${materialViewModel.descricaoMaterial}" required="required"/></td>
 			</tr>
 			<tr>
 				<td colspan="4">Princípio Ativo:</td>
 			</tr>
 			<tr>
-				<td colspan="4"><input type="text" id="descricaoPrincipioAtivo" class="inputGrande" name="descricaoPrincipioAtivo"
+				<td colspan="4"><input type="text" id="descricaoPrincipioAtivo"
+					class="inputGrande" name="descricaoPrincipioAtivo"
 					value="${materialViewModel.descricaoPrincipioAtivo}" required="required"/></td>
 			</tr>
 			<tr>
-				<td>Miligramagem (mg):</td>
+				<td>Miligramagem:</td>
 				<td>Qtd Mínima Estoque:</td>
 				<td>
 			</tr>
 			<tr>
+				<td><select id="valorMiligramagem" name="valorMiligramagem" >
+						<option value="">SELECIONE</option>
+						<option value="${materialViewModel.valorMiligramagem}">5mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">10mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">15mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">20mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">25mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">30mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">35mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">40mg</option>
+						<option value="${materialViewModel.valorMiligramagem}">45mg</option>
+				</select></td>
 
-				<td>
-					<input type="number" id="valorMiligramagem" class="inputPequeno" 
-					value="${materialViewModel.valorMiligramagem}" name="valorMiligramagem" required="required" min="1" />	
-				</td>
-
-				<td>
-				<input type="number" id="quantidadeEstoqueMinimo" class="inputPequeno"
-					value="${materialViewModel.quantidadeEstoqueMinimo}"
-					name="quantidadeEstoqueMinimo" required="required" min="1"/>
-				</td>
-
-
+				<td><input type="text" id="quantidadeEstoqueMinimo" class="inputPequeno" value="${materialViewModel.quantidadeEstoqueMinimo}"
+					name="quantidadeEstoqueMinimo" required/></td>
 			</tr>
 			<tr>
 				<td>Tipo Medicamento:</td>
@@ -50,22 +54,21 @@
 			</tr>
 			<tr>
 
-				<td><select type="text" id="status" name="tiposMedicamentos" required>
+				<td><select  id="status" name="codigoSelecionadoTipoMedicamento" required>
 						<option value="">SELECIONE</option>
 						<c:forEach items="${materialViewModel.tiposMedicamentos}" var="tipoMedicamento">
 							<option value="${tipoMedicamento.codigoTipoMedicamento}">${tipoMedicamento.descricaoTipoMedicamento}</option>
 						</c:forEach>
 				</select></td>
 
-				<td><select type="text" id="tipo" name="tiposControles" required>
+				<td><select  id="tipo" name="codigoSelecionadoTipoControle" required>
 						<option value="">SELECIONE</option>
 						<c:forEach items="${materialViewModel.tiposControles}" var="tipoControle">
 							<option value="${tipoControle.codigoTipoControle}">${tipoControle.descricaoTipoControle}</option>
 						</c:forEach>
 				</select></td>
 
-
-				<td><select type="text" id="tipo" name="tiposConteudos" required>
+				<td><select  id="tipo" name="codigoSelecionadoTipoConteudo" required>
 						<option value="">SELECIONE</option>
 						<c:forEach items="${materialViewModel.tiposConteudos}" var="tipoConteudo">
 							<option value="${tipoConteudo.codigoTipoConteudo}">${tipoConteudo.descricaoTipoConteudo}</option>
@@ -75,7 +78,7 @@
 			</tr>
 			<tr>
 				<td align="right" colspan="4"><input type="button" value="Voltar" onclick="history.go(-1)" class="botaoEstilo" /></td>
-				<td align="right" colspan="4"><input type="submit" value="Cadastrar Material" class="botaoEstilo" /></td>
+				<td align="right" colspan="4"><input type="submit" value="Cadastrar material" class="botaoEstilo" /></td>
 			</tr>
 		</table>
 	</form>

@@ -39,11 +39,22 @@ public class MaterialController extends ControllerBase {
 		model.addAttribute("url", "material/editarMaterial");
 		return "home/index";
 	}
-	//fazendo
+	//ok
 	@RequestMapping("material/editarMaterial")
 	public String editarMaterial(Model model, MaterialViewModel materialViewModel){
 		
 		this.materialLogica.editarMaterial(materialViewModel);
 		return abrirTelaConsultarMaterial(model);
 	}
+	//fazendo
+	@RequestMapping("material/cadastrarMaterial")
+	public String cadastrarMaterial(Model model, MaterialViewModel materialViewModel){
+		
+		this.materialLogica.cadastrarMarerial(materialViewModel);
+		return abrirTelaConsultarMaterial(model);
+	}
+	
+	
+	
+	
 }
