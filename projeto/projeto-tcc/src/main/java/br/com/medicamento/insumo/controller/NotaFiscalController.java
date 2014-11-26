@@ -39,14 +39,33 @@ public class NotaFiscalController extends ControllerBase {
 		return abrirTelaConsultarNotaFiscal(model);	
 	}
 	
-	@RequestMapping("notaFiscal/abrirTelaDetalharNotaFiscal/{id}")
-	public String abrirTelaDetalharNotaFiscal(Model model, @PathVariable("id") Integer id){
+	@RequestMapping("notaFiscal/abrirTelaAdicionarItensNotaFiscal/{id}")
+	public String abrirTelaAdicionarItensNotaFiscal(Model model, @PathVariable("id") Integer id){
 		
-		NotaFiscalViewModel notaFiscalViewModel = super.notaFiscalLogica.editarNotaFiscal(id);
+		NotaFiscalViewModel notaFiscalViewModel = super.notaFiscalLogica.abrirTelaAdicionarItensNotaFiscal(id);
 		model.addAttribute("notaFiscalViewModel", notaFiscalViewModel);
-		model.addAttribute("url", "notaFiscal/cadastroItensNotaFiscal");	
+		model.addAttribute("url", "notaFiscal/cadastrarItensNotaFiscal");	
 		return "home/index";
 	}
 	
-
+	@RequestMapping("notaFiscal/abrirTelaEditarNotaFiscal/{id}")
+	public String abrirTelaEditarNotaFiscal(Model model, @PathVariable("id") Integer id){
+		
+		NotaFiscalViewModel notaFiscalViewModel = super.notaFiscalLogica.editarNotaFiscal(id);
+		model.addAttribute("notaFiscalViewModel", notaFiscalViewModel);
+		model.addAttribute("url", "notaFiscal/editarNotaFiscal");	
+		return "home/index";
+	}
+	
+	@RequestMapping("notaFiscal/editarNotaFiscal/")
+	public void editarNotaFiscal(NotaFiscalViewModel notaFiscalViewModel){
+		//TODO
+		
+		
+	}
+	
+	@RequestMapping("notaFiscal/adicionarItensNotaFiscal/")
+	public void adicionarItensNotaFiscal(NotaFiscalViewModel notaFiscalViewModel){
+		//TODO
+	}
 }

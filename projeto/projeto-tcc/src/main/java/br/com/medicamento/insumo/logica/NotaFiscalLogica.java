@@ -8,6 +8,7 @@ import br.com.medicamento.insumo.viewmodel.NotaFiscalViewModel;
 
 public class NotaFiscalLogica extends LogicaBase {
 	
+	//ok
 	public NotaFiscalViewModel consultarNotaFiscal(){
 		
 		List<NotaFiscal> listaNotaFiscal = super.notaFiscalDAO.buscarTodos();
@@ -16,7 +17,7 @@ public class NotaFiscalLogica extends LogicaBase {
 		return notaFiscalViewModel;
 		
 	}
-	
+	//ok
 	public void cadastrarNotaFiscal(NotaFiscalViewModel notaFiscalViewModel){
 		
 		NotaFiscal nota = new NotaFiscal();
@@ -28,6 +29,22 @@ public class NotaFiscalLogica extends LogicaBase {
 		super.notaFiscalDAO.salvar(nota);
 	}
 
+	@SuppressWarnings("unchecked")
+	public NotaFiscalViewModel abrirTelaAdicionarItensNotaFiscal(Integer id){
+		
+		 List<NotaFiscal> listaNotaFiscal = (List<NotaFiscal>) this.sessao.getAttribute("listaNotaFiscal");
+		 
+		 NotaFiscal notaFiscal = new NotaFiscal();
+		 notaFiscal.setCodigoNumeroNota(listaNotaFiscal.get(id).getCodigoNumeroNota());
+		 notaFiscal.setNumero(listaNotaFiscal.get(id).getNumero());
+		 notaFiscal.setDataEmissao(listaNotaFiscal.get(id).getDataEmissao());
+		 notaFiscal.setValorTotalNota(listaNotaFiscal.get(id).getValorTotalNota());
+		 
+		 NotaFiscalViewModel notaFiscalViewModel = new NotaFiscalViewModel(notaFiscal);
+		
+		return notaFiscalViewModel;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public NotaFiscalViewModel editarNotaFiscal(Integer id){
 		
