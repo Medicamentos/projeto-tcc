@@ -26,7 +26,7 @@
 				<td colspan="4">Valor da Nota:</td>
 			</tr>
 			<tr>
-				<td colspan="4"><input type="tex" id="valor" class="inputMedio" name="valor" value="${notaFiscalViewModel.valor}" required="required"/></td>
+				<td colspan="4"><input type="text" id="valor" class="inputMedio" name="valor" value="${notaFiscalViewModel.valor}" required="required"/></td>
 			</tr>
 		
 			<tr>

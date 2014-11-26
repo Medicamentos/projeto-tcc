@@ -17,11 +17,8 @@ public class NotaFiscalDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public Integer salvar(NotaFiscal notaFical) {
+	public void salvar(NotaFiscal notaFical) {
 		em.persist(notaFical);
-		em.flush();
-		em.refresh(notaFical);
-		return notaFical.getCodigoNumeroNota();
 	}
 
 	public void atualizar(NotaFiscal notaFical) {
@@ -38,7 +35,7 @@ public class NotaFiscalDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<NotaFiscal> buscarTodos() {
-		List<NotaFiscal> listaNotaFiscal = em.createQuery("SELECT n FROM nota_fiscal n").getResultList();
+		List<NotaFiscal> listaNotaFiscal = em.createQuery("SELECT n FROM notaFiscal n").getResultList();
 		return listaNotaFiscal;
 	}
 

@@ -22,9 +22,9 @@ public class NotaFiscalLogica extends LogicaBase {
 		
 		NotaFiscal nota = new NotaFiscal();
 		
-		nota.setNumero(notaFiscalViewModel.getNumeroNotaFiscal());
+		nota.setNumeroNotaFiscal(notaFiscalViewModel.getNumeroNotaFiscal());
 		nota.setDataEmissao(notaFiscalViewModel.getDataEmissao());
-		nota.setValorTotalNota(notaFiscalViewModel.getValor());
+		nota.setValor(notaFiscalViewModel.getValor());
 		
 		super.notaFiscalDAO.salvar(nota);
 	}
@@ -35,10 +35,10 @@ public class NotaFiscalLogica extends LogicaBase {
 		 List<NotaFiscal> listaNotaFiscal = (List<NotaFiscal>) this.sessao.getAttribute("listaNotaFiscal");
 		 
 		 NotaFiscal notaFiscal = new NotaFiscal();
-		 notaFiscal.setCodigoNumeroNota(listaNotaFiscal.get(id).getCodigoNumeroNota());
-		 notaFiscal.setNumero(listaNotaFiscal.get(id).getNumero());
+		 notaFiscal.setCodigoNotaFiscal(listaNotaFiscal.get(id).getCodigoNotaFiscal());
+		 notaFiscal.setNumeroNotaFiscal(listaNotaFiscal.get(id).getNumeroNotaFiscal());
 		 notaFiscal.setDataEmissao(listaNotaFiscal.get(id).getDataEmissao());
-		 notaFiscal.setValorTotalNota(listaNotaFiscal.get(id).getValorTotalNota());
+		 notaFiscal.setValor(listaNotaFiscal.get(id).getValor());
 		 
 		 NotaFiscalViewModel notaFiscalViewModel = new NotaFiscalViewModel(notaFiscal);
 		
@@ -51,13 +51,24 @@ public class NotaFiscalLogica extends LogicaBase {
 		 List<NotaFiscal> listaNotaFiscal = (List<NotaFiscal>) this.sessao.getAttribute("listaNotaFiscal");
 		 
 		 NotaFiscal notaFiscal = new NotaFiscal();
-		 notaFiscal.setCodigoNumeroNota(listaNotaFiscal.get(id).getCodigoNumeroNota());
-		 notaFiscal.setNumero(listaNotaFiscal.get(id).getNumero());
+		 notaFiscal.setCodigoNotaFiscal(listaNotaFiscal.get(id).getCodigoNotaFiscal());
+		 notaFiscal.setNumeroNotaFiscal(listaNotaFiscal.get(id).getNumeroNotaFiscal());
 		 notaFiscal.setDataEmissao(listaNotaFiscal.get(id).getDataEmissao());
-		 notaFiscal.setValorTotalNota(listaNotaFiscal.get(id).getValorTotalNota());
+		 notaFiscal.setValor(listaNotaFiscal.get(id).getValor());
 		 
 		 NotaFiscalViewModel notaFiscalViewModel = new NotaFiscalViewModel(notaFiscal);
 		
 		return notaFiscalViewModel;
+	}
+	public void editarNotaFiscal(NotaFiscalViewModel notaFiscalViewModel) {
+		
+		 NotaFiscal notaFiscal = new NotaFiscal();
+		 notaFiscal.setCodigoNotaFiscal(notaFiscalViewModel.getCodigoNotaFiscal());
+		 notaFiscal.setNumeroNotaFiscal(notaFiscalViewModel.getNumeroNotaFiscal());
+		 notaFiscal.setDataEmissao(notaFiscalViewModel.getDataEmissao());
+		 notaFiscal.setValor(notaFiscalViewModel.getValor());
+		 
+		 this.notaFiscalDAO.atualizar(notaFiscal);
+		
 	}
 }

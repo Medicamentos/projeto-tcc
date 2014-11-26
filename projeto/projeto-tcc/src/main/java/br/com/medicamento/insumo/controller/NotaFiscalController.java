@@ -10,7 +10,7 @@ import br.com.medicamento.insumo.viewmodel.NotaFiscalViewModel;
 @Controller
 public class NotaFiscalController extends ControllerBase {
 	
-	
+	//ok
 	@RequestMapping("notaFiscal/abrirTelaConsultarNotaFiscal")
 	public String abrirTelaConsultarNotaFiscal(Model model){
 		
@@ -20,7 +20,7 @@ public class NotaFiscalController extends ControllerBase {
 		return "home/index";	
 		
 	}
-
+	//ok
 	@RequestMapping("notaFiscal/abrirTelaCadastrarNotaFiscal")
 	public String abrirTelaCadastrarNotaFiscal(Model model){
 		NotaFiscalViewModel notaFiscalViewModel = new NotaFiscalViewModel();
@@ -28,7 +28,7 @@ public class NotaFiscalController extends ControllerBase {
 		model.addAttribute("url", "notaFiscal/cadastrarNotaFiscal");
 	return "home/index";	
 	}
-	
+	//erro
 	@RequestMapping("notaFiscal/CadastrarNotaFiscal")
 	public String CadastrarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel){
 		
@@ -38,7 +38,7 @@ public class NotaFiscalController extends ControllerBase {
 	
 		return abrirTelaConsultarNotaFiscal(model);	
 	}
-	
+	//ok
 	@RequestMapping("notaFiscal/abrirTelaAdicionarItensNotaFiscal/{id}")
 	public String abrirTelaAdicionarItensNotaFiscal(Model model, @PathVariable("id") Integer id){
 		
@@ -47,7 +47,7 @@ public class NotaFiscalController extends ControllerBase {
 		model.addAttribute("url", "notaFiscal/cadastrarItensNotaFiscal");	
 		return "home/index";
 	}
-	
+	//ok
 	@RequestMapping("notaFiscal/abrirTelaEditarNotaFiscal/{id}")
 	public String abrirTelaEditarNotaFiscal(Model model, @PathVariable("id") Integer id){
 		
@@ -57,14 +57,15 @@ public class NotaFiscalController extends ControllerBase {
 		return "home/index";
 	}
 	
-	@RequestMapping("notaFiscal/editarNotaFiscal/")
-	public void editarNotaFiscal(NotaFiscalViewModel notaFiscalViewModel){
-		//TODO
+	@RequestMapping("notaFiscal/editarNotaFiscal")
+	public String editarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel){
 		
-		
+		this.notaFiscalLogica.editarNotaFiscal(notaFiscalViewModel);
+		return abrirTelaConsultarNotaFiscal(model);	
+
 	}
 	
-	@RequestMapping("notaFiscal/adicionarItensNotaFiscal/")
+	@RequestMapping("notaFiscal/adicionarItensNotaFiscal")
 	public void adicionarItensNotaFiscal(NotaFiscalViewModel notaFiscalViewModel){
 		//TODO
 	}

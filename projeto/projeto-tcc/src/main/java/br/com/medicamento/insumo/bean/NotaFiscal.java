@@ -6,27 +6,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name="nota_fiscal")
+@Entity(name="notaFiscal")
 public class NotaFiscal {
 	
 	@Id
 	@GeneratedValue
-    private Integer codigoNumeroNota;
-	private Integer numero;
+    private Integer codigoNotaFiscal;
+	private Integer numeroNotaFiscal;
     private Date dataEmissao;
-    private Long valorTotalNota;
+    private Long valor;
     
-	public Integer getCodigoNumeroNota() {
-		return codigoNumeroNota;
+	public Integer getCodigoNotaFiscal() {
+		return codigoNotaFiscal;
 	}
-	public void setCodigoNumeroNota(Integer codigoNumeroNota) {
-		this.codigoNumeroNota = codigoNumeroNota;
+	public void setCodigoNotaFiscal(Integer codigoNotaFiscal) {
+		this.codigoNotaFiscal = codigoNotaFiscal;
 	}
-	public Integer getNumero() {
-		return numero;
+	public Integer getNumeroNotaFiscal() {
+		return numeroNotaFiscal;
 	}
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+	public void setNumeroNotaFiscal(Integer numeroNotaFiscal) {
+		this.numeroNotaFiscal = numeroNotaFiscal;
 	}
 	public Date getDataEmissao() {
 		return dataEmissao;
@@ -34,11 +34,11 @@ public class NotaFiscal {
 	public void setDataEmissao(Date dataEmissao) {
 		this.dataEmissao = dataEmissao;
 	}
-	public Long getValorTotalNota() {
-		return valorTotalNota;
+	public Long getValor() {
+		return valor;
 	}
-	public void setValorTotalNota(Long valorTotalNota) {
-		this.valorTotalNota = valorTotalNota;
+	public void setValor(Long valor) {
+		this.valor = valor;
 	}
 	@Override
 	public int hashCode() {
@@ -46,12 +46,13 @@ public class NotaFiscal {
 		int result = 1;
 		result = prime
 				* result
-				+ ((codigoNumeroNota == null) ? 0 : codigoNumeroNota.hashCode());
+				+ ((codigoNotaFiscal == null) ? 0 : codigoNotaFiscal.hashCode());
 		result = prime * result
 				+ ((dataEmissao == null) ? 0 : dataEmissao.hashCode());
-		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
-		result = prime * result
-				+ ((valorTotalNota == null) ? 0 : valorTotalNota.hashCode());
+		result = prime
+				* result
+				+ ((numeroNotaFiscal == null) ? 0 : numeroNotaFiscal.hashCode());
+		result = prime * result + ((valor == null) ? 0 : valor.hashCode());
 		return result;
 	}
 	@Override
@@ -63,26 +64,28 @@ public class NotaFiscal {
 		if (getClass() != obj.getClass())
 			return false;
 		NotaFiscal other = (NotaFiscal) obj;
-		if (codigoNumeroNota == null) {
-			if (other.codigoNumeroNota != null)
+		if (codigoNotaFiscal == null) {
+			if (other.codigoNotaFiscal != null)
 				return false;
-		} else if (!codigoNumeroNota.equals(other.codigoNumeroNota))
+		} else if (!codigoNotaFiscal.equals(other.codigoNotaFiscal))
 			return false;
 		if (dataEmissao == null) {
 			if (other.dataEmissao != null)
 				return false;
 		} else if (!dataEmissao.equals(other.dataEmissao))
 			return false;
-		if (numero == null) {
-			if (other.numero != null)
+		if (numeroNotaFiscal == null) {
+			if (other.numeroNotaFiscal != null)
 				return false;
-		} else if (!numero.equals(other.numero))
+		} else if (!numeroNotaFiscal.equals(other.numeroNotaFiscal))
 			return false;
-		if (valorTotalNota == null) {
-			if (other.valorTotalNota != null)
+		if (valor == null) {
+			if (other.valor != null)
 				return false;
-		} else if (!valorTotalNota.equals(other.valorTotalNota))
+		} else if (!valor.equals(other.valor))
 			return false;
 		return true;
-	}   
+	}
+    
+	 
 }
