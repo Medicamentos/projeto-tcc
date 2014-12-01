@@ -15,7 +15,7 @@ public class NotaFiscalController extends ControllerBase {
 	public String abrirTelaConsultarNotaFiscal(Model model){
 		
 		NotaFiscalViewModel notaFiscalViewModel = super.notaFiscalLogica.consultarNotaFiscal();
-		model.addAttribute("notaFiscalX", notaFiscalViewModel);
+		model.addAttribute("notaFiscal", notaFiscalViewModel);
 		model.addAttribute("url", "notaFiscal/consultarNotaFiscal");
 		return "home/index";	
 		

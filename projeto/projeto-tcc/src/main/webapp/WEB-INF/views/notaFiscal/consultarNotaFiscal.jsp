@@ -19,7 +19,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${notaFiscalX.listaNotaFiscal}" var="notaFiscal" varStatus="indice">
+			<c:forEach items="${notaFiscal.listaNotaFiscal}" var="notaFiscal" varStatus="indice">
 				<tr>
 					<td>${notaFiscal.codigoNotaFiscal }</td>
 					<td>${notaFiscal.numeroNotaFiscal }</td>
