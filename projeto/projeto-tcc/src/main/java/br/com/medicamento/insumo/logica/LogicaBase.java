@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.medicamento.insumo.dao.BairroDAO;
 import br.com.medicamento.insumo.dao.CargoDAO;
+import br.com.medicamento.insumo.dao.ItemMaterialDAO;
+import br.com.medicamento.insumo.dao.LaboratorioDAO;
 import br.com.medicamento.insumo.dao.MaterialDAO;
 import br.com.medicamento.insumo.dao.NivelAcessoDAO;
 import br.com.medicamento.insumo.dao.NotaFiscalDAO;
@@ -54,6 +56,12 @@ public abstract class LogicaBase {
 	
 	@Autowired
 	protected NotaFiscalDAO notaFiscalDAO;
+	
+	@Autowired
+	protected LaboratorioDAO laboratorioDAO;
+	
+	@Autowired
+	protected ItemMaterialDAO itemMaterialDAO;
 	
 	
 }

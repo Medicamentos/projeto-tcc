@@ -20,6 +20,7 @@ public class MaterialViewModel {
 	private TipoControle  tipoControle; 
 	private TipoConteudo  tipoConteudo;
 	
+
 	private List<MaterialViewModel> materiais;
 	private List<TipoMedicamento> tiposMedicamentos;
 	private List<TipoControle> tiposControles;

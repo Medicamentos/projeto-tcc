@@ -45,17 +45,16 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="" var="unidade" varStatus="indice">
+					<c:forEach items="${notaFiscalViewModel.listaItensMaterial}" var="itemMaterial" varStatus="indice">
 						<tr>
-							<td>Novalgina 30mg</td>
-							<td>000945</td>
-							<td>01/03/2014</td>
-							<td>12/06/2015</td>
-							<td>300</td>
-							<td>Novartis</td>
+							<td>${itemMaterial.material.descricaoMaterial}</td>
+							<td>${itemMaterial.numeroLote}</td>
+							<td>${itemMaterial.dataEntrada}</td>
+							<td>${itemMaterial.dataValidade}</td>
+							<td>${itemMaterial.quantidadeItemMaterial}</td>
+							<td>${itemMaterial.laboratorio.nomeLaboratorio}</td>
 							<td>editar - apagar</td>
 						</tr>
-
 					</c:forEach>
 				</tbody>
 			</table>
@@ -69,11 +68,11 @@
 			<table cellspacing="10">
 				<tr>
 					<td>Material:</td>
-					<td><select id="material">
-							<option>....</option>
-							<option>Novalgina 30mg</option>
-							<option>Dipirona 100mg</option>
-							<option>Esparadrapo</option>
+					<td><select id="material" name="codigoSelecionadoMaterial" required>
+							<option value="">SELECIONE</option>
+							<c:forEach items="${notaFiscalViewModel.listaMaterial}" var="material">
+								<option value="${material.codigoMaterial}">${material.descricaoMaterial}</option>
+							</c:forEach>
 					</select></td>
 
 				</tr>
@@ -95,11 +94,11 @@
 				</tr>
 				<tr>
 					<td>Laboratório:</td>
-					<td><select id="laboratório">
-							<option>....</option>
-							<option>Bayer</option>
-							<option>Euro Farma</option>
-							<option>Novartis</option>
+					<td><select id="laboratório" name="codigoSelecionadoLaboratorio" required>
+							<option value="">SELECIONE</option>
+							<c:forEach items="${notaFiscalViewModel.listaLaboratorio}" var="laboratorio">
+								<option value="${laboratorio.codigoLaboratorio}">${laboratorio.nomeLaboratorio}</option>
+							</c:forEach>
 					</select></td>
 				</tr>
 				<tr>
@@ -141,5 +140,3 @@
 		}
 	});
 </script>
-
-</div>

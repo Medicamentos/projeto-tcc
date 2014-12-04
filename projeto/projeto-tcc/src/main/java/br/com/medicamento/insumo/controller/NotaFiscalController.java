@@ -1,5 +1,7 @@
 package br.com.medicamento.insumo.controller;
 
+import java.text.ParseException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,7 +32,7 @@ public class NotaFiscalController extends ControllerBase {
 	}
 	//erro
 	@RequestMapping("notaFiscal/CadastrarNotaFiscal")
-	public String CadastrarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel){
+	public String CadastrarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel) throws ParseException{
 		
 		super.notaFiscalLogica.cadastrarNotaFiscal(notaFiscalViewModel);
 		//model.addAttribute("notaFiscalViewModel",notaFiscalViewModel);
@@ -38,7 +40,7 @@ public class NotaFiscalController extends ControllerBase {
 	
 		return abrirTelaConsultarNotaFiscal(model);	
 	}
-	//ok
+	//TRABALHANDO
 	@RequestMapping("notaFiscal/abrirTelaAdicionarItensNotaFiscal/{id}")
 	public String abrirTelaAdicionarItensNotaFiscal(Model model, @PathVariable("id") Integer id){
 		
@@ -58,7 +60,7 @@ public class NotaFiscalController extends ControllerBase {
 	}
 	
 	@RequestMapping("notaFiscal/editarNotaFiscal")
-	public String editarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel){
+	public String editarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel) throws ParseException{
 		
 		this.notaFiscalLogica.editarNotaFiscal(notaFiscalViewModel);
 		return abrirTelaConsultarNotaFiscal(model);	
