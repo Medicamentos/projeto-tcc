@@ -2,7 +2,6 @@ package br.com.medicamento.insumo.viewmodel;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -23,8 +22,8 @@ public class NotaFiscalViewModel {
 	//Atributos da ItemMaterial
 	private Long codigoItemMaterial;
 	private Long numeroLote;
-	private Calendar dataEntrada;
-	private Calendar dataValidade;
+	private String dataEntrada;
+	private String dataValidade;
 	private Long quantidadeItemMaterial;  
 	private NotaFiscal notaFiscal; 
 	private Material material;
@@ -138,19 +137,19 @@ public class NotaFiscalViewModel {
 		this.numeroLote = numeroLote;
 	}
 
-	public Calendar getDataEntrada() {
+	public String getDataEntrada() {
 		return dataEntrada;
 	}
 
-	public void setDataEntrada(Calendar dataEntrada) {
+	public void setDataEntrada(String dataEntrada) {
 		this.dataEntrada = dataEntrada;
 	}
 
-	public Calendar getDataValidade() {
+	public String getDataValidade() {
 		return dataValidade;
 	}
 
-	public void setDataValidade(Calendar dataValidade) {
+	public void setDataValidade(String dataValidade) {
 		this.dataValidade = dataValidade;
 	}
 

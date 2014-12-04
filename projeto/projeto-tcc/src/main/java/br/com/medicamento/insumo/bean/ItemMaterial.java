@@ -1,6 +1,6 @@
 package br.com.medicamento.insumo.bean;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,10 +17,12 @@ public class ItemMaterial {
 	@GeneratedValue
 	private Long codigoItemMaterial;
 	private Long numeroLote;
+	
 	@Temporal(TemporalType.DATE)
-    private Calendar dataEntrada;
+    private Date dataEntrada;
 	@Temporal(TemporalType.DATE)
-    private Calendar dataValidade;
+    private Date dataValidade;
+	
     private Long quantidadeItemMaterial;  
     @ManyToOne
     @JoinColumn(name="codigoNotaFiscal")
@@ -34,7 +36,6 @@ public class ItemMaterial {
     @ManyToOne
     @JoinColumn(name="codigoFornecedor")
     private Fornecedor fornecedor;
-    
 	public Long getCodigoItemMaterial() {
 		return codigoItemMaterial;
 	}
@@ -47,16 +48,16 @@ public class ItemMaterial {
 	public void setNumeroLote(Long numeroLote) {
 		this.numeroLote = numeroLote;
 	}
-	public Calendar getDataEntrada() {
+	public Date getDataEntrada() {
 		return dataEntrada;
 	}
-	public void setDataEntrada(Calendar dataEntrada) {
+	public void setDataEntrada(Date dataEntrada) {
 		this.dataEntrada = dataEntrada;
 	}
-	public Calendar getDataValidade() {
+	public Date getDataValidade() {
 		return dataValidade;
 	}
-	public void setDataValidade(Calendar dataValidade) {
+	public void setDataValidade(Date dataValidade) {
 		this.dataValidade = dataValidade;
 	}
 	public Long getQuantidadeItemMaterial() {
@@ -172,8 +173,6 @@ public class ItemMaterial {
 		} else if (!quantidadeItemMaterial.equals(other.quantidadeItemMaterial))
 			return false;
 		return true;
-	}  
-	
-	
-	
+	}
+  
 }

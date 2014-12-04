@@ -14,7 +14,7 @@ import br.com.medicamento.insumo.viewmodel.NotaFiscalViewModel;
 
 public class NotaFiscalLogica extends LogicaBase {
 	
-	//ok
+
 	public NotaFiscalViewModel consultarNotaFiscal(){
 		
 		List<NotaFiscal> listaNotaFiscal = super.notaFiscalDAO.buscarTodos();
@@ -23,7 +23,7 @@ public class NotaFiscalLogica extends LogicaBase {
 		return notaFiscalViewModel;
 		
 	}
-	//ok
+	
 	public void cadastrarNotaFiscal(NotaFiscalViewModel notaFiscalViewModel) throws ParseException{
 		
 		NotaFiscal nota = new NotaFiscal();
