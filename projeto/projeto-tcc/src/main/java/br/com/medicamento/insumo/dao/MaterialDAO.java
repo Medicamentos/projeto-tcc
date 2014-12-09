@@ -36,14 +36,6 @@ public class MaterialDAO {
 		return em.find(Material.class, id.intValue());
 	}
 	
-/*	@SuppressWarnings("unchecked")
-	public List<Material> buscarTodosPorNotaFiscal(Integer id) {
-		NotaFiscal notaFiscal = em.find(NotaFiscal.class, id);
-		List<Material> listaMaterial = em.createQuery("SELECT m FROM material m where codigoNotaFiscal ="+ notaFiscal.getCodigoNotaFiscal()).getResultList();
-		return listaMaterial;
-	}*/
-
-	
 	@SuppressWarnings("unchecked")
 	public List<Material> buscarTodos() {
 		List<Material> listaMaterial = em.createQuery("SELECT m FROM material m").getResultList();

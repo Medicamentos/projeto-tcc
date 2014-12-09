@@ -30,17 +30,17 @@ public class NotaFiscalController extends ControllerBase {
 		model.addAttribute("url", "notaFiscal/cadastrarNotaFiscal");
 	return "home/index";	
 	}
-	//erro
+	
 	@RequestMapping("notaFiscal/CadastrarNotaFiscal")
 	public String CadastrarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel) throws ParseException{
-		
+		//TODO
 		super.notaFiscalLogica.cadastrarNotaFiscal(notaFiscalViewModel);
 		//model.addAttribute("notaFiscalViewModel",notaFiscalViewModel);
 		//model.addAttribute("url", "notaFiscal/cadastrarNotaFiscal");
 	
 		return abrirTelaConsultarNotaFiscal(model);	
 	}
-	//TRABALHANDO
+	//ok
 	@RequestMapping("notaFiscal/abrirTelaAdicionarItensNotaFiscal/{id}")
 	public String abrirTelaAdicionarItensNotaFiscal(Model model, @PathVariable("id") Integer id){
 		
@@ -58,7 +58,7 @@ public class NotaFiscalController extends ControllerBase {
 		model.addAttribute("url", "notaFiscal/editarNotaFiscal");	
 		return "home/index";
 	}
-	
+	//ok
 	@RequestMapping("notaFiscal/editarNotaFiscal")
 	public String editarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel) throws ParseException{
 		
