@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.medicamento.insumo.bean.ItemMaterial;
+import br.com.medicamento.insumo.bean.NotaFiscal;
 
 @Transactional
 @Repository
@@ -37,5 +38,14 @@ public class ItemMaterialDAO {
 	public List<ItemMaterial> buscarTodos() {
 		List<ItemMaterial> listaItemMaterial = em.createQuery("SELECT m FROM item_material m").getResultList();
 		return listaItemMaterial;
+	}
+	
+		@SuppressWarnings("unchecked")
+	public List<ItemMaterial> buscarTodosPorNotaFiscal(Integer id) {
+			
+		int codigo = id+1;	
+		NotaFiscal notaFiscal = em.find(NotaFiscal.class, codigo);
+		List<ItemMaterial> listaMaterial = em.createQuery("SELECT m FROM item_material m where codigoNotaFiscal ="+ notaFiscal.getCodigoNotaFiscal()).getResultList();
+		return listaMaterial;
 	}
 }

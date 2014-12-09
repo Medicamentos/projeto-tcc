@@ -40,7 +40,7 @@ public class NotaFiscalLogica extends LogicaBase {
 		
 		List<Material> listaMaterial = super.materialDAO.buscarTodos();
 		List<Laboratorio> listaLaboratorios = super.laboratorioDAO.buscarTodos();
-		List<ItemMaterial> listaItemMaterial = super.itemMaterialDAO.buscarTodos();
+		List<ItemMaterial> listaItemMaterial = super.itemMaterialDAO.buscarTodosPorNotaFiscal(id);
 		
 		List<NotaFiscal> listaNotaFiscal = (List<NotaFiscal>) this.sessao.getAttribute("listaNotaFiscal");
 		NotaFiscal notaFiscal = new NotaFiscal();

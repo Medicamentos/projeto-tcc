@@ -67,8 +67,11 @@ public class NotaFiscalViewModel {
 			List<ItemMaterial> listaItemMaterial) {
 
 		this.setListaItensMaterial(listaItemMaterial);
+		
 		this.setListaLaboratorio(listaLaboratorios);
+		
 		this.setListaMaterial(listaMaterial);
+		
 		this.setCodigoNotaFiscal(notaFiscal.getCodigoNotaFiscal());
 		this.setNumeroNotaFiscal(notaFiscal.getNumeroNotaFiscal());
 		this.setDataEmissao(formataData(notaFiscal.getDataEmissao()));
