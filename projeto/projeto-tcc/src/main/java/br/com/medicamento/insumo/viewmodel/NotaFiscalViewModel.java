@@ -1,5 +1,6 @@
 package br.com.medicamento.insumo.viewmodel;
 
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +17,7 @@ public class NotaFiscalViewModel {
 	private Integer codigoNotaFiscal;
 	private Integer numeroNotaFiscal;
 	private String dataEmissao;
-	private Long valor;
+	private String valor;
 	private List<NotaFiscalViewModel> listaNotaFiscal;
 	
 	//Atributos da ItemMaterial
@@ -49,16 +50,23 @@ public class NotaFiscalViewModel {
 			nota.setCodigoNotaFiscal(notaFiscal.getCodigoNotaFiscal());
 			nota.setNumeroNotaFiscal(notaFiscal.getNumeroNotaFiscal());
 			nota.setDataEmissao(formataData(notaFiscal.getDataEmissao()));
-			nota.setValor(notaFiscal.getValor());
+			nota.setValor(formataValor(notaFiscal.getValor()));
 			this.listaNotaFiscal.add(nota);
 		}
+	}
+	
+	static String formatarValor(Long valor){
+		
+		NumberFormat formataValor= NumberFormat.getInstance();
+		return formataValor.format(valor);
+		
 	}
 
 	public NotaFiscalViewModel(NotaFiscal notaFiscal) {
 		this.setCodigoNotaFiscal(notaFiscal.getCodigoNotaFiscal());
 		this.setNumeroNotaFiscal(notaFiscal.getNumeroNotaFiscal());
 		this.setDataEmissao(formataData(notaFiscal.getDataEmissao()));
-		this.setValor(notaFiscal.getValor());
+		this.setValor(formatarValor(notaFiscal.getValor()));
 	}
 
 	//Construtor para tela itensNotaFiscal
@@ -75,7 +83,7 @@ public class NotaFiscalViewModel {
 		this.setCodigoNotaFiscal(notaFiscal.getCodigoNotaFiscal());
 		this.setNumeroNotaFiscal(notaFiscal.getNumeroNotaFiscal());
 		this.setDataEmissao(formataData(notaFiscal.getDataEmissao()));
-		this.setValor(notaFiscal.getValor());
+		this.setValor(formatarValor(notaFiscal.getValor()));
 		
 	}
 	
@@ -83,6 +91,12 @@ public class NotaFiscalViewModel {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		return simpleDateFormat.format(data);	
 	}
+	
+	public String formataValor(Long valor){
+		NumberFormat formataValor = NumberFormat.getCurrencyInstance();
+		return formataValor.format(valor);
+	}
+	
 
 	public Integer getCodigoNotaFiscal() {
 		return codigoNotaFiscal;
@@ -108,11 +122,11 @@ public class NotaFiscalViewModel {
 		this.dataEmissao = dataEmissao;
 	}
 
-	public Long getValor() {
+	public String getValor() {
 		return valor;
 	}
 
-	public void setValor(Long valor) {
+	public void setValor(String valor) {
 		this.valor = valor;
 	}
 

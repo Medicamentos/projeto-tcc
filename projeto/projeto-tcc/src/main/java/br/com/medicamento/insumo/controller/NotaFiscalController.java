@@ -12,7 +12,6 @@ import br.com.medicamento.insumo.viewmodel.NotaFiscalViewModel;
 @Controller
 public class NotaFiscalController extends ControllerBase {
 	
-	//ok
 	@RequestMapping("notaFiscal/abrirTelaConsultarNotaFiscal")
 	public String abrirTelaConsultarNotaFiscal(Model model){
 		
@@ -22,7 +21,7 @@ public class NotaFiscalController extends ControllerBase {
 		return "home/index";	
 		
 	}
-	//ok
+
 	@RequestMapping("notaFiscal/abrirTelaCadastrarNotaFiscal")
 	public String abrirTelaCadastrarNotaFiscal(Model model){
 		NotaFiscalViewModel notaFiscalViewModel = new NotaFiscalViewModel();
@@ -33,14 +32,11 @@ public class NotaFiscalController extends ControllerBase {
 	
 	@RequestMapping("notaFiscal/CadastrarNotaFiscal")
 	public String CadastrarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel) throws ParseException{
-		//TODO
+		
 		super.notaFiscalLogica.cadastrarNotaFiscal(notaFiscalViewModel);
-		//model.addAttribute("notaFiscalViewModel",notaFiscalViewModel);
-		//model.addAttribute("url", "notaFiscal/cadastrarNotaFiscal");
-	
 		return abrirTelaConsultarNotaFiscal(model);	
 	}
-	//ok
+
 	@RequestMapping("notaFiscal/abrirTelaAdicionarItensNotaFiscal/{id}")
 	public String abrirTelaAdicionarItensNotaFiscal(Model model, @PathVariable("id") Integer id){
 		
@@ -49,7 +45,7 @@ public class NotaFiscalController extends ControllerBase {
 		model.addAttribute("url", "notaFiscal/cadastrarItensNotaFiscal");	
 		return "home/index";
 	}
-	//ok
+
 	@RequestMapping("notaFiscal/abrirTelaEditarNotaFiscal/{id}")
 	public String abrirTelaEditarNotaFiscal(Model model, @PathVariable("id") Integer id){
 		
@@ -58,7 +54,7 @@ public class NotaFiscalController extends ControllerBase {
 		model.addAttribute("url", "notaFiscal/editarNotaFiscal");	
 		return "home/index";
 	}
-	//ok
+
 	@RequestMapping("notaFiscal/editarNotaFiscal")
 	public String editarNotaFiscal(Model model, NotaFiscalViewModel notaFiscalViewModel) throws ParseException{
 		

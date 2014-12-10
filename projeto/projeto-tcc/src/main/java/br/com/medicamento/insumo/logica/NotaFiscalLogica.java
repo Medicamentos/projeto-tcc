@@ -27,11 +27,9 @@ public class NotaFiscalLogica extends LogicaBase {
 	public void cadastrarNotaFiscal(NotaFiscalViewModel notaFiscalViewModel) throws ParseException{
 		
 		NotaFiscal nota = new NotaFiscal();
-		
 		nota.setNumeroNotaFiscal(notaFiscalViewModel.getNumeroNotaFiscal());
 		nota.setDataEmissao(formataData(notaFiscalViewModel.getDataEmissao()));
-		nota.setValor(notaFiscalViewModel.getValor());
-		
+		nota.setValor(Long.parseLong(notaFiscalViewModel.getValor()));
 		super.notaFiscalDAO.salvar(nota);
 	}
 
@@ -77,7 +75,7 @@ public class NotaFiscalLogica extends LogicaBase {
 		 
 		 notaFiscal.setDataEmissao(formataData(notaFiscalViewModel.getDataEmissao()));
 		 
-		 notaFiscal.setValor(notaFiscalViewModel.getValor());
+		 notaFiscal.setValor(Long.parseLong(notaFiscalViewModel.getValor()));
 		 
 		 this.notaFiscalDAO.atualizar(notaFiscal);
 		

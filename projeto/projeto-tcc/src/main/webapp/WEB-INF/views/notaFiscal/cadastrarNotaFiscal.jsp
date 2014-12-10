@@ -6,26 +6,26 @@
 <div id="conteudoPagina">
 	<h1>Cadastrar Nota-Fiscal</h1>
 
-	<form id="formNotaFiscal" action='<c:url value ="CadastrarNotaFiscal"/>' method="POST" name="NotaFiscalViewModel">
+	<form id="formNotaFiscal" action='<c:url value ="CadastrarNotaFiscal"/>' method="POST" name="formNotaFiscal">
 
 		<table cellspacing="10">
 			<tr>
 				<td colspan="4">Número da Nota:</td>
 			</tr>
 			<tr>
-				<td colspan="4"><input type="text" id="numeroNotaFiscal" class="inputMedio" name="numeroNotaFiscal" value="${NotaFiscalViewModel.numeroNotaFiscal}" required="required"/></td>
+				<td colspan="4"><input type="text" id="numeroNotaFiscal" class="inputMedio" name="numeroNotaFiscal" value="${notaFiscalViewModel.numeroNotaFiscal}" required="required"/></td>
 			</tr>
 			<tr>
 				<td colspan="4">Data da Emissão:</td>
 			</tr>
 			<tr>
-				<td colspan="4"><input type="date" id="dataEmissao" class="inputMedio" name="dataEmissao" value="${NotaFiscalViewModel.dataEmissao}" required="required"/></td>
+				<td colspan="4"><input type="date" id="dataEmissao" class="inputMedio" name="dataEmissao" value="${notaFiscalViewModel.dataEmissao}" required="required"/></td>
 			</tr>
 			<tr>
 				<td colspan="4">Valor da Nota:</td>
 			</tr>
 			<tr>
-				<td colspan="4"><input type="tex" id="valor" class="inputMedio" name="valor" value="${NotaFiscalViewModel.valor}" required="required"/></td>
+				<td colspan="4"><input type="tex" id="valor" class="inputMedio" name="valor" value="${notaFiscalViewModel.valor}" required="required"/></td>
 			</tr>
 		
 			<tr>
