@@ -19,7 +19,7 @@
 				<td colspan="4">Data da Emissão:</td>
 			</tr>
 			<tr>
-				<td colspan="4"><input type="date" id="dataEmissao" class="inputMedio" name="dataEmissao" value="${notaFiscalViewModel.dataEmissao}" required="required"/></td>
+				<td colspan="4"><input type="date" id="dataEmissao" class="inputMedio" name="dataEmissao" value="${notaFiscalViewModel.dataEmissao}" placeholder="Exemplo: dd/mm/aaaa" required pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/[12][0-9]{3}$"/></td>
 			</tr>
 			<tr>
 				<td colspan="4">Valor da Nota:</td>
