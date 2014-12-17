@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.medicamento.insumo.logica.HomeLogica;
+import br.com.medicamento.insumo.logica.ItemMaterialLogica;
 import br.com.medicamento.insumo.logica.MaterialLogica;
 import br.com.medicamento.insumo.logica.NotaFiscalLogica;
 import br.com.medicamento.insumo.logica.UnidadeLogica;
@@ -29,6 +30,9 @@ public class ControllerBase {
 	
 	@Autowired
 	protected NotaFiscalLogica notaFiscalLogica;
+	
+	@Autowired
+	protected ItemMaterialLogica itemMaterialLogica;
 	
 
 

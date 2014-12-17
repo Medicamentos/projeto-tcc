@@ -25,7 +25,7 @@
 					<td>${notaFiscal.numeroNotaFiscal }</td>
 					<td>${notaFiscal.dataEmissao }</td>
 					<td>${notaFiscal.valor}</td>
-					<td> <a href='<c:url value ="/notaFiscal/abrirTelaEditarNotaFiscal/${indice.index}"/>'>Editar</a> - <a href='<c:url value ="/notaFiscal/abrirTelaAdicionarItensNotaFiscal/${indice.index}"/>'>Adicionar Itens</a></td>
+					<td> <a href='<c:url value ="/notaFiscal/abrirTelaEditarNotaFiscal/${indice.index}"/>'>Editar</a> - <a href='<c:url value ="/itemMaterial/abrirTelaCadastrarItemMaterial/${indice.index}"/>'>Adicionar Itens</a></td>
 				</tr>
 			
 			</c:forEach>

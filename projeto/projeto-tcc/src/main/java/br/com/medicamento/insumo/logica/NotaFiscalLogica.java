@@ -6,9 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import br.com.medicamento.insumo.bean.ItemMaterial;
-import br.com.medicamento.insumo.bean.Laboratorio;
-import br.com.medicamento.insumo.bean.Material;
 import br.com.medicamento.insumo.bean.NotaFiscal;
 import br.com.medicamento.insumo.viewmodel.NotaFiscalViewModel;
 
@@ -36,9 +33,6 @@ public class NotaFiscalLogica extends LogicaBase {
 	@SuppressWarnings("unchecked")
 	public NotaFiscalViewModel abrirTelaAdicionarItensNotaFiscal(Integer id){
 		
-		List<Material> listaMaterial = super.materialDAO.buscarTodos();
-		List<Laboratorio> listaLaboratorios = super.laboratorioDAO.buscarTodos();
-		List<ItemMaterial> listaItemMaterial = super.itemMaterialDAO.buscarTodosPorNotaFiscal(id);
 		
 		List<NotaFiscal> listaNotaFiscal = (List<NotaFiscal>) this.sessao.getAttribute("listaNotaFiscal");
 		NotaFiscal notaFiscal = new NotaFiscal();
@@ -47,7 +41,7 @@ public class NotaFiscalLogica extends LogicaBase {
 		notaFiscal.setDataEmissao(listaNotaFiscal.get(id).getDataEmissao());
 		notaFiscal.setValor(listaNotaFiscal.get(id).getValor());	
 		
-		NotaFiscalViewModel notaFiscalViewModel = new NotaFiscalViewModel(notaFiscal, listaMaterial, listaLaboratorios,listaItemMaterial);
+		NotaFiscalViewModel notaFiscalViewModel = new NotaFiscalViewModel(notaFiscal);
 	
 		return notaFiscalViewModel;
 	}

@@ -1,18 +1,22 @@
 package br.com.medicamento.insumo.viewmodel;
 
-import java.util.Calendar;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+import br.com.medicamento.insumo.bean.ItemMaterial;
 import br.com.medicamento.insumo.bean.Laboratorio;
 import br.com.medicamento.insumo.bean.Material;
 import br.com.medicamento.insumo.bean.NotaFiscal;
+
 
 public class ItemMaterialViewModel {
 	
 	private Long codigoItemMaterial;
 	private Long numeroLote;
-	private Calendar dataEntrada;
-	private Calendar dataValidade;
+	private String dataEntrada;
+	private String dataValidade;
 	private Long quantidadeItemMaterial;  
 	private NotaFiscal notaFiscal; 
 	private Material material;
@@ -20,12 +24,23 @@ public class ItemMaterialViewModel {
 	
 	private List<Laboratorio> listaLaboratorio;
 	private List<Material> listaMaterial;
-	private List<ItemMaterialViewModel> listaItensMaterial;
+	private List<ItemMaterial> listaItensMaterial;
 	
 	private int codigoSelecionadoLaboratorio;
 	private int codigoSelecionadoMaterial;
 	
-	public ItemMaterialViewModel() {
+	public ItemMaterialViewModel(){
+		
+	}
+
+	//construtor para a tema cadastrasItemMaterial
+	public ItemMaterialViewModel(List<Material> listaMaterial,
+			List<Laboratorio> listaLaboratorio,
+			List<ItemMaterial> listaItemMaterial) {
+		
+		this.setListaItensMaterial(listaItemMaterial);
+		this.setListaLaboratorio(listaLaboratorio);
+		this.setListaMaterial(listaMaterial);
 	}
 
 	public Long getCodigoItemMaterial() {
@@ -44,19 +59,19 @@ public class ItemMaterialViewModel {
 		this.numeroLote = numeroLote;
 	}
 
-	public Calendar getDataEntrada() {
+	public String getDataEntrada() {
 		return dataEntrada;
 	}
 
-	public void setDataEntrada(Calendar dataEntrada) {
+	public void setDataEntrada(String dataEntrada) {
 		this.dataEntrada = dataEntrada;
 	}
 
-	public Calendar getDataValidade() {
+	public String getDataValidade() {
 		return dataValidade;
 	}
 
-	public void setDataValidade(Calendar dataValidade) {
+	public void setDataValidade(String dataValidade) {
 		this.dataValidade = dataValidade;
 	}
 
@@ -108,11 +123,11 @@ public class ItemMaterialViewModel {
 		this.listaMaterial = listaMaterial;
 	}
 
-	public List<ItemMaterialViewModel> getListaItensMaterial() {
+	public List<ItemMaterial> getListaItensMaterial() {
 		return listaItensMaterial;
 	}
 
-	public void setListaItensMaterial(List<ItemMaterialViewModel> listaItensMaterial) {
+	public void setListaItensMaterial(List<ItemMaterial> listaItensMaterial) {
 		this.listaItensMaterial = listaItensMaterial;
 	}
 
@@ -131,5 +146,21 @@ public class ItemMaterialViewModel {
 	public void setCodigoSelecionadoMaterial(int codigoSelecionadoMaterial) {
 		this.codigoSelecionadoMaterial = codigoSelecionadoMaterial;
 	}
+
+	static String formatarValor(Long valor){
+		
+		NumberFormat formataValor= NumberFormat.getInstance();
+		return formataValor.format(valor);
+		
+	}
 	
+	public String formataData(Date data){
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		return simpleDateFormat.format(data);	
+	}
+	
+	public String formataValor(Long valor){
+		NumberFormat formataValor = NumberFormat.getCurrencyInstance();
+		return formataValor.format(valor);
+	}
 }

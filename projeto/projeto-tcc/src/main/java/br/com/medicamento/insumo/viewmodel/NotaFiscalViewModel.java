@@ -55,13 +55,8 @@ public class NotaFiscalViewModel {
 		}
 	}
 	
-	static String formatarValor(Long valor){
-		
-		NumberFormat formataValor= NumberFormat.getInstance();
-		return formataValor.format(valor);
-		
-	}
-
+	
+	//construtor para a tela cadastrarItemMaterial
 	public NotaFiscalViewModel(NotaFiscal notaFiscal) {
 		this.setCodigoNotaFiscal(notaFiscal.getCodigoNotaFiscal());
 		this.setNumeroNotaFiscal(notaFiscal.getNumeroNotaFiscal());
@@ -69,23 +64,7 @@ public class NotaFiscalViewModel {
 		this.setValor(formatarValor(notaFiscal.getValor()));
 	}
 
-	//Construtor para tela itensNotaFiscal
-	public NotaFiscalViewModel(NotaFiscal notaFiscal,
-			List<Material> listaMaterial, List<Laboratorio> listaLaboratorios,
-			List<ItemMaterial> listaItemMaterial) {
 
-		this.setListaItensMaterial(listaItemMaterial);
-		
-		this.setListaLaboratorio(listaLaboratorios);
-		
-		this.setListaMaterial(listaMaterial);
-		
-		this.setCodigoNotaFiscal(notaFiscal.getCodigoNotaFiscal());
-		this.setNumeroNotaFiscal(notaFiscal.getNumeroNotaFiscal());
-		this.setDataEmissao(formataData(notaFiscal.getDataEmissao()));
-		this.setValor(formatarValor(notaFiscal.getValor()));
-		
-	}
 	
 	public String formataData(Date data){
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -97,6 +76,12 @@ public class NotaFiscalViewModel {
 		return formataValor.format(valor);
 	}
 	
+	static String formatarValor(Long valor){
+		
+		NumberFormat formataValor= NumberFormat.getInstance();
+		return formataValor.format(valor);
+		
+	}
 
 	public Integer getCodigoNotaFiscal() {
 		return codigoNotaFiscal;
